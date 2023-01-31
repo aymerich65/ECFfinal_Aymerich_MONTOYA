@@ -15,7 +15,7 @@
 
 
 
-//Création de la table:
+//Création de la table entrées:
 
 
 function createtable(){
@@ -37,7 +37,7 @@ function createtable(){
     }
 }
 
-//Création de la table:
+//Création de la table clients:
 
 
 function createclient(){
@@ -87,7 +87,6 @@ try{
 }catch(PDOException $PDOException){
     echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
 }
-echo 'ce message lui s\'affiche';
 
 
 
