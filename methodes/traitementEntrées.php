@@ -1,18 +1,12 @@
 <?php
 try{
-    $titre="";
-    $description= "";
-    $prix=null;
+var_dump($_POST);
+    $titre=$_POST['titre'];
+    $description= $_POST['description'];
+    $prix= $_POST['prix'];
 
-    if(isset($_POST['titre'])) {
-        $titre = $_POST['titre'];
-    };
-    if(isset($_POST['description'])) {
-        $description = $_POST['description'];
-    };
-    if(isset($_POST['prix'])) {
-        $titre = $_POST['prix'];
-    };
+
+
 
     $dsn = 'mysql:host=localhost;dbname=quaiantique';
     $pdo = new PDO($dsn,'root','');

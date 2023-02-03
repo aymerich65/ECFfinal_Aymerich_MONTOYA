@@ -45,8 +45,7 @@ function createclient(){
         $dsn = 'mysql:host=localhost;dbname=quaiantique';
         $pdo = new PDO($dsn,'root','');
         $myClientTable ="CREATE TABLE clients (
-        nom VARCHAR(40) NOT NULL,
-        prénom VARCHAR(40) NOT NULL,
+        convives int NULL,
         email VARCHAR(40) NOT NULL PRIMARY KEY,
         password VARCHAR(60) NOT NULL 
         )";
