@@ -63,6 +63,29 @@ require '../templates/header.php';
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
+    <h2>Ajouter Administrateur</h2>
+
+    <p>Le directeur doit être informé de tout ajout de personne en tant qu'administrateur sous peine de sanction</p>
+
+    <form method="POST" action="../methodes/traitementInscriptionAdmin.php" class="formstyle">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="email">Adresse Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Indiquez votre adresse email">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Indiquez votre mot de passe">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="poste">Poste dans l'entreprise</label>
+                <input type="texte" class="form-control" id="poste" name="poste" placeholder="Indiquez le poste dans l'entreprise">
+            </div>
+        </div>
+        <button type="submit">Valider</button>
+    </form>
+
+
 
 
            </div>
