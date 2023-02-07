@@ -1,5 +1,5 @@
 
-<form method="POST" action="../methodes/" class="formstyle">
+<form method="POST" action="" class="formstyle">
     <div class="form-row">
         <div class="form-group col-md-12">
             <label for="email">Adresse Email</label>

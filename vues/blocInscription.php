@@ -1,5 +1,5 @@
 
-            <form method="POST" action="../methodes/traitementInscription.php" class="formstyle">
+            <form method="POST" action="nscription.php" class="formstyle">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="email">Adresse Email</label>
