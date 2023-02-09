@@ -43,7 +43,7 @@
 
 
 
-
+<script src="JS/scriptControleTablesDisponibles.js"></script>
 <script src="JS/bootstrap.bundle.min.js"></script>
 </body>
 </html>
