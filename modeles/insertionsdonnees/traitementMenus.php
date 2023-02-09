@@ -1,29 +1,17 @@
 <?php
 try{
-    $titre="";
-    $description= "";
-    $prix=null;
-
-    if(isset($_POST['titre'])) {
-        $titre = $_POST['titre'];
-    };
-    if(isset($_POST['formule1'])) {
-        $formule1 = $_POST['formule1'];
-    } else {
-        $formule1 = null;
-    };
-
-    if(isset($_POST['2'])) {
-        $formule2 = $_POST['formule2'];
-    } else {
-        $formule2 = null;
-    };
+var_dump($_POST);
+$titre=$_POST['titre'];
+$formule=$_POST['formule'];
+$description= $_POST['description'];
+$prix= $_POST['prix'];
 
 
     $dsn = 'mysql:host=localhost;dbname=quaiantique';
     $pdo = new PDO($dsn,'root','');
-    $myTable = $pdo->prepare("INSERT INTO desserts (titre, formule1, formule2) VALUES (:titre, :formule1, :formule2)");
+    $myTable = $pdo->prepare("INSERT INTO menus (titre, formule, description, prix) VALUES (:titre, :formule, :description, :prix)");
     $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $myTable->bindValue(':formule', $formule, PDO::PARAM_STR);
     $myTable->bindValue(':description', $description, PDO::PARAM_STR);
     $myTable->bindValue(':prix', $prix, PDO::PARAM_STR);
     $myTable->execute();

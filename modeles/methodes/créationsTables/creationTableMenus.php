@@ -1,17 +1,17 @@
 <?php
-function createFormules(){
+function createMenus(){
 try{
 $dsn = 'mysql:host=localhost;dbname=quaiantique';
 $pdo = new PDO($dsn,'root','');
-$myformulatable  ="CREATE TABLE formules (
+$menus  ="CREATE TABLE menus (
 id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(50) NOT NULL,
+titre VARCHAR(50) NOT NULL,
 formule VARCHAR(50) NOT NULL,
 description TEXT NOT NULL,
 prix DECIMAL(10,2) NOT NULL
 )";
 
-$pdo->exec($myformulatable);
+$pdo->exec($menus);
 echo 'La table a été créée';
 
 
@@ -20,4 +20,4 @@ echo 'une erreur c\'est produite:' . $exception->getMessage();
 }
 }
 
-createFormules();
+createMenus();
