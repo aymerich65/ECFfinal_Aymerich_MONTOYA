@@ -1,9 +1,9 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+
 try{
     $dsn = 'mysql:host=localhost;dbname=quaiantique';
     $pdo = new PDO($dsn,'root','');
-    $myTable = $pdo->query("SELECT tables_disponibles FROM tables");
+    $myTable = $pdo->query("SELECT FROM client WHERE email = :email");
     $myTable->execute();
     $row = $myTable->fetch(PDO::FETCH_ASSOC);
 
@@ -17,3 +17,4 @@ try{
 } catch(PDOException $e){
     echo 'il y a une erreur:'.$e->getMessage();
 }
+

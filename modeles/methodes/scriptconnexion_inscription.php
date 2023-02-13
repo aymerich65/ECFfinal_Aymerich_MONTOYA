@@ -31,6 +31,10 @@
                 <label for="guests">Convives par défaut</label>
                 <input type="number" class="form-control" id="guests" name="guests" placeholder="Indiquez le nombre de convives par défaut">
             </div>
+            <div class="form-group col-md-12">
+                <label for="allergies">Allergies</label>
+                <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Indiquez vos allergies si besoin">
+            </div>
         </div>
             <button type="submit">Valider</button>
         </form>
