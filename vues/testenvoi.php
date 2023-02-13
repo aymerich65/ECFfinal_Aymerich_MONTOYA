@@ -1,18 +1,19 @@
-<?php
-try{
-    var_dump($_POST);
-    $nom=$_POST['nom'];
-
-
-
-
-
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn,'root','');
-    $myTable = $pdo->prepare("INSERT INTO tabletest (nom) VALUES (:nom)");
-    $myTable->bindValue(':nom', $nom, PDO::PARAM_STR);
-
-    $myTable->execute();
-}catch(PDOException $PDOException){
-    echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
-}
+<div class="">
+    <form method="POST" action="../modeles/insertionsdonnees/traitementInscription.php">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="email">Adresse Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Indiquez votre adresse email">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Indiquez votre mot de passe">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="convives">Convives par défaut</label>
+                <input type="number" class="form-control" id="convives" name="convives" placeholder="Indiquez le nombre de convives par défaut">
+            </div>
+        </div>
+        <button type="submit">Valider</button>
+    </form>
+</div>

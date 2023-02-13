@@ -1,5 +1,5 @@
 
-            <form method="POST" action="nscription.php" class="formstyle">
+            <form method="POST" action="modeles/insertionsdonnees/traitementInscription.php" class="formstyle">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="email">Adresse Email</label>
@@ -11,7 +11,7 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label for="guests">Convives par défaut</label>
-                        <input type="number" class="form-control" id="guests" name="guests" placeholder="Indiquez le nombre de convives par défaut">
+                        <input type="number" class="form-control" id="convives" name="convives" placeholder="Indiquez le nombre de convives par défaut">
                     </div>
                 </div>
                 <button type="submit">Valider</button>

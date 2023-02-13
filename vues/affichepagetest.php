@@ -1,9 +1,5 @@
 <?php
-
-ob_start();
-require_once 'JWT/authentification.php';
-
-?>
+ob_start();?>
 <div class="connexionstyle">
     <h1>Connexion/Inscription</h1>
     <div>
@@ -14,7 +10,7 @@ require_once 'JWT/authentification.php';
     </div>
     <?php if(isset($_POST['connexion'])){?>
     <div class="">
-        <form method="post" action="">
+        <form method="post">
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="email">Adresse Email</label>
@@ -44,21 +40,12 @@ require_once 'JWT/authentification.php';
                 <label for="convives">Convives par défaut</label>
                 <input type="number" class="form-control" id="convives" name="convives" placeholder="Indiquez le nombre de convives par défaut">
             </div>
-                        <div class="form-group col-md-12">
-                <label for="allergies">Allergies</label>
-                <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Indiquez vos allergies si besoin">
-            </div>
         </div>
         <button type="submit">Valider</button>
     </form>
 </div>
 
 <?php }
-
-
-
-
-
 
 $contenu =ob_get_clean();
 
