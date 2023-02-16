@@ -101,6 +101,11 @@ require_once 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
         <label class="label-admin-style">Tables : <input type="number" name="tables" value=""></label>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
+    <h2 class="titleh2-admin-form">Envoyer une image </h2>
+    <form method="POST" action="modeles/insertionsdonnees/insertion_images.php" enctype="multipart/form-data">
+        <label class="label-admin-style">Choisissez une image : <input type="file" name="image" id="image" value=""></label>
+        <button class="dishbuton" type="submit">Valider</button>
+    </form>
 
 <?php
 
