@@ -13,18 +13,24 @@ return null;
 }
 }
 
-function moveUploadedFile(array $uploadedFile): bool {
+
+
+$targetFile= '';
+
+
+function moveUploadedFile(array $uploadedFile,&$targetFile): bool {
 $finfo = new finfo(FILEINFO_MIME_TYPE);
 $mimeType = $finfo->file($uploadedFile['tmp_name']);
 $extension = getExtensionFromMimeType($mimeType);
-
+    $targetDir = 'C:\xampp\htdocs\QuaiAntique_AymerichMONTOYA\uploads\\';
+    $targetFile = $targetDir . sha1_file($uploadedFile['tmp_name']) . '.' . $extension;
 if ($extension === null) {
 return false;
 }
 
-$targetDir = 'C:\xampp\htdocs\QuaiAntique_AymerichMONTOYA\uploads\\';
-$targetFile = $targetDir . sha1_file($uploadedFile['tmp_name']) . '.' . $extension;
-
+//$targetDir = 'C:\xampp\htdocs\QuaiAntique_AymerichMONTOYA\uploads\\';
+//$targetFile = $targetDir . sha1_file($uploadedFile['tmp_name']) . '.' . $extension;
+    var_dump($targetFile);
 return move_uploaded_file($uploadedFile['tmp_name'], $targetFile);
 }
 
@@ -40,7 +46,7 @@ if (!file_exists('./uploads')) {
 mkdir('./uploads', 0777, true);
 }
 
-if (moveUploadedFile($_FILES['image'])) {
+if (moveUploadedFile($_FILES['image'],$targetFile)) {
 echo 'Téléchargement réussi.';
 } else {
 echo 'Une erreur est survenue lors du téléchargement du fichier.';
@@ -55,19 +61,14 @@ echo 'Le fichier dépasse la taille autorisée.';
 echo 'Une erreur est survenue lors de l\'envoi du fichier.';
 }
 
-/*function moveUploadedFile(array $uploadedFile): bool {
-    $finfo = new finfo(FILEINFO_MIME_TYPE);
-    $mimeType = $finfo->file($uploadedFile['tmp_name']);
+$titre = $_POST['titre'];
+$description = $_POST['description'];
+$reference = $targetFile;
 
-    return move_uploaded_file(
-        $uploadedFile['tmp_name'],
-        sprintf('./uploads/%s.%s',
-            sha1_file($uploadedFile['tmp_name']),
-            getExtensionFromMimeType($mimeType)
-        )
-    );
-}
-
-if (!moveUploadedFile($_FILES['uploaded_file'])) {
-    throw new RuntimeException('Impossible to upload file.');
-}*/
+$dsn = 'mysql:host=localhost;dbname=quaiantique';
+$pdo = new PDO($dsn,'root','');
+$myTable = $pdo->prepare("INSERT INTO images ( titre, description, reference) VALUES (:titre, :description, :reference)");
+$myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
+$myTable->bindValue(':description', $description, PDO::PARAM_STR);
+$myTable->bindValue(':reference', $reference, PDO::PARAM_STR);
+$myTable->execute();
