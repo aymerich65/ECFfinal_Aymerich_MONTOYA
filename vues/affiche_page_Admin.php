@@ -106,11 +106,34 @@ require_once 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
         <label class="label-admin-style">Choisissez une image : <input type="file" name="image" id="image" value=""></label>
         <label class="label-admin-style">Titre : <input type="text" name="titre" value="" ></label>
         <label class="label-admin-style">Description : <input type="text" name="description" value="" ></label>
+        <label>Numéro d'image <input id="text" name="numero_image" value="" required></label>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
     <button class="" type="button" id="pbutton">Afficher les images stockées</button>
      <div id="table-container"></div>
+    <h2 class="titleh2-admin-form">Supprimer une image </h2>
+<form method="POST" action="../modeles/suppressionlignes/supressionImage.php" class="form-admin-style">
+    <label>Titre en base de donnée <input id="text" name="titre" value="" required></label>
+    <label>Numéro d'image <input id="text" name="numero_image" value="" required></label>
+    <button>Supprimer</button>
+</form>
+<br>
+    <h2 class="titleh2-admin-form">Choisissez les trois images de l'accueil</h2>
+    <form method="post" action="modeles/insertionsdonnees/insertion_imagesaccueil.php">
+        <label for="num_image_bloc_1">Bloc 1:</label>
+        <input type="number" id="num_image_bloc_1" name="num_image_bloc_1" required placeholder="numéro d'image">
+
+        <label for="num_image_bloc_2">Bloc 2:</label>
+        <input type="number" id="num_image_bloc_2" name="num_image_bloc_2" required placeholder="numéro d'image">
+
+        <label for="num_image_bloc_3">Bloc 3:</label>
+        <input type="number" id="num_image_bloc_3" name="num_image_bloc_3" required placeholder="numéro d'image">
+
+        <button type="submit">Valider</button>
+    </form>
+
+
 
 <?php
 

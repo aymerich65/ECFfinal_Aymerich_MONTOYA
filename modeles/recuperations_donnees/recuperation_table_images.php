@@ -9,7 +9,7 @@ $myTable->execute();
 $html = '';
 
 while($row = $myTable->fetch(PDO::FETCH_ASSOC)) {
-    $html .= '<tr><td>'.htmlspecialchars($row['titre']).'</td><td>'.$row['reference'].'</td></tr>';
+    $html .= '<tr><td>'.htmlspecialchars($row['titre']).'</td><td>'.$row['numero_image'].'</td></tr>';
 }
 
 echo '<table><tr><th>Titre</th><th>Référence</th></tr>' . $html . '</table>';

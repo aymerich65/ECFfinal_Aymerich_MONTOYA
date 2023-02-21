@@ -41,8 +41,6 @@
 
 
 </div>
-
-
 <script src="JS/appelle_script_recuperation_table_image.js"></script>
 <script src="JS/scriptControleTablesDisponibles.js"></script>
 <script src="JS/bootstrap.bundle.min.js"></script>

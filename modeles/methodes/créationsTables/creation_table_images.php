@@ -8,8 +8,9 @@ function createImages()
         $picturesTable = "CREATE TABLE images (
         id int NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
         titre VARCHAR(60),
+        nom_fichier VARCHAR(60),
         description TEXT,
-        reference VARCHAR(60) 
+        numero_image int NOT NULL 
         )";
 
         $pdo->exec($picturesTable);
