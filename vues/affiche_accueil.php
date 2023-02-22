@@ -62,6 +62,13 @@ ob_start();
         });
 
     </script>
+<div class="button-container mytestcolor">
+  <a href="?page=reservation"><button class="button-reservation-style">Réservation</button></a>
+</div>
+
+
+
+
 
 <?php
 
