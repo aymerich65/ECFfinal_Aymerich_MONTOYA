@@ -1,4 +1,21 @@
 <?php
+/*session_start();
+
+
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    header('Location: index.php');
+    exit;
+}
+if ($_SESSION['admin'] !== 'approuved') {
+    header('Location: index.php');
+    exit;
+}
+
+
+*/
+
+
+var_dump($_SESSION);
 
 ob_start();
 ?>
@@ -6,7 +23,7 @@ ob_start();
 <br>
 <h2>Réservations</h2>
 <?php
-require_once 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
+require 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
 ?>
 
 
@@ -139,4 +156,4 @@ require_once 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
 
 $contenu =ob_get_clean();
 
-require_once 'layout.php';
+require 'layout.php';
