@@ -1,21 +1,13 @@
 <?php
-/*session_start();
-
-
-if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
-    header('Location: index.php');
-    exit;
-}
-if ($_SESSION['admin'] !== 'approuved') {
-    header('Location: index.php');
-    exit;
+if(session_status() === PHP_SESSION_NONE){
+    session_start();
 }
 
 
-*/
-
-
-var_dump($_SESSION);
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== 'approuved') {
+    header('Location: index.php');
+    exit;
+}
 
 ob_start();
 ?>

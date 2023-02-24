@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuaiAntique</title>
-    <link rel="stylesheet" href="CSS/bootstrap.css">
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -16,7 +16,6 @@
 
 </head>
 <body class="bodystyle">
-
 <div class="container-fluid">
     <div class="header row">
         <?php require 'header.php';
@@ -43,7 +42,8 @@
 </div>
 <script src="JS/appelle_script_recuperation_table_image.js"></script>
 <script src="JS/scriptControleTablesDisponibles.js"></script>
-<script src="JS/bootstrap.bundle.min.js"></script>
+<script src="../JS/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 
