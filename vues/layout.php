@@ -16,12 +16,10 @@
 
 </head>
 <body class="bodystyle">
-<div class="container-fluid">
-    <div class="header row">
-        <?php require 'header.php';
-        ?>
-
-    </div>
+    
+<div class="header">
+    <?php require 'header.php'; ?>
+</div>
 
     <div class="main row">
         <?php
@@ -29,10 +27,13 @@
         ?>
     </div>
 
-    <div class="footer row">
-        <?php
-        ?>
-    </div>
+    <div class="footerstyle">
+        <div class="col-10 offset-1">
+            <?php require_once 'affiche_horraires.php'; ?>
+        </div>
+
+
+
 
 
 

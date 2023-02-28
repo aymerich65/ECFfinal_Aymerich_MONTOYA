@@ -1,12 +1,117 @@
 <?php
 require_once 'modeles/recuperations_donnees/script_recuperation_horaires.php';
 ?>
+<div class="footerchildrenstyle ">
+    <h3 class="titleschedule">Nos horaires d'ouverture</h3>
 
-<h3>Nos horaires d'ouverture</h3>
-<p>Lundi:<?php echo "$mondayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$mondayOpeningNoon"." "."$mondayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$mondayOpeningEvening"." ".$mondayClosingEvening;?></p></br>
-<p>Mardi:<?php echo "$tuesdayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$tuesdayOpeningNoon"." "."$tuesdayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$tuesdayOpeningEvening"." ".$tuesdayClosingEvening;?></p></br>
-<p>Mercredi:<?php echo "$wednesdayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$wednesdayOpeningNoon"." "."$wednesdayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$wednesdayOpeningEvening"." ".$wednesdayClosingEvening;?></p></br>
-<p>Jeudi:<?php echo "$thursdayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$thursdayOpeningNoon"." "."$thursdayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$thursdayOpeningEvening"." ".$thursdayClosingEvening;?></p></br>
-<p>Vendredi:<?php echo "$fridayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$fridayOpeningNoon"." "."$fridayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$fridayOpeningEvening"." ".$fridayClosingEvening;?></p></br>
-<p>Samedi:<?php echo "$saturdayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$saturdayOpeningNoon"." "."$saturdayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$saturdayOpeningEvening"." ".$saturdayClosingEvening;?></p></br>
-<p>Dimanche:<?php echo "$sundayOpeningDay&nbsp;&nbsp;&nbsp;&nbsp;$sundayOpeningNoon"." "."$sundayClosingNoon&nbsp;&nbsp;&nbsp;&nbsp;$sundayOpeningEvening"." ".$sundayClosingEvening;?></p></br>
+    <p>Lundi:
+        <?php
+        if ($mondayOpeningNoon != '00:00:00' || $mondayOpeningEvening != '00:00:00') {
+            echo $mondayOpeningDay."&nbsp;&nbsp;";
+            if ($mondayOpeningNoon != '00:00:00') {
+                echo $mondayOpeningNoon."-".$mondayClosingNoon."&nbsp;&nbsp;";
+            }
+            if ($mondayOpeningEvening != '00:00:00') {
+                echo $mondayOpeningEvening."-".$mondayClosingEvening;
+            }
+        } else {
+            echo "Fermé";
+        }
+        ?>
+    </p>
+
+    <p>Mardi:
+        <?php
+        if ($tuesdayOpeningNoon != '00:00:00' || $tuesdayOpeningEvening != '00:00:00') {
+            echo $tuesdayOpeningDay."&nbsp;&nbsp;";
+            if ($tuesdayOpeningNoon != '00:00:00') {
+                echo $tuesdayOpeningNoon."-".$tuesdayClosingNoon."&nbsp;&nbsp;";
+            }
+            if ($tuesdayOpeningEvening != '00:00:00') {
+                echo $tuesdayOpeningEvening."-".$tuesdayClosingEvening;
+            }
+        } else {
+            echo "Fermé";
+        }
+        ?>
+    </p>
+
+    <p>Mercredi:
+        <?php
+        if ($wednesdayOpeningNoon != '00:00:00' || $wednesdayOpeningEvening != '00:00:00') {
+            echo $wednesdayOpeningDay."&nbsp;&nbsp;";
+            if ($wednesdayOpeningNoon != '00:00:00') {
+                echo $wednesdayOpeningNoon."-".$wednesdayClosingNoon."&nbsp;&nbsp;";
+            }
+            if ($wednesdayOpeningEvening != '00:00:00') {
+                echo $wednesdayOpeningEvening."-".$wednesdayClosingEvening;
+            }
+        } else {
+            echo "Fermé";
+        }
+        ?>
+    </p>
+
+    <p>Jeudi:
+        <?php
+        if ($thursdayOpeningNoon != '00:00:00' || $thursdayOpeningEvening != '00:00:00') {
+            echo $thursdayOpeningDay."&nbsp;&nbsp;";
+            if ($thursdayOpeningNoon != '00:00:00') {
+                echo $thursdayOpeningNoon."-".$thursdayClosingNoon."&nbsp;&nbsp;";
+            }
+            if ($thursdayOpeningEvening != '00:00:00') {
+                echo $thursdayOpeningEvening."-".$thursdayClosingEvening;
+            }
+        } else {
+            echo "Fermé";
+        }
+        ?>
+    </p>
+
+    <p>Vendredi:
+        <?php
+        if ($fridayOpeningNoon != '00:00:00' || $fridayOpeningEvening != '00:00:00') {
+            echo $fridayOpeningDay."&nbsp;&nbsp;";
+            if ($fridayOpeningNoon != '00:00:00') {
+                echo $fridayOpeningNoon."-".$fridayClosingNoon."&nbsp;&nbsp;";
+            }
+            if ($fridayOpeningEvening != '00:00:00') {
+                echo $fridayOpeningEvening."-".$fridayClosingEvening;
+            }
+        } else {
+            echo "Fermé";
+        }
+        ?>
+    </p>
+
+<p>Samedi:
+    <?php
+    if ($saturdayOpeningNoon != '00:00:00' || $saturdayOpeningEvening != '00:00:00') {
+        echo $saturdayOpeningDay."&nbsp;&nbsp;";
+        if ($saturdayOpeningNoon != '00:00:00') {
+            echo $saturdayOpeningNoon."-". $saturdayClosingNoon."&nbsp;&nbsp;";
+        }
+        if ($saturdayOpeningEvening != '00:00:00') {
+            echo $saturdayOpeningEvening."-". $saturdayClosingEvening;
+        }
+    } else {
+        echo "Fermé";
+    }
+    ?>
+</p>
+<p>Dimanche:
+    <?php
+    if ($sundayOpeningNoon != '00:00:00' || $sundayOpeningEvening != '00:00:00') {
+        echo $sundayOpeningDay."&nbsp;&nbsp;";
+        if ($sundayOpeningNoon != '00:00:00') {
+            echo $sundayOpeningNoon."-". $sundayClosingNoon."&nbsp;&nbsp;";
+        }
+        if ($sundayOpeningEvening != '00:00:00') {
+            echo $sundayOpeningEvening."-". $sundayClosingEvening;
+        }
+    } else {
+        echo "Fermé";
+    }
+    ?>
+</p>
+</div>

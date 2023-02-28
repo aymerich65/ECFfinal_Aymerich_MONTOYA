@@ -9,33 +9,34 @@ $mybddTable = $myrequest->fetchAll(PDO::FETCH_ASSOC);
 ob_start();
 
 ?>
-
-    <div class="galerieaccueil">
-        <?php if (!empty($mybddTable[0])) : ?>
-            <div class="myimage-container">
-                <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[0]['nom_fichier'] ?>" data-title="<?= $mybddTable[0]['description'] ?>">
-                <div class="mytooltip"><?= $mybddTable[0]['nom_fichier'] ?></div>
-            </div>
-        <?php endif; ?>
+    <div class="row">
+        <div class="col-md-4">
+            <?php if (!empty($mybddTable[0])) : ?>
+                <div class="myimage-container">
+                    <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[0]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[0]['titre']) ?>">
+                    <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[0]['titre']) ?></div>
+                </div>
+            <?php endif; ?>
+        </div>
+        <div class="col-md-4">
+            <?php if (!empty($mybddTable[1])) : ?>
+                <div class="myimage-container">
+                    <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[1]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[1]['titre']) ?>">
+                    <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[1]['titre']) ?></div>
+                </div>
+            <?php endif; ?>
+        </div>
+        <div class="col-md-4">
+            <?php if (!empty($mybddTable[2])) : ?>
+                <div class="myimage-container">
+                    <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[2]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[2]['titre']) ?>">
+                    <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[2]['titre']) ?></div>
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 
-    <div class="galerieaccueil">
-        <?php if (!empty($mybddTable[1])) : ?>
-            <div class="myimage-container">
-                <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[1]['nom_fichier'] ?>" data-title="<?= $mybddTable[1]['description'] ?>">
-                <div class="mytooltip"><?= $mybddTable[1]['nom_fichier'] ?></div>
-            </div>
-        <?php endif; ?>
-    </div>
 
-    <div class="galerieaccueil">
-        <?php if (!empty($mybddTable[2])) : ?>
-            <div class="myimage-container">
-                <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[2]['nom_fichier'] ?>" data-title="<?= $mybddTable[2]['description'] ?>">
-                <div class="mytooltip"><?= $mybddTable[2]['nom_fichier'] ?></div>
-            </div>
-        <?php endif; ?>
-    </div>
 
     <script>
         window.onload = function() {
@@ -63,7 +64,7 @@ ob_start();
 
     </script>
 <div class="button-container mytestcolor">
-  <a href="?page=reservation"><button class="button-reservation-style">Réservation</button></a>
+  <a href="index.php?page=réservation"><button class="button-reservation-style">Réservation</button></a>
 </div>
 
 

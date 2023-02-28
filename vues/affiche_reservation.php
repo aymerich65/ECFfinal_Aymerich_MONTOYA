@@ -1,6 +1,7 @@
 <?php
 ob_start();
-require_once('modeles/recuperations_donnees/recuperationDonneesClients.php');
+//require_once('modeles/recuperations_donnees/recuperationDonneesClients.php');
+
 
 ?>
 
@@ -38,6 +39,28 @@ require_once('modeles/recuperations_donnees/recuperationDonneesClients.php');
     </form>
 
 </div>
+
+
+<script>
+    const fetchOptions3 = {
+      mode: 'cors'
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('../modeles/recuperations_donnees/script_recuperationTablesDisponibles.php', fetchOptions3)
+        .then(response => response.json())
+        .then(data => {
+          const tableData = document.querySelector('#table-data');
+          tableData.innerHTML = data.tablesDisponibles;
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite :', error);
+        });
+    });
+
+</script>
+
+
 
 <?php
 

@@ -1,6 +1,17 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-$dsn = 'mysql:host=localhost;dbname=quaiantique';
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+
+
+
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+
+$dotenv->load();
+
+$dsn = $_ENV['DB_DSN'];
 $pdo = new PDO($dsn,'root','');
 $myTable = $pdo->prepare("SELECT * FROM images ");
 

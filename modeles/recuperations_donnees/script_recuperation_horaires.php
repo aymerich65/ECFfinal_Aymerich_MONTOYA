@@ -1,6 +1,9 @@
 <?php
+require_once __DIR__ . '/../../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
 try{
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
+    $dsn = $_ENV['DB_DSN'];
     $pdo = new PDO($dsn,'root','');
     $myTable = $pdo->query("SELECT jour, statut, ouverture_midi, fermeture_midi, ouverture_soir, fermeture_soir FROM horaires");
     $myTable->execute();
