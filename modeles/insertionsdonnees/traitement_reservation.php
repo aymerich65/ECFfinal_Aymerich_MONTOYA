@@ -3,9 +3,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 
-/* mon système d'envoi du mail*/
+/* mon système d'envoi du mail:*/
 ini_set('SMTP', 'localhost');
 ini_set('smtp_port', 1025);
+
 
 $clientmail = htmlspecialchars($_POST['email']);
 $subject = 'Confirmation réservation';
@@ -64,8 +65,11 @@ $date = $_POST['date'];
 $date_mysql = date('Y-m-d', strtotime($date));
 
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
+$dsn = $_ENV['DB_DSN'];
 
-$dsn = 'mysql:host=localhost;dbname=quaiantique';
 $pdo = new PDO($dsn,'root','');
 
 $statement = $pdo->prepare('SELECT tables_disponibles FROM tables WHERE id = 1' );

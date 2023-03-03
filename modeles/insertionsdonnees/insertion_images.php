@@ -42,7 +42,7 @@ $titre = $myText = str_replace(" ", "_", $_POST['titre']);
 $description = $_POST['description'];
 $numero_image = $_POST['numero_image'];
 
-$targetDir = 'C:\xampp\htdocs\QuaiAntique_AymerichMONTOYA\galerie';
+$targetDir = '../../galerie';
 if (!$targetDir) {
 echo 'Le dossier de destination n\'existe pas ou n\'a pas les permissions nécessaires.';
 exit;

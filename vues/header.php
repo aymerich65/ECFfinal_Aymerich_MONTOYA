@@ -9,8 +9,10 @@
   <h2 class="headerlink"><a href="index.php?page=réservation"><span>Réservation</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=connexion"><span>Connexion</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=carte"><span>Carte</span></a></h2>
-  <h2 class="headerlink"><a href="index.php?page=contact"><span>Contact</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=a_propos"><span class="aproposestyle">A propos</span></a></h2>
+        <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'approuved'): ?>
+            <h2 class="headerlink pageadministrateurestyle"><a href="index.php?page=admin"><span>Page administrateur</span></a></h2>
+        <?php endif; ?>
 </div>
 
         <div class="col-4 text-end">
@@ -23,7 +25,6 @@
                     <li><a class="dropdown-item" href="index.php?page=réservation">Réservation</a></li>
                     <li><a class="dropdown-item" href="index.php?page=connexion">Connexion</a></li>
                     <li><a class="dropdown-item" href="index.php?page=carte">Carte</a></li>
-                    <li><a class="dropdown-item" href="index.php?page=contact">Contact</a></li>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'approuved'): ?>
                         <li><a class="dropdown-item" href="index.php?page=admin">Page administrateur</a></li>
                     <?php endif; ?>

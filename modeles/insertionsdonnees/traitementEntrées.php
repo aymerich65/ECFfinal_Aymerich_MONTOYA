@@ -1,5 +1,10 @@
 <?php
 try{
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+    $dotenv->load();
+
+
 var_dump($_POST);
     $titre=$_POST['titre'];
     $description= $_POST['description'];
@@ -8,7 +13,7 @@ var_dump($_POST);
 
 
 
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
+    $dsn = $_ENV['DB_DSN'];
     $pdo = new PDO($dsn,'root','');
     $myTable = $pdo->prepare("INSERT INTO entrees (titre, description, prix) VALUES (:titre, :description, :prix)");
     $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);

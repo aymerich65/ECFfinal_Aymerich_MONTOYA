@@ -1,8 +1,10 @@
 <?php
 ob_start();
-//require_once('modeles/recuperations_donnees/recuperationDonneesClients.php');
+require_once 'JWT/authentification.php';
 
-
+$email=$_SESSION['email'];
+$guestsnumber=$_SESSION['convives'];
+$allergies=$_SESSION['allergies'];
 ?>
 
 <div>

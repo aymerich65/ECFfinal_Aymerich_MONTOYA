@@ -1,6 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
@@ -35,10 +37,10 @@ if(isset($_SESSION['password']) && isset($_SESSION['email'])){
 
 }
 
-}catch(ExceptionA $e){
-
+}catch(Exception $e){
+echo 'un erreur c\'est produite';
 }
-
+var_dump($_SESSION);
 
 
 

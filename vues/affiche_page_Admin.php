@@ -1,25 +1,48 @@
 <?php
+ob_start();
 if(session_status() === PHP_SESSION_NONE){
     session_start();
 }
+require_once 'vendor/autoload.php';
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 
-if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== 'approuved') {
-    header('Location: index.php');
+require_once 'JWT/validate_jwt.php';
+
+
+if (isset($_SESSION['jwt'])) {
+    $jwt = $_SESSION['jwt'];
+
+    // Valider le jeton JWT
+    $user = validateJWT($jwt);
+
+
+    if ($user !== false && isset($_SESSION['admin']) && $_SESSION['admin'] === 'approuved') {
+        echo 'Bienvenue administrateur !';
+
+    } else {
+
+        header('Location: index.php?page=connexion');
+        exit;
+    }
+} else {
+
+    header('Location: index.php?page=connexion');
     exit;
 }
 
-ob_start();
 ?>
-<h1>TABLEAU DE BORD</h1>
+<h1 class="tableaudebordstyle">TABLEAU DE BORD</h1>
 <br>
 <h2>Réservations</h2>
 <?php
-require 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
-?>
+    require 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
+    ?>
 
 
-<h2 class="formadmin-style titleh2-admin-form">Modifier carte:</h2>
+
+<h2 class="titleh2-admin-form">Modifier carte:</h2>
     <h3 class="titleh3-admin-form">Insérer entrée : </h3>
     <form method="POST" action="modeles/insertionsdonnees/traitementEntrées.php" class="form-admin-style">
         <label class="right-align label-admin-style">Titre : <input type="text" name="titre" value="" class="input-admin-style"></label>
@@ -129,7 +152,7 @@ require 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
 </form>
 <br>
     <h2 class="titleh2-admin-form">Choisissez les trois images de l'accueil</h2>
-    <form method="post" action="modeles/insertionsdonnees/insertion_imagesaccueil.php">
+    <form method="post" class="footer-form-style "  action="modeles/insertionsdonnees/insertion_imagesaccueil.php">
         <label for="num_image_bloc_1">Bloc 1:</label>
         <input type="number" id="num_image_bloc_1" name="num_image_bloc_1" required placeholder="numéro d'image">
 

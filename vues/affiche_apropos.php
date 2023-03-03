@@ -21,6 +21,10 @@ ob_start();
             <h2 class="mentionslegaletitlesstyle">Mentions légales</h2>
         <p class="mentionslegalesstyle">Le Quai Antique SAS</p>
         <p class="mentionslegalesstyle">Adresse : 12 rue des Bains fictifs, 73000 Chambéry</p>
+        <p class="mentionslegalesstyle">Email : Lequaiantique@fictifsite.fr</p>
+        <p class="mentionslegalesstyle">Telephone : 00 00 00 00 00</p>
+
+
         <p class="mentionslegalesstyle">Numéro de SIRET : XXX XXX XXX XXXXX</p>
         <p class="mentionslegalesstyle">Directeur de la publication : Jean Dupont</p>
 

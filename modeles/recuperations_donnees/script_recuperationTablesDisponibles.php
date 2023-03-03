@@ -8,12 +8,13 @@ $dotenv->load();
 try{
     $dsn = $_ENV['DB_DSN'];
     $pdo = new PDO($dsn,'root','');
-    $myTable = $pdo->query("SELECT tables_disponibles FROM tables");
+    $myTable = $pdo->query("SELECT SUM(tables) AS total_tables_reserves FROM reservations");
     $myTable->execute();
     $row = $myTable->fetch(PDO::FETCH_ASSOC);
-    $availablesTable = htmlspecialchars($row['tables_disponibles']);
+    $total_tables_reserves = htmlspecialchars($row['total_tables_reserves']);
+    $tables_disponibles = 20 - $total_tables_reserves;
     header("Content-Type: application/json");
-    echo json_encode(array('tablesDisponibles' => $availablesTable));
+    echo json_encode(array('tablesDisponibles' => $tables_disponibles));
 } catch(PDOException $e){
     echo json_encode(array('error' => 'Une erreur s\'est produite : '.$e->getMessage()));
 }

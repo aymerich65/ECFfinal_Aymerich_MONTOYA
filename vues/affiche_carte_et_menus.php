@@ -43,32 +43,32 @@ try {
 
 ?>
 
-<h1>Notre carte</h1>
+<h1 class="h1cartestyle">Notre carte</h1>
 
-<h2 class="cartetitlestyle">Entrées</h2>
+<h2 class="cartetitlestyle h2cartestyle">Entrées</h2>
 <?php foreach($myStarterTable as $row) {
-    echo "<h3>" . $row['titre'] . "</h3>";
+    echo "<h3 class=\"h3cartestyle\">" . $row['titre'] . "</h3>";
     echo "<p>" . $row['description'] . "</p>";
     echo "<p>Prix: " . $row['prix'] . "</p>";
 } ?>
 
-<h2 class="cartetitlestyle">Plats</h2>
+<h2 class="cartetitlestyle h2cartestyle">Plats</h2>
 <?php foreach($myStarterTablePlat as $row) {
-    echo "<h3>" . $row['titre'] . "</h3>";
+    echo "<h3 class=\"h3cartestyle\">>" . $row['titre'] . "</h3>";
     echo "<p>" . $row['description'] . "</p>";
     echo "<p>Prix: " . $row['prix'] . "</p>";
 } ?>
 
-<h2 class="cartetitlestyle">Desserts</h2>
+<h2 class="cartetitlestyle h2cartestyle">Desserts</h2>
 <?php foreach($myDessertsTable as $row) {
-    echo "<h3>" . $row['titre'] . "</h3>";
+    echo "<h3 class=\"h3cartestyle\">>" . $row['titre'] . "</h3>";
     echo "<p>" . $row['description'] . "</p>";
     echo "<p>Prix: " . $row['prix'] . "</p>";
 } ?>
 
-<h2 class="cartetitlestyle">Menus</h2>
+<h2 class="cartetitlestyle h2cartestyle">Menus</h2>
 <?php foreach($myMenusTable as $row) {
-    echo "<h3>" . $row['titre'] . "</h3>";
+    echo "<h3 class=\"h3cartestyle\">>" . $row['titre'] . "</h3>";
     echo "<p> Formule: " . $row['formule'] . "</p>";
     echo "<p>" . $row['description'] . "</p>";
     echo "<p>Prix: " . $row['prix'] . "</p>";
