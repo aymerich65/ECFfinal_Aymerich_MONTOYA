@@ -9,11 +9,15 @@ try{
     $ouverture_soir = $_POST['ouverture_soir'];
     $fermeture_soir = $_POST['fermeture_soir'];
 
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+    $dotenv->load();
 
+    $dsn = $_ENV['DB_DSN'];
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
 
-
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn,'root','');
+    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->prepare("UPDATE horaires SET jour = :jour, statut = :statut, ouverture_midi = :ouverture_midi, fermeture_midi = :fermeture_midi, ouverture_soir = :ouverture_soir, fermeture_soir = :fermeture_soir WHERE jour = :jour");
     $myTable->bindValue(':jour', $jour, PDO::PARAM_STR);
     $myTable->bindValue(':statut', $statut, PDO::PARAM_STR);

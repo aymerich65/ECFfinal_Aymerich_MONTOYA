@@ -6,7 +6,7 @@
     <div class="col-8 titrestyle">
   <h1 class="headertitlestyle">QuaiAntique</h1>
   <h2 class="headerlink"><a href="index.php?page=accueil"><span>Accueil</span></a></h2>
-  <h2 class="headerlink"><a href="index.php?page=réservation"><span>Réservation</span></a></h2>
+  <h2 class="headerlink"><a href="index.php?page=reservation"><span>Réservation</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=connexion"><span>Connexion</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=carte"><span>Carte</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=a_propos"><span class="aproposestyle">A propos</span></a></h2>
@@ -22,7 +22,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="index.php?page=accueil">Accueil</a></li>
-                    <li><a class="dropdown-item" href="index.php?page=réservation">Réservation</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=reservation">Réservation</a></li>
                     <li><a class="dropdown-item" href="index.php?page=connexion">Connexion</a></li>
                     <li><a class="dropdown-item" href="index.php?page=carte">Carte</a></li>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'approuved'): ?>

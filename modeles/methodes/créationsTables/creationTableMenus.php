@@ -1,9 +1,18 @@
 <?php
+
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
+
 function createMenus(){
 try{
-$dsn = 'mysql:host=localhost;dbname=quaiantique';
-$pdo = new PDO($dsn,'root','');
-$menus  ="CREATE TABLE menus (
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../../');
+    $dotenv->load();
+
+    $dsn = $_ENV['DB_DSN'];
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+    $pdo = new PDO($dsn, $envuser , $envpassword);
+$menus  ="CREATE TABLE menus2 (
 id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 titre VARCHAR(50) NOT NULL,
 formule VARCHAR(50) NOT NULL,

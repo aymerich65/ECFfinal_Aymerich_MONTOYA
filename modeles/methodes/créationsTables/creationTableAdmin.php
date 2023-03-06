@@ -1,8 +1,15 @@
 <?php
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
 function createAdmin(){
     try{
-        $dsn = 'mysql:host=localhost;dbname=quaiantique';
-        $pdo = new PDO($dsn,'root','');
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../../');
+        $dotenv->load();
+
+        $dsn = $_ENV['DB_DSN'];
+        $envuser = $_ENV['DB_USER'];
+        $envpassword = $_ENV['DB_PASSWORD'];
+        $pdo = new PDO($dsn, $envuser , $envpassword);
         $AdministratorsTable ="CREATE TABLE Administrateurs (
         email VARCHAR(254) NOT NULL PRIMARY KEY UNIQUE,
         poste VARCHAR(60) NOT NULL,

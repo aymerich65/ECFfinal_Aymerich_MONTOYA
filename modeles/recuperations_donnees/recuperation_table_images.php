@@ -15,9 +15,9 @@ $myTable->execute();
 $html = '';
 
 while($row = $myTable->fetch(PDO::FETCH_ASSOC)) {
-    $html .= '<tr><td>'.htmlspecialchars($row['titre']).'</td><td>'.$row['numero_image'].'</td></tr>';
+    $html .= '<tr><td>'.htmlspecialchars($row['titre']).'</td><td>'.$row['numero_image'].'</td><td>'.$row['nom_fichier'].'</td></tr>';
 }
 
-echo '<table><tr><th>Titre</th><th>Référence</th></tr>' . $html . '</table>';
+echo '<table id="my-table"><tr><th>Titre: </th><th> Référence: </th><th> Nom du fichier:</th></tr>' . $html . '</table>';
 ?>
 

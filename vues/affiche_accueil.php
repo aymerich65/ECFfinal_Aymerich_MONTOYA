@@ -64,7 +64,7 @@ ob_start();
 
     </script>
 <div class="button-container mytestcolor">
-  <a href="index.php?page=réservation"><button class="button-reservation-style">Réservation</button></a>
+  <a href="index.php?page=reservation"><button class="button-reservation-style">Réservation</button></a>
 </div>
 
 

@@ -21,7 +21,7 @@
     <?php require 'header.php'; ?>
 </div>
 
-    <div class="main row">
+    <div class="main">
         <?php
         echo $contenu;
         ?>

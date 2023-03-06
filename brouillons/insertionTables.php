@@ -11,8 +11,11 @@ try {
     $tables_disponibles= $_POST['tables'];
 
     $dsn = $_ENV['DB_DSN'];
-    $pdo = new PDO($dsn, 'root', '');
-    $myTable = $pdo->prepare("INSERT INTO tables (tables_disponibles) VALUES (:tables_disponibles)");
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+
+    $pdo = new PDO($dsn, $envuser , $envpassword);
+    $myTable = $pdo->prepare("INSERT INTO tables2 (tables_disponibles) VALUES (:tables_disponibles)");
     $myTable->bindValue(':tables_disponibles', $tables_disponibles, PDO::PARAM_INT);
 
     $myTable->execute();

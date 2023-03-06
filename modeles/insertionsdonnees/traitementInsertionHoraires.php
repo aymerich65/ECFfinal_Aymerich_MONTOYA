@@ -10,11 +10,16 @@ var_dump($_POST);
     $fermeture_soir = $_POST['fermeture_soir'];
 
 
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+    $dotenv->load();
 
+    $dsn = $_ENV['DB_DSN'];
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
 
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn,'root','');
-    $myTable = $pdo->prepare("INSERT INTO horaires (jour, statut, ouverture_midi, fermeture_midi, ouverture_soir, fermeture_soir) VALUES (:jour, :statut, :ouverture_midi, :fermeture_midi, :ouverture_soir, :fermeture_soir)");
+    $pdo = new PDO($dsn, $envuser , $envpassword);
+    $myTable = $pdo->prepare("INSERT INTO horaires2 (jour, statut, ouverture_midi, fermeture_midi, ouverture_soir, fermeture_soir) VALUES (:jour, :statut, :ouverture_midi, :fermeture_midi, :ouverture_soir, :fermeture_soir)");
     $myTable->bindValue(':jour', $jour, PDO::PARAM_STR);
     $myTable->bindValue(':statut', $statut, PDO::PARAM_STR);
     $myTable->bindValue(':ouverture_midi', $ouverture_midi, PDO::PARAM_STR);

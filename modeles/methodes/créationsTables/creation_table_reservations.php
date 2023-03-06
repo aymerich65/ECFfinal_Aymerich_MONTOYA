@@ -1,10 +1,18 @@
 <?php
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
+
 
 function createReservations()
 {
     try {
-        $dsn = 'mysql:host=localhost;dbname=quaiantique';
-        $pdo = new PDO($dsn, 'root', '');
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../../');
+        $dotenv->load();
+
+        $dsn = $_ENV['DB_DSN'];
+        $envuser = $_ENV['DB_USER'];
+        $envpassword = $_ENV['DB_PASSWORD'];
+        $pdo = new PDO($dsn, $envuser , $envpassword);
         $reservationsTable = "CREATE TABLE reservations (
         reservation int NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
         tables int NOT NULL,

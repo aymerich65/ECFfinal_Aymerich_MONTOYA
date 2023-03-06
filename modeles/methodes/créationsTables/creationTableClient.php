@@ -1,8 +1,16 @@
 <?php
+
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
 function createclient(){
     try{
-        $dsn = 'mysql:host=localhost;dbname=quaiantique';
-        $pdo = new PDO($dsn,'root','');
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../../');
+        $dotenv->load();
+
+        $dsn = $_ENV['DB_DSN'];
+        $envuser = $_ENV['DB_USER'];
+        $envpassword = $_ENV['DB_PASSWORD'];
+        $pdo = new PDO($dsn, $envuser , $envpassword);
         $myClientTable ="CREATE TABLE clients (
         convives int  NOT NULL,
         email VARCHAR(40) NOT NULL PRIMARY KEY UNIQUE,

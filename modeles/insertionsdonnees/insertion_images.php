@@ -54,8 +54,17 @@ echo 'Téléchargement réussi.';
 
 $realname = basename($targetFile);
 
-$dsn = 'mysql:host=localhost;dbname=quaiantique';
-$pdo = new PDO($dsn,'root','');
+
+
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+    $dotenv->load();
+    $dsn = $_ENV['DB_DSN'];
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+
+
+$pdo = new PDO($dsn, $envuser , $envpassword );
 $myTable = $pdo->prepare("INSERT INTO images (titre, description, numero_image, nom_fichier) VALUES (:titre, :description, :numero_image, :nom_fichier)");
 $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
 $myTable->bindValue(':description', $description, PDO::PARAM_STR);

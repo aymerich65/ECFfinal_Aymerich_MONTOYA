@@ -6,8 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dotenv->load();
 
     $dsn = $_ENV['DB_DSN'];
-    //$dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn, 'root', '');
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+
+    $pdo = new PDO($dsn, $envuser , $envpassword);
 
     $num_image_bloc_1 = htmlspecialchars($_POST['num_image_bloc_1']);
     $num_image_bloc_2 = htmlspecialchars($_POST['num_image_bloc_2']);
@@ -17,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt_insert = $pdo->prepare('INSERT INTO images_accueil (titre, nom_fichier, description, numero_image) VALUES (?, ?, ?, ?)');
 
-    // Supprimer les images précédemment stockées
+    /* Supprimer les images précédemment stockées*/
     $pdo->exec('DELETE FROM images_accueil');
 
     $stmt->execute([$num_image_bloc_1]);

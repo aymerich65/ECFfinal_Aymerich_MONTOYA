@@ -4,7 +4,7 @@ ob_start();
 require_once 'JWT/authentification.php';
 
 ?>
-<div class="connexionstyle">
+
     <h1>Connexion/Inscription</h1>
     <div>
         <form method="post">
@@ -51,7 +51,7 @@ require_once 'JWT/authentification.php';
         </div>
         <button type="submit">Valider</button>
     </form>
-</div>
+
 
 <?php }
 

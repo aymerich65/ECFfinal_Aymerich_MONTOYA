@@ -10,7 +10,10 @@ try{
     $prix= $_POST['prix'];
 
     $dsn = $_ENV['DB_DSN'];
-    $pdo = new PDO($dsn,'root','');
+    $envuser = $_ENV['DB_USER'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+
+    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->prepare("INSERT INTO plats (titre, description, prix) VALUES (:titre, :description, :prix)");
     $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
     $myTable->bindValue(':description', $description, PDO::PARAM_STR);

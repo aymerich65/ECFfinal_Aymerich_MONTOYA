@@ -1,13 +1,28 @@
 <?php
 ob_start();
 require_once 'JWT/authentification.php';
+if(isset($_SESSION['email'])){
+    $email=$_SESSION['email'];
+} else {
+    $email='';
+}
 
-$email=$_SESSION['email'];
-$guestsnumber=$_SESSION['convives'];
-$allergies=$_SESSION['allergies'];
+if(isset($_SESSION['convives'])){
+    $guestsnumber=$_SESSION['convives'];
+} else {
+    $guestsnumber='';
+}
+
+if(isset($_SESSION['allergies'])){
+    $allergies=$_SESSION['allergies'];
+} else {
+    $allergies='';
+}
+
+
 ?>
 
-<div>
+<div class="reservationstyle">
     <h1>Reservation</h1>
     <h2>Tables disponibles</h2>
     <p>Actuellement:<span id="table-data"> </span></p>

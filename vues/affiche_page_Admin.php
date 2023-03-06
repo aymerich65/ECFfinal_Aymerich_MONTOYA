@@ -38,7 +38,19 @@ if (isset($_SESSION['jwt'])) {
 <h2>Réservations</h2>
 <?php
     require 'modeles/recuperations_donnees/recuperation_bdd_reservations.php';
+
     ?>
+
+    <h3 class="titleh3-admin-form">Supprimer une réservation:</h3>
+    <form method="POST" action="../modeles/suppressionlignes/supression_reservation.php" class="form-admin-style">
+        <label class="label-admin-style">Adresse e-mail : <input type="email" name="email" value="" class="input-admin-style"></label>
+        <br>
+        <button class="dishbuton" type="submit">Valider</button>
+    </form>
+    <h3 class="titleh3-admin-form">Supprimer toute les  réservations du jour:</h3>
+    <form method="POST" action="modeles/suppressionlignes/supression_reservations.php">
+        <input type="submit" value="Supprimer toutes les réservations">
+    </form>
 
 
 
@@ -103,33 +115,34 @@ if (isset($_SESSION['jwt'])) {
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
-
     <h3 class="titleh3-admin-form">Insérer Horaire : </h3>
     <form method="POST" action="modeles/insertionsdonnees/traitementInsertionHoraires.php" class="form-admin-style">
-        <label class="label-admin-style">Jour : <input type="text" name="jour" value=""></label>
-        <label class="label-admin-style"vvv>Ouvert : <input type="radio" name="statut" value="OUVERT" ></label>
-        <label class="label-admin-style">Fermé : <input type="radio" name="statut" value="FERME" ></label>
-        <label class="label-admin-style">Ouverture midi : <input type="text" name="ouverture_midi" value=""></label>
-        <label class="label-admin-style">Fermeture midi : <input type="text" name="fermeture_midi" value=""></label>
-        <label class="label-admin-style">Ouverture soir : <input type="text" name="ouverture_soir" value=""></label>
-        <label class="label-admin-style">Fermeture soir : <input type="text" name="fermeture_soir" value=""></label>
-        <br>
-        <button class="dishbuton" type="submit">Valider</button>
-    </form>
-    <h3 class="titleh3-admin-form">Modifier Horaire : </h3>
-    <form method="POST" action="modeles/insertionsdonnees/traitementModificationHoraires.php" class="form-admin-style">
-        <label class="label-admin-style">Jour : <input type="text" name="jour" value=""></label>
+        <label class="label-admin-style">Jour : <input type="text" name="jour" placeholder="Jour"></label>
         <label class="label-admin-style">Ouvert : <input type="radio" name="statut" value="OUVERT" ></label>
         <label class="label-admin-style">Fermé : <input type="radio" name="statut" value="FERME" ></label>
-        <label class="label-admin-style">Ouverture midi : <input type="text" name="ouverture_midi" value=""></label>
-        <label class="label-admin-style">Fermeture midi : <input type="text" name="fermeture_midi" value=""></label>
-        <label class="label-admin-style">Ouverture soir : <input type="text" name="ouverture_soir" value=""></label>
-        <label class="label-admin-style">Fermeture soir : <input type="text" name="fermeture_soir" value=""></label>
+        <label class="label-admin-style">Ouverture midi : <input type="text" name="ouverture_midi" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <label class="label-admin-style">Fermeture midi : <input type="text" name="fermeture_midi" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <label class="label-admin-style">Ouverture soir : <input type="text" name="ouverture_soir" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <label class="label-admin-style">Fermeture soir : <input type="text" name="fermeture_soir" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
         <br>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
+
+    <h3 class="titleh3-admin-form">Modifier Horaire : </h3>
+    <form method="POST" action="modeles/insertionsdonnees/traitementModificationHoraires.php" class="form-admin-style">
+        <label class="label-admin-style">Jour : <input type="text" name="jour" placeholder="Jour"></label>
+        <label class="label-admin-style">Ouvert : <input type="radio" name="statut" value="OUVERT" ></label>
+        <label class="label-admin-style">Fermé : <input type="radio" name="statut" value="FERME" ></label>
+        <label class="label-admin-style">Ouverture midi : <input type="text" name="ouverture_midi" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <label class="label-admin-style">Fermeture midi : <input type="text" name="fermeture_midi" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <label class="label-admin-style">Ouverture soir : <input type="text" name="ouverture_soir" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <label class="label-admin-style">Fermeture soir : <input type="text" name="fermeture_soir" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"placeholder="hh:mm"></label>
+        <br>
+        <button class="dishbuton" type="submit">Valider</button>
+    </form>
+
     <h3 class="titleh3-admin-form">Modifier nombre de tables : </h3>
-    <form method="POST" action="../modeles/insertionsdonnees/insertionTables.php">
+    <form method="POST" action="../brouillons/insertionTables.php">
         <label class="label-admin-style">Tables : <input type="number" name="tables" value=""></label>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
@@ -143,7 +156,7 @@ if (isset($_SESSION['jwt'])) {
     </form>
 
     <button class="" type="button" id="pbutton">Afficher les images stockées</button>
-     <div id="table-container"></div>
+     <div id="table-container" class="my-table"></div>
     <h2 class="titleh2-admin-form">Supprimer une image </h2>
 <form method="POST" action="../modeles/suppressionlignes/supressionImage.php" class="form-admin-style">
     <label>Titre en base de donnée <input id="text" name="titre" value="" required></label>
