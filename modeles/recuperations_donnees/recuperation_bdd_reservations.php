@@ -30,7 +30,7 @@ if(!empty($reservationsArray)){
     echo '<thead>
 <tr>
 <th>Reservation</th>
-<th>Tables</th>
+<th>Couverts</th>
 <th>Email</th>
 <th>Date</th>
 <th>Horaire</th>
@@ -41,9 +41,9 @@ echo '<tbody>';
     foreach ($reservationsArray as $reservation) {
         echo '<tr>';
         echo '<td>' . $reservation['reservation'] . '</td>';
-        echo '<td>' . $reservation['tables'] . '</td>';
+        echo '<td>' . $reservation['couverts'] . '</td>';
         echo '<td>' . $reservation['email'] . '</td>';
-        echo '<td>' . $reservation['date'] . '</td>';
+        echo '<td>' . date('j/m/Y', strtotime($reservation['date'])).'</td>';
         echo '<td>' . $reservation['horaire'] . '</td>';
         echo '<td>' . $reservation['allergies'] . '</td>';
         echo '</tr>';

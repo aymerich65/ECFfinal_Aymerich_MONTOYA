@@ -12,7 +12,7 @@ try{
     $envuser = $_ENV['DB_USER'];
     $envpassword = $_ENV['DB_PASSWORD'];
     $pdo = new PDO($dsn, $envuser , $envpassword);
-$menus  ="CREATE TABLE menus2 (
+$menus  ="CREATE TABLE menus (
 id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 titre VARCHAR(50) NOT NULL,
 formule VARCHAR(50) NOT NULL,

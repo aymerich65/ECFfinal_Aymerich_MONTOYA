@@ -15,7 +15,7 @@ function createReservations()
         $pdo = new PDO($dsn, $envuser , $envpassword);
         $reservationsTable = "CREATE TABLE reservations (
         reservation int NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
-        tables int NOT NULL,
+        couverts int NOT NULL,
         email VARCHAR(254) NOT NULL,
         allergies VARCHAR(60) NULL,
         date  DATE NOT NULL,

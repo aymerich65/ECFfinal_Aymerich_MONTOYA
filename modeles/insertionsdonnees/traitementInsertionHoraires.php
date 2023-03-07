@@ -19,7 +19,7 @@ var_dump($_POST);
     $envpassword = $_ENV['DB_PASSWORD'];
 
     $pdo = new PDO($dsn, $envuser , $envpassword);
-    $myTable = $pdo->prepare("INSERT INTO horaires2 (jour, statut, ouverture_midi, fermeture_midi, ouverture_soir, fermeture_soir) VALUES (:jour, :statut, :ouverture_midi, :fermeture_midi, :ouverture_soir, :fermeture_soir)");
+    $myTable = $pdo->prepare("INSERT INTO horaires (jour, statut, ouverture_midi, fermeture_midi, ouverture_soir, fermeture_soir) VALUES (:jour, :statut, :ouverture_midi, :fermeture_midi, :ouverture_soir, :fermeture_soir)");
     $myTable->bindValue(':jour', $jour, PDO::PARAM_STR);
     $myTable->bindValue(':statut', $statut, PDO::PARAM_STR);
     $myTable->bindValue(':ouverture_midi', $ouverture_midi, PDO::PARAM_STR);

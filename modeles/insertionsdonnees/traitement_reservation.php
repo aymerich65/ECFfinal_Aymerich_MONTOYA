@@ -47,17 +47,7 @@ if (!$mail->send()) {
 /* fin du système d'envoi de mail*/
 
 
-
-
-
-
-
-$tables = $_POST['convives'];
-if ($tables % 2 == 1) {
-    $tables = ceil($tables/2)*2;
-}
-
-$tables =htmlspecialchars($tables);
+$couverts =htmlspecialchars($_POST['couverts']);
 $allergies=htmlspecialchars($_POST['allergies']);
 $email=htmlspecialchars($_POST['email']);
 $schedule=htmlspecialchars($_POST['heure']);
@@ -75,20 +65,9 @@ $envpassword = $_ENV['DB_PASSWORD'];
 
 $pdo = new PDO($dsn, $envuser , $envpassword);
 
-$statement = $pdo->prepare('SELECT tables_disponibles FROM tables WHERE id = 1' );
-$statement->execute();
-$donnees = $statement->fetch();
-$tables_disponibles = $donnees['tables_disponibles'];
-
-$tables_disponibles -= $tables;
-
-$statement = $pdo->prepare('UPDATE tables SET tables_disponibles = :tables_disponibles WHERE id = 1' );
-$statement->bindParam(':tables_disponibles', $tables_disponibles);
-$statement->execute();
-
 /* envoie réservation en bdd */
-$myTable = $pdo->prepare("INSERT INTO reservations (tables, email, allergies, date, horaire) VALUES (:tables, :email,:allergies, :date, :horaire)");
-$myTable->bindValue(':tables', $tables, PDO::PARAM_STR);
+$myTable = $pdo->prepare("INSERT INTO reservations (couverts, email, allergies, date, horaire) VALUES (:couverts, :email,:allergies, :date, :horaire)");
+$myTable->bindValue(':couverts', $couverts, PDO::PARAM_STR);
 $myTable->bindValue(':email', $email, PDO::PARAM_STR);
 $myTable->bindValue(':allergies', $allergies, PDO::PARAM_STR);
 $myTable->bindValue(':date', $date_mysql, PDO::PARAM_STR);

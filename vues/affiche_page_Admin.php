@@ -159,7 +159,7 @@ if (isset($_SESSION['jwt'])) {
      <div id="table-container" class="my-table"></div>
     <h2 class="titleh2-admin-form">Supprimer une image </h2>
 <form method="POST" action="../modeles/suppressionlignes/supressionImage.php" class="form-admin-style">
-    <label>Titre en base de donnée <input id="text" name="titre" value="" required></label>
+    <label>Nom de fichier <input id="text" name="titre" value=""  placeholder="Nom du fichier"></label>
     <label>Numéro d'image <input id="text" name="numero_image" value="" required></label>
     <button>Supprimer</button>
 </form>
