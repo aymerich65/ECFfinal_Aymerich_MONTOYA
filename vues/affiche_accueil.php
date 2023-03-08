@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 $dsn = 'mysql:host=localhost;dbname=quaiantique';
 $pdo = new PDO($dsn,'root','');
@@ -6,7 +10,9 @@ $myrequest = $pdo->prepare('SELECT * FROM images_accueil');
 $myrequest->execute();
 $mybddTable = $myrequest->fetchAll(PDO::FETCH_ASSOC);
 
+
 ob_start();
+
 
 ?>
     <div class="row">

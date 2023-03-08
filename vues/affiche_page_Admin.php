@@ -41,15 +41,18 @@ if (isset($_SESSION['jwt'])) {
 
     ?>
 
-    <h3 class="titleh3-admin-form">Supprimer une réservation:</h3>
+    <h3 class="titleh3-admin-form">Supprimer une réservation :</h3>
     <form method="POST" action="../modeles/suppressionlignes/supression_reservation.php" class="form-admin-style">
         <label class="label-admin-style">Adresse e-mail : <input type="email" name="email" value="" class="input-admin-style"></label>
+        <label class="label-admin-style">Date : <input type="date" name="date" value="" class="input-admin-style"></label>
+        <label class="label-admin-style">Horaire : <input type="time" name="horaire" value="" class="input-admin-style"></label>
         <br>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
+
     <h3 class="titleh3-admin-form">Supprimer toute les  réservations du jour:</h3>
     <form method="POST" action="modeles/suppressionlignes/supression_reservations.php">
-        <input type="submit" value="Supprimer toutes les réservations">
+        <input type="submit" value="Supprimer toutes les réservations" class="dishbuton">
     </form>
 
 
@@ -141,9 +144,9 @@ if (isset($_SESSION['jwt'])) {
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
-    <h3 class="titleh3-admin-form">Modifier nombre de tables : </h3>
-    <form method="POST" action="../brouillons/insertionTables.php">
-        <label class="label-admin-style">Tables : <input type="number" name="tables" value=""></label>
+    <h3 class="titleh3-admin-form">Modifier nombre de couverts total : </h3>
+    <form method="POST" action="modeles/insertionsdonnees/modifier_capacite_totale.php">
+        <label class="label-admin-style">Couverts : <input type="number" name="capacite_totale" value=""></label>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
     <h2 class="titleh2-admin-form">Envoyer une image </h2>
@@ -155,7 +158,7 @@ if (isset($_SESSION['jwt'])) {
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
-    <button class="" type="button" id="pbutton">Afficher les images stockées</button>
+    <button class="dishbuton" type="button" id="pbutton">Afficher les images stockées</button>
      <div id="table-container" class="my-table"></div>
     <h2 class="titleh2-admin-form">Supprimer une image </h2>
 <form method="POST" action="../modeles/suppressionlignes/supressionImage.php" class="form-admin-style">
@@ -163,6 +166,15 @@ if (isset($_SESSION['jwt'])) {
     <label>Numéro d'image <input id="text" name="numero_image" value="" required></label>
     <button>Supprimer</button>
 </form>
+    <h2 class="titleh2-admin-form">Modifier une image </h2>
+    <form action="modeles/insertionsdonnees/modifier_images.php" method="post" enctype="multipart/form-data"  class="form-admin-style">
+        <label class="label-admin-style" for="titre">Titre :<input type="text" name="titre" id="titre" required></label>
+        <label class="label-admin-style" for="description">Description :  <input name="description" id="description" required></label>
+        <label class="label-admin-style" for="numero_image">Numéro d'image :<input type="number" name="numero_image" id="numero_image" required></label>
+        <label class="label-admin-style" for="image">Image :<input type="file" name="image" id="image" accept="image/jpeg,image/png,image/gif" required></label>
+        <button class="dishbuton" type="submit">Valider</button>
+    </form>
+
 <br>
     <h2 class="titleh2-admin-form">Choisissez les trois images de l'accueil</h2>
     <form method="post" class="footer-form-style "  action="modeles/insertionsdonnees/insertion_imagesaccueil.php">
@@ -175,7 +187,7 @@ if (isset($_SESSION['jwt'])) {
         <label for="num_image_bloc_3">Bloc 3:</label>
         <input type="number" id="num_image_bloc_3" name="num_image_bloc_3" required placeholder="numéro d'image">
 
-        <button type="submit">Valider</button>
+        <button type="submit" class="dishbuton" >Valider</button>
     </form>
 
 

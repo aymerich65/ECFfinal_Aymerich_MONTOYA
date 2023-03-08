@@ -9,8 +9,8 @@ if (isset($_SESSION['email'])) {
     $email = '';
 }
 
-if (isset($_SESSION['couverts'])) {
-    $guestsnumber = $_SESSION['couverts'];
+if (isset($_SESSION['convives'])) {
+    $guestsnumber = $_SESSION['convives'];
 } else {
     $guestsnumber = '';
 }
@@ -64,14 +64,14 @@ if (isset($_SESSION['allergies'])) {
 
 
     <div class="reservationstyle" id="reservation-container" style="display:none;">
-        <h1>Reservation</h1>
+
         <form method="post" action="modeles/insertionsdonnees/traitement_reservation.php" id="reservation-form">
             <div>
                 <label>Email : <input type="email" name="email" value="<?php echo $email; ?>" required></label>
             </div>
             <br>
             <div>
-                <label>Convives : <input type="text" name="couverts" value="<?php echo $guestsnumber; ?>" required></label>
+                <label>Convives : <input type="number" name="couverts" value="<?php echo $guestsnumber; ?>" required max="30"></label>
             </div>
             <br>
             <div>
@@ -111,7 +111,7 @@ if (isset($_SESSION['allergies'])) {
             const date = document.querySelector('#date-input').value;
             const heure = document.querySelector('#heure-input').value;
             const disponibilitesContainer = document.querySelector('#disponibilites-container');
-            fetch('../modeles/recuperations_donnees/afficher_disponibilites.php', {
+            fetch('../modeles/recuperations_donnees/recuperation_disponibilites.php', {
                 method: 'POST',
                 body: JSON.stringify({ date, heure }),
                 headers: {

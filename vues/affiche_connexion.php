@@ -51,7 +51,7 @@ require_once 'JWT/authentification.php';
         </div>
         <button type="submit">Valider</button>
     </form>
-
+</div>
 
 <?php }
 
