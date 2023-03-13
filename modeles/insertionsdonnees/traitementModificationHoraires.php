@@ -1,13 +1,13 @@
 <?php
 try{
-    var_dump($_POST);
+    //var_dump($_POST);
 
-    $jour =$_POST['jour'];
-    $statut = $_POST['statut'];
-    $ouverture_midi = $_POST['ouverture_midi'];
-    $fermeture_midi = $_POST['fermeture_midi'];
-    $ouverture_soir = $_POST['ouverture_soir'];
-    $fermeture_soir = $_POST['fermeture_soir'];
+    $jour =htmlspecialchars($_POST['jour'], ENT_QUOTES);
+    $statut = htmlspecialchars($_POST['statut'], ENT_QUOTES);
+    $ouverture_midi = htmlspecialchars($_POST['ouverture_midi'], ENT_QUOTES);
+    $fermeture_midi =htmlspecialchars($_POST['fermeture_midi'], ENT_QUOTES);
+    $ouverture_soir = htmlspecialchars($_POST['ouverture_soir'], ENT_QUOTES);
+    $fermeture_soir =htmlspecialchars($_POST['fermeture_soir'], ENT_QUOTES);
 
     require_once __DIR__ . '/../../vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');

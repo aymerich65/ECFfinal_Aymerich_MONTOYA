@@ -1,10 +1,10 @@
 <?php
 try{
- var_dump($_POST);
-    $email=$_POST['email'];
-    $password= $_POST['password'];
-    $convives= $_POST['convives'];
-    $allergies= $_POST['allergies'];
+ //var_dump($_POST);
+    $email=htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $password= htmlspecialchars($_POST['password'], ENT_QUOTES);
+    $convives= htmlspecialchars($_POST['convives'], ENT_QUOTES);
+    $allergies= htmlspecialchars($_POST['allergies'], ENT_QUOTES);
 
 
     require_once __DIR__ . '/../../vendor/autoload.php';

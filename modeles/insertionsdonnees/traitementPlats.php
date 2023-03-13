@@ -4,10 +4,10 @@ try{
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
     $dotenv->load();
 
-    var_dump($_POST);
-    $titre=$_POST['titre'];
-    $description= $_POST['description'];
-    $prix= $_POST['prix'];
+    //var_dump($_POST);
+    $titre=htmlspecialchars($_POST['titre'], ENT_QUOTES);
+    $description= htmlspecialchars($_POST['description'], ENT_QUOTES);
+    $prix= htmlspecialchars($_POST['prix'], ENT_QUOTES);
 
     $dsn = $_ENV['DB_DSN'];
     $envuser = $_ENV['DB_USER'];

@@ -1,11 +1,11 @@
 <?php
 
 
-$couverts =htmlspecialchars($_POST['couverts']);
-$allergies=htmlspecialchars($_POST['allergies']);
-$email=htmlspecialchars($_POST['email']);
-$schedule=htmlspecialchars($_POST['heure']);
-$date = $_POST['date'];
+$couverts =htmlspecialchars($_POST['couverts'], ENT_QUOTES);
+$allergies=htmlspecialchars($_POST['allergies'], ENT_QUOTES);
+$email=htmlspecialchars($_POST['email'], ENT_QUOTES);
+$schedule=htmlspecialchars($_POST['heure'], ENT_QUOTES);
+$date = htmlspecialchars($_POST['date'], ENT_QUOTES);
 $date_mysql = date('Y-m-d', strtotime($date));
 
 
@@ -18,6 +18,11 @@ $envpassword = $_ENV['DB_PASSWORD'];
 
 
 $pdo = new PDO($dsn, $envuser , $envpassword);
+
+
+
+
+
 
 /* envoie réservation en bdd */
 $myTable = $pdo->prepare("INSERT INTO reservations (couverts, email, allergies, date, horaire) VALUES (:couverts, :email,:allergies, :date, :horaire)");

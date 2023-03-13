@@ -41,6 +41,7 @@ if (isset($_SESSION['allergies'])) {
                     <option value="13:15">13:15</option>
                     <option value="13:30">13:30</option>
                     <option value="13:45">13:45</option>
+                    <option value="14:00">14:00</option>
                     <option value="19:00">19:00</option>
                     <option value="19:15">19:15</option>
                     <option value="19:30">19:30</option>
@@ -53,6 +54,7 @@ if (isset($_SESSION['allergies'])) {
                     <option value="21:15">21:15</option>
                     <option value="21:30">21:30</option>
                     <option value="21:45">21:45</option>
+                    <option value="22:00">22:00</option>
                 </select>
             </div>
             <br>

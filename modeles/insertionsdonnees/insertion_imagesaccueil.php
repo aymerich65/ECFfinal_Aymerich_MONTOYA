@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $pdo = new PDO($dsn, $envuser , $envpassword);
 
-    $num_image_bloc_1 = htmlspecialchars($_POST['num_image_bloc_1']);
-    $num_image_bloc_2 = htmlspecialchars($_POST['num_image_bloc_2']);
-    $num_image_bloc_3 = htmlspecialchars($_POST['num_image_bloc_3']);
+    $num_image_bloc_1 = htmlspecialchars($_POST['num_image_bloc_1'], ENT_QUOTES);
+    $num_image_bloc_2 = htmlspecialchars($_POST['num_image_bloc_2'], ENT_QUOTES);
+    $num_image_bloc_3 = htmlspecialchars($_POST['num_image_bloc_3'], ENT_QUOTES);
 
     $stmt = $pdo->prepare('SELECT titre, nom_fichier, description, numero_image FROM images WHERE numero_image = ?');
 

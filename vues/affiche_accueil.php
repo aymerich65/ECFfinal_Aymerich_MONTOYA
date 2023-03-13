@@ -16,7 +16,7 @@ ob_start();
 
 ?>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 px-0">
             <?php if (!empty($mybddTable[0])) : ?>
                 <div class="myimage-container">
                     <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[0]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[0]['titre']) ?>">
@@ -24,7 +24,7 @@ ob_start();
                 </div>
             <?php endif; ?>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 px-0">
             <?php if (!empty($mybddTable[1])) : ?>
                 <div class="myimage-container">
                     <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[1]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[1]['titre']) ?>">
@@ -32,7 +32,7 @@ ob_start();
                 </div>
             <?php endif; ?>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 px-0">
             <?php if (!empty($mybddTable[2])) : ?>
                 <div class="myimage-container">
                     <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[2]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[2]['titre']) ?>">

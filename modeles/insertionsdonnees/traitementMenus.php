@@ -1,10 +1,10 @@
 <?php
 try{
-var_dump($_POST);
-$titre=$_POST['titre'];
-$formule=$_POST['formule'];
-$description= $_POST['description'];
-$prix= $_POST['prix'];
+//var_dump($_POST);
+$titre= htmlspecialchars($_POST['titre'], ENT_QUOTES);
+$formule=htmlspecialchars($_POST['formule'], ENT_QUOTES);
+$description= htmlspecialchars($_POST['description'], ENT_QUOTES);
+$prix= htmlspecialchars($_POST['prix'], ENT_QUOTES);
 
     require_once __DIR__ . '/../../vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');

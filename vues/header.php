@@ -4,7 +4,7 @@
 <div class="container-fluid headerstyle">
     <div class="row d-flex align-items-center">
     <div class="col-8 titrestyle">
-  <h1 class="headertitlestyle">QuaiAntique</h1>
+  <h1 class="headertitlestyle">Quai Antique</h1>
   <h2 class="headerlink"><a href="index.php?page=accueil"><span>Accueil</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=reservation"><span>Réservation</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=connexion"><span>Connexion</span></a></h2>

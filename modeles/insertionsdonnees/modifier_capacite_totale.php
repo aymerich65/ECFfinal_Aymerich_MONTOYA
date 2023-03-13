@@ -5,8 +5,8 @@ try{
     $dotenv->load();
 
 
-    var_dump($_POST);
-    $capacity=$_POST['capacite_totale'];
+    //var_dump($_POST);
+    $capacity=htmlspecialchars($_POST['capacite_totale'], ENT_QUOTES);
 
 
 

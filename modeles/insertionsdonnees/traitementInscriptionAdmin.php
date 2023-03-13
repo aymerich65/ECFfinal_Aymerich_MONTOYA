@@ -1,9 +1,9 @@
 <?php
 try{
 
-    $email=$_POST['email'];
-    $poste= $_POST['poste'];
-    $password= $_POST['password'];
+    $email=htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $poste=htmlspecialchars($_POST['poste'], ENT_QUOTES) ;
+    $password= htmlspecialchars($_POST['password'], ENT_QUOTES);
 
     require_once __DIR__ . '/../../vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');

@@ -38,9 +38,16 @@ echo 'Fichier trop volumineux';
 exit;
 }
 
-$titre = $myText = str_replace(" ", "_", $_POST['titre']);
-$description = $_POST['description'];
-$numero_image = $_POST['numero_image'];
+/* sécurisation de mes variables:*/
+
+
+$titre = $myText = str_replace(" ", "_", htmlspecialchars($_POST['titre'], ENT_QUOTES));
+$description =  htmlspecialchars($_POST['description'], ENT_QUOTES);
+$numero_image =  htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
+
+
+
+
 
 $targetDir = '../../galerie';
 if (!$targetDir) {

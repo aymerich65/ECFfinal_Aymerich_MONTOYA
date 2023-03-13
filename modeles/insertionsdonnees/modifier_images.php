@@ -38,10 +38,10 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         exit;
     }
 
-    $titre = $myText = str_replace(" ", "_", $_POST['titre']);
-    $description = $_POST['description'];
-    $numero_image = $_POST['numero_image'];
-    $image_id = $_POST['image_id'];
+    $titre = $myText = str_replace(" ", "_", htmlspecialchars($_POST['titre'], ENT_QUOTES));
+    $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+    $numero_image = htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
+    $image_id = htmlspecialchars($_POST['image_id'], ENT_QUOTES);
 
     $targetDir = '../../galerie';
     if (!$targetDir) {
@@ -75,10 +75,10 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     }
 
 } else {
-    $titre = $myText = str_replace(" ", "_", $_POST['titre']);
-    $description = $_POST['description'];
-    $numero_image = $_POST['numero_image'];
-    $image_id = $_POST['image_id'];
+    $titre = $myText = str_replace(" ", "_", htmlspecialchars($_POST['titre'], ENT_QUOTES));
+    $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+    $numero_image = htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
+    $image_id = htmlspecialchars($_POST['image_id'], ENT_QUOTES);
 
     require_once __DIR__ . '/../../vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
