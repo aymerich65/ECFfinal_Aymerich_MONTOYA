@@ -21,6 +21,17 @@ $prix= htmlspecialchars($_POST['prix'], ENT_QUOTES);
     $myTable->bindValue(':description', $description, PDO::PARAM_STR);
     $myTable->bindValue(':prix', $prix, PDO::PARAM_STR);
     $myTable->execute();
+
+    echo '<script>alert("Données insérées en base de donnée")</script>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
 }catch(PDOException $PDOException){
     echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }

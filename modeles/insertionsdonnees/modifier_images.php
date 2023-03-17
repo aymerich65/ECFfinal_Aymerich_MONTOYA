@@ -17,7 +17,13 @@ function moveUploadedFile(array $uploadedFile, &$targetFile, $titre, $targetDir)
     $mimeType = $finfo->file($uploadedFile['tmp_name']);
     $extension = getExtensionFromMimeType($mimeType);
     if ($extension === null) {
+
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
+
         return false;
+
     }
 
     $targetFile = $targetDir . DIRECTORY_SEPARATOR . $titre . '.' . $extension;
@@ -30,11 +36,21 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $extension = getExtensionFromMimeType($mimeType);
     if ($extension === null) {
         echo 'Type de fichier invalide';
+
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
         exit;
+
+
     }
     $taille_fichier = $_FILES['image']['size'];
     if ($taille_fichier > 5000000) {
         echo 'Fichier trop volumineux';
+
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
         exit;
     }
 
@@ -42,14 +58,24 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
     $numero_image = htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
     $image_id = htmlspecialchars($_POST['image_id'], ENT_QUOTES);
-
     $targetDir = '../../galerie';
+
+
+
     if (!$targetDir) {
         echo 'Le dossier de destination n\'existe pas ou n\'a pas les permissions nécessaires.';
+
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
         exit;
+
+
     }
 
     $targetFile = '';
+
+
     if (moveUploadedFile($_FILES['image'], $targetFile, $titre, $targetDir)) {
         echo 'Téléchargement réussi.';
 
@@ -70,8 +96,24 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $myTable->bindValue(':nom_fichier', $realname, PDO::PARAM_STR);
         $myTable->bindValue(':image_id', $image_id, PDO::PARAM_INT);
         $myTable->execute();
+
+        echo '<script>alert("Image modifiée redirection vers l\'accueil")</script>';
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
+        exit;
+
+
+
     } else {
-        echo 'Une erreur est survenue lors du téléchargement du fichier.';
+
+        echo '<script>alert("Une erreur est survenue lors du téléchargement du fichier.")</script>';
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
+        exit;
+
+
     }
 
 } else {
@@ -95,4 +137,12 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $myTable->bindValue(':image_id', $image_id, PDO::PARAM_INT);
     $myTable->execute();
 
-    echo 'Les données ont été mises à jour.';}
+    echo '<script>alert("Image modifiée")</script>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
+
+
+}

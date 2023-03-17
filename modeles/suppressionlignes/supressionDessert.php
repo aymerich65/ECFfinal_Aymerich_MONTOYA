@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 try{
-    var_dump($_POST);
+    //var_dump($_POST);
     $titre=$_POST['titre'];
 
 
@@ -19,6 +19,18 @@ try{
     $statement->bindValue(':titre', $titre, PDO::PARAM_STR);
 
     $statement->execute();
+
+    echo 'Suppression effectuée.';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
 }catch(PDOException $PDOException){
     echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }

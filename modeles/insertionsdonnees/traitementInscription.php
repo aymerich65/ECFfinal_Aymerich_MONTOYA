@@ -22,6 +22,15 @@ try{
     $myTable->bindValue(':convives', $convives, PDO::PARAM_INT);
     $myTable->bindValue(':allergies', $allergies, PDO::PARAM_STR);
     $myTable->execute();
+    echo '<script>alert("Inscription validée redirection vers l\'accueil")</script>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=accueil"><button class="button-reservation-style">Retour accueil</button></a>';
+    echo '</div>';
+    exit;
 }catch(PDOException $PDOException){
     echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=accueil"><button class="button-reservation-style">Retour accueil</button></a>';
+    echo '</div>';
+    exit;
 }

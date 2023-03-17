@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 try{
-    var_dump($_POST);
+    //var_dump($_POST);
     $titre=$_POST['titre'];
     $numero_image=$_POST['numero_image'];
 
@@ -26,11 +26,27 @@ try{
 
     if (file_exists($file_path)) {
         unlink($file_path);
-        echo "Image supprimée avec succès : " . $file_path;
+
+
+        echo 'Suppression effectuée.';
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
+        exit;
+
+
     } else {
         echo "Le fichier n'existe pas : " . $file_path;
+        echo '<div class="button-container mytestcolor">';
+        echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+        echo '</div>';
+        exit;
     }
 
 } catch(PDOException $PDOException){
     echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }

@@ -28,6 +28,17 @@ try{
     $myTable->bindValue(':fermeture_soir', $fermeture_soir, PDO::PARAM_STR);
 
     $myTable->execute();
+    echo '<script>alert("Horaire inséré en base de donnée")</script>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
+
 }catch(PDOException $PDOException){
     echo 'il y a une erreur'.$PDOException->getMessage().'<br>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }

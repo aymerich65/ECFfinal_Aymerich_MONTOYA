@@ -1,6 +1,6 @@
 <?php
 
-
+try{
 $couverts =htmlspecialchars($_POST['couverts'], ENT_QUOTES);
 $allergies=htmlspecialchars($_POST['allergies'], ENT_QUOTES);
 $email=htmlspecialchars($_POST['email'], ENT_QUOTES);
@@ -37,11 +37,18 @@ $myTable->execute();
 
 
 
-echo '<script>alert("Votre réservation a été enregistrée avec succès!")</script>';
-header('Refresh: 0; url=../../index.php');
-exit;
+
+    echo '<script>alert("Votre réservation a été enregistrée avec succès!")</script>';
+    header('Refresh: 0; url=../../index.php');
+    exit;
 
 
-
+}catch(PDOException $PDOException) {
+    echo 'il y a une erreur' . $PDOException->getMessage() . '<br>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=accueil"><button class="button-reservation-style">Retour accueil</button></a>';
+    echo '</div>';
+    exit;
+}
 ?>
 

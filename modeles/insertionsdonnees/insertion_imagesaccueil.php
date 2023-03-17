@@ -33,6 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$num_image_bloc_3]);
     $result = $stmt->fetch();
     $stmt_insert->execute([htmlspecialchars($result['titre']), htmlspecialchars($result['nom_fichier']), htmlspecialchars($result['description']), $num_image_bloc_3]);
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
 }
 
 

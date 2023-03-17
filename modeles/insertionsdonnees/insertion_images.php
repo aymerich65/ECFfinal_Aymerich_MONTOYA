@@ -17,6 +17,13 @@ $finfo = new finfo(FILEINFO_MIME_TYPE);
 $mimeType = $finfo->file($uploadedFile['tmp_name']);
 $extension = getExtensionFromMimeType($mimeType);
 if ($extension === null) {
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+
+
+
 return false;
 }
 
@@ -30,11 +37,21 @@ $mimeType = $fileInfo->file($_FILES['image']['tmp_name']);
 $extension = getExtensionFromMimeType($mimeType);
 if ($extension === null) {
 echo 'Type de fichier invalide';
-exit;
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }
 $taille_fichier = $_FILES['image']['size'];
 if ($taille_fichier > 5000000) {
 echo 'Fichier trop volumineux';
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+
+
 exit;
 }
 
@@ -52,7 +69,11 @@ $numero_image =  htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
 $targetDir = '../../galerie';
 if (!$targetDir) {
 echo 'Le dossier de destination n\'existe pas ou n\'a pas les permissions nécessaires.';
-exit;
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }
 
 $targetFile = '';
@@ -78,17 +99,41 @@ $myTable->bindValue(':description', $description, PDO::PARAM_STR);
 $myTable->bindValue(':numero_image', $numero_image, PDO::PARAM_INT);
 $myTable->bindValue(':nom_fichier', $realname, PDO::PARAM_STR);
 $myTable->execute();
+
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
+
 } else {
 echo 'Une erreur est survenue lors du téléchargement du fichier.';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }
 
 } else {
 echo 'Une erreur est survenue lors de l\'envoi du fichier.';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }
 
 if (file_exists($targetFile)) {
 echo 'Le fichier a été déplacé avec succès dans le dossier "galerie".';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+
 } else {
 echo 'Le fichier n\'a pas été déplacé dans le dossier "galerie". Veuillez vérifier les permissions du dossier.';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
 }
 
