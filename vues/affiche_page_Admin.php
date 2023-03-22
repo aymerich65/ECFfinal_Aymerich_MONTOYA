@@ -42,7 +42,7 @@ if (isset($_SESSION['jwt'])) {
     ?>
 
     <h3 class="titleh3-admin-form">Supprimer une réservation :</h3>
-    <form method="POST" action="../modeles/suppressionlignes/supression_reservation.php" class="form-admin-style">
+    <form method="POST" action="../modeles/suppressionlignes/suppression_reservation.php" class="form-admin-style">
         <label class="label-admin-style">Adresse e-mail : <input type="email" name="email" value="" class="input-admin-style"></label>
         <label class="label-admin-style">Date : <input type="date" name="date" value="" class="input-admin-style"></label>
         <label class="label-admin-style">Horaire : <input type="time" name="horaire" value="" class="input-admin-style"></label>
@@ -161,7 +161,7 @@ if (isset($_SESSION['jwt'])) {
     <button class="dishbuton" type="button" id="pbutton">Afficher les images stockées</button>
      <div id="table-container" class="my-table"></div>
     <h2 class="titleh2-admin-form">Supprimer une image </h2>
-<form method="POST" action="../modeles/suppressionlignes/supressionImage.php" class="form-admin-style">
+<form method="POST" action="../modeles/suppressionlignes/suppressionImage.php" class="form-admin-style">
     <label>Nom de fichier <input id="text" name="titre" value=""  placeholder="Nom du fichier"></label>
     <label>Numéro d'image <input id="text" name="numero_image" value="" required></label>
     <button>Supprimer</button>
@@ -188,6 +188,29 @@ if (isset($_SESSION['jwt'])) {
         <input type="number" id="num_image_bloc_3" name="num_image_bloc_3" required placeholder="numéro d'image">
 
         <button type="submit" class="dishbuton" >Valider</button>
+    </form>
+    <br>
+    <h2 class="titleh2-admin-form">Gérer les administrateurs</h2>
+
+<?php
+require 'modeles/recuperations_donnees/recuperation_administrateurs.php';
+?>
+    <h2 class="titleh2-admin-form">Ajouter un administrateur</h2>
+    <form action="modeles/insertionsdonnees/traitementInscriptionAdmin.php" method="post" class="form-admin-style">
+        <label class="label-admin-style" for="email">Email :</label>
+        <input type="email" name="email" id="email" required>
+        <label class="label-admin-style" for="poste">Poste :</label>
+        <input type="text" name="poste" id="poste" required>
+        <label class="label-admin-style" for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password" required>
+        <button class="dishbuton" type="submit">Valider</button>
+    </form>
+    <br>
+    <h2 class="titleh2-admin-form">Supprimer un administrateur</h2>
+    <form action="modeles/suppressionlignes/suppression_administrateur.php" method="post" class="form-admin-style">
+        <label class="label-admin-style" for="email">Email :</label>
+        <input type="email" name="email" id="email" required>
+        <button class="dishbuton" type="submit">Supprimer</button>
     </form>
 
 
