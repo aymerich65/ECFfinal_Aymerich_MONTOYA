@@ -12,4 +12,9 @@ define("DB_DSN", $db_dsn);
 define("DB_USER", $db_user);
 define("DB_PASSWORD", $db_password);
 
+echo $hostname . "<br>";
+echo $db_name . "<br>";
+echo $db_user . "<br>";
+echo $db_password . "<br>";
+
 define("JWT_SECRET_KEY", getenv("JWT_SECRET_KEY"));
