@@ -4,17 +4,19 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+require_once __DIR__ . '/../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 $dsn = $_ENV['DB_DSN'];
 $envuser = $_ENV['DB_USER'];
 $envpassword = $_ENV['DB_PASSWORD'];
-$pdo = new PDO($dsn, $envuser , $envpassword );
 
+
+$pdo = new PDO($dsn, $envuser , $envpassword );
 $myrequest = $pdo->prepare('SELECT * FROM images_accueil');
 $myrequest->execute();
 $mybddTable = $myrequest->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 ob_start();
