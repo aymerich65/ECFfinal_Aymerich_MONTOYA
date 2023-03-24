@@ -7,7 +7,7 @@ function createAdmin(){
         $dotenv->load();
 
         $dsn = $_ENV['DB_DSN'];
-        $envuser = $_ENV['DB_USER'];
+        $envuser = $_ENV['DB_USERNAME'];
         $envpassword = $_ENV['DB_PASSWORD'];
         $pdo = new PDO($dsn, $envuser , $envpassword);
         $AdministratorsTable ="CREATE TABLE Administrateurs (

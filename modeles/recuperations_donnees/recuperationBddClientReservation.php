@@ -3,8 +3,11 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 try{
+
     $dsn = $_ENV['DB_DSN'];
-    $pdo = new PDO($dsn,'root','');
+    $envuser = $_ENV['DB_USERNAME'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->query("SELECT FROM client WHERE email = :email");
     $myTable->execute();
     $row = $myTable->fetch(PDO::FETCH_ASSOC);

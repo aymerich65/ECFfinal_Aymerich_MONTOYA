@@ -11,8 +11,13 @@ $dotenv->load();
 
 
 try{
+
     $dsn = $_ENV['DB_DSN'];
-    $pdo = new PDO($dsn,'root','');
+    $envuser = $_ENV['DB_USERNAME'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+    $pdo = new PDO($dsn, $envuser , $envpassword);
+
+
     $myTable = $pdo->query("SELECT * FROM reservations");
     $myTable->execute();
     $reservationsArray = $myTable->fetchAll(PDO::FETCH_ASSOC);

@@ -15,8 +15,16 @@ try{
 if(isset($_SESSION['password']) && isset($_SESSION['email'])){
     $password = $_SESSION['password'];
     $email = $_SESSION['email'];
+
+
     $dsn = $_ENV['DB_DSN'];
-    $pdo = new PDO($dsn,'root','');
+    $envuser = $_ENV['DB_USERNAME'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+    $pdo = new PDO($dsn, $envuser , $envpassword);
+
+
+
+
 
     $statement = $pdo->prepare("SELECT*FROM clients WHERE email =:email");
     $statement->bindValue(':email', $email);

@@ -7,7 +7,9 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
 $dsn = $_ENV['DB_DSN'];
-$pdo = new PDO($dsn,'root','');
+$envuser = $_ENV['DB_USERNAME'];
+$envpassword = $_ENV['DB_PASSWORD'];
+$pdo = new PDO($dsn, $envuser , $envpassword);
 $myTable = $pdo->prepare("SELECT * FROM images ");
 
 $myTable->execute();
