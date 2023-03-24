@@ -17,4 +17,9 @@ echo $db_name . "<br>";
 echo $db_user . "<br>";
 echo $db_password . "<br>";
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 define("JWT_SECRET_KEY", getenv("JWT_SECRET_KEY"));
