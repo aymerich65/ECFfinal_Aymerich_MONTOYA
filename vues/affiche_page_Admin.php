@@ -47,12 +47,12 @@ if (isset($_SESSION['jwt'])) {
         <label class="label-admin-style">Date : <input type="date" name="date" value="" class="input-admin-style"></label>
         <label class="label-admin-style">Horaire : <input type="time" name="horaire" value="" class="input-admin-style"></label>
         <br>
-        <button class="dishbuton" type="submit">Valider</button>
+        <button class="" type="submit">Valider</button>
     </form>
 
     <h3 class="titleh3-admin-form">Supprimer toute les  réservations du jour:</h3>
     <form method="POST" action="modeles/suppressionlignes/supression_reservations.php">
-        <input type="submit" value="Supprimer toutes les réservations" class="dishbuton">
+        <input type="submit" value="Supprimer toutes les réservations" class="connexionbutton">
     </form>
 
 
@@ -155,7 +155,7 @@ if (isset($_SESSION['jwt'])) {
         <label class="label-admin-style">Titre : <input type="text" name="titre" value="" ></label>
         <label class="label-admin-style">Description : <input type="text" name="description" value="" ></label>
         <label>Numéro d'image <input id="text" name="numero_image" value="" required></label>
-        <button class="dishbuton" type="submit">Valider</button>
+        <button class="connexionbutton" type="submit">Valider</button>
     </form>
 
     <button class="dishbuton" type="button" id="pbutton">Afficher les images stockées</button>
@@ -171,7 +171,7 @@ if (isset($_SESSION['jwt'])) {
         <label class="label-admin-style" for="titre">Titre :<input type="text" name="titre" id="titre" required></label>
         <label class="label-admin-style" for="description">Description :  <input name="description" id="description" required></label>
         <label class="label-admin-style" for="numero_image">Numéro d'image :<input type="number" name="numero_image" id="numero_image" required></label>
-        <label class="label-admin-style" for="image">Image :<input type="file" name="image" id="image" accept="image/jpeg,image/png,image/gif" required></label>
+        <label class="label-admin-style " for="image">Image :<input class="" type="file" name="image" id="image" accept="image/jpeg,image/png,image/gif" required></label>
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 

@@ -20,7 +20,7 @@ require '../templates/header.php';
 <div class="main">
 <h2>Modifier carte:</h2>
 <p>Insérer entrée:</p>
-<form method="POST" action="../methodes/traitementEntrées.php">
+<form method="POST" action="../modeles/insertionsdonnees/traitementEntrées.php">
     <label >Titre <input type="text" name="titre" placeholder="Titre" value="" required></label>
     <label>Description<input type="text" name="description" placeholder="Description" value="" required></label>
     <label>Prix<input type="number" step="0.01" name="prix" placeholder="Prix" value="" required></label>
@@ -29,7 +29,7 @@ require '../templates/header.php';
 </form>
 
     <p>Insérer plat:</p>
-    <form method="POST" action="../methodes/traitementPlats.php">
+    <form method="POST" action="../modeles/insertionsdonnees/traitementPlats.php">
         <label >Titre <input type="text" name="titre" placeholder="Titre" value="" required></label>
         <label>Description<input type="text" name="description" placeholder="Description" value="" required></label>
         <label>Prix<input type="number" step="0.01" name="prix" placeholder="Prix" value="" required></label>
@@ -38,7 +38,7 @@ require '../templates/header.php';
     </form>
 
         <p>Insérer dessert:</p>
-    <form method="POST" action="../methodes/traitementDesserts.php">
+    <form method="POST" action="../modeles/insertionsdonnees/traitementDesserts.php">
         <label >Titre <input type="text" name="titre" placeholder="Titre" value="" required></label>
         <label>Description<input type="text" name="description" placeholder="Description" value="" required></label>
         <label>Prix<input type="number" step="0.01" name="prix" placeholder="Prix" value="" required></label>
@@ -47,7 +47,7 @@ require '../templates/header.php';
     </form>
 
                    <h2>Modifier Menu:</h2>
-    <form method="POST" action="../methodes/traitementMenus.php">
+    <form method="POST" action="../modeles/insertionsdonnees/traitementMenus.php">
         <label >Titre <input type="text" name="titre" placeholder="Titre" value="" required></label>
         <label>Formule<input type="formule1" name="formule1" placeholder="formule1" value="" required></label>
         <br>
@@ -67,7 +67,7 @@ require '../templates/header.php';
 
     <p>Le directeur doit être informé de tout ajout de personne en tant qu'administrateur sous peine de sanction</p>
 
-    <form method="POST" action="../methodes/traitementInscriptionAdmin.php" class="formstyle">
+    <form method="POST" action="../modeles/insertionsdonnees/traitementInscriptionAdmin.php" class="formstyle">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="email">Adresse Email</label>

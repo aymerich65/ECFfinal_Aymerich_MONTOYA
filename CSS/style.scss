@@ -175,8 +175,21 @@ min-height: 60%;
 
   }
 
-  .connexion-button{
+
+  /*boutons page connexion : */
+  .connexionbutton{
+    background-color: rgb(182, 172, 151);
+    border-radius: 8px;
+    border: 1px solid black;
+
+
+  }
+
+  .connexionvalidatebutton{
     margin-top: 3rem;
+    background-color: rgb(182, 172, 151);
+    border-radius: 8px;
+    border: 1px solid black;
 
   }
 
@@ -287,7 +300,8 @@ min-height: 60%;
 }
 
   .button-reservation-style {
-    background-color: rgba(182, 172, 151, 1); 
+    background-color: rgb(182, 172, 151);
+    border-radius: 2%;
     border: 2px solid black; 
     color: rgb(0, 0, 0); 
     padding: 10px 20px; 
@@ -566,4 +580,11 @@ th:last-child, td:last-child {
 
 }
 
+/*couleur boutons*/
+
+button{
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
+}
 

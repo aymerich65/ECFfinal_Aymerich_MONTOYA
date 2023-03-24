@@ -4,7 +4,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 if (getenv("JAWSDB_URL")) {
-    /* Pour l'application sur Heroku */
+    /* Pour exécuter l'application sur Heroku: */
 
 
     $url = getenv('JAWSDB_URL');
@@ -20,7 +20,7 @@ if (getenv("JAWSDB_URL")) {
 
 
 } else {
-    /* Pour l'application en local */
+    /* Pour exécuter l'application en locale: */
     $db_dsn = getenv("DB_DSN");
     $db_user = getenv("DB_USER");
     $db_password = getenv("DB_PASSWORD");

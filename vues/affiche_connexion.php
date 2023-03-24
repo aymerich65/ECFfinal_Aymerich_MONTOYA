@@ -8,8 +8,8 @@ require_once 'JWT/authentification.php';
     <h1>Connexion/Inscription</h1>
     <div>
         <form method="post">
-            <button class="btn"><input type="submit" name="connexion" value="Connexion" ></button>
-            <button class="btn"><input type="submit" name="inscription" value="Inscription" ></button>
+            <button  type="submit" name="connexion" value="Connexion" >Connexion</button>
+            <button  type="submit" name="inscription" value="Inscription" >Inscription</button>
         </form>
     </div>
     <?php if(isset($_POST['connexion'])){?>
@@ -25,7 +25,7 @@ require_once 'JWT/authentification.php';
                     <input type="password" class="form-control" id="password" name="password" placeholder="Indiquez votre mot de passe">
                 </div>
             </div>
-            <button type="submit" class="connexion-button">Valider</button>
+            <button type="submit" class="connexionvalidatebutton">Valider</button>
         </form>
     </div>
 <?php } elseif(isset($_POST['inscription'])){ ?>
@@ -49,7 +49,7 @@ require_once 'JWT/authentification.php';
                 <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Indiquez vos allergies si besoin">
             </div>
         </div>
-        <button type="submit" class="connexion-button">Valider</button>
+        <button type="submit" class="connexionvalidatebutton">Valider</button>
     </form>
 </div>
 

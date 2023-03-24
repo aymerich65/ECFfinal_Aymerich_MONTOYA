@@ -123,8 +123,18 @@
     margin-bottom: 1rem;
   }
 }
-.connexion-button {
+/*boutons page connexion : */
+.connexionbutton {
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.connexionvalidatebutton {
   margin-top: 3rem;
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
 }
 
 /* Ici le css de la galerie d'accueil:*/
@@ -204,6 +214,7 @@
 
 .button-reservation-style {
   background-color: rgb(182, 172, 151);
+  border-radius: 2%;
   border: 2px solid black;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
@@ -420,4 +431,11 @@ th:last-child, td:last-child {
 .disponibiltéstyle {
   margin-top: 2rem;
   margin-bottom: 6rem;
+}
+
+/*couleur boutons*/
+button {
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
 }/*# sourceMappingURL=style.css.map */

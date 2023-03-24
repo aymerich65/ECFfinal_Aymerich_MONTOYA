@@ -1,44 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>QuaiAntique</title>
-    <link rel="stylesheet" href="CSS/bootstrap.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<?php
+if(session_status() === PHP_SESSION_NONE){
+    session_start();
+}
+require_once 'controleurs/controles.php';
+//require_once 'JWT/verificationCookieJwt.php';
 
+$id= 'accueil';
+$id = isset($_GET['page']) ? $_GET['page'] : 'accueil';
+$controleur = new controles();
 
-</head>
-<body class="bodystyle">
-
-<div class="container-fluid">
-    <div class="header row"> 
-       <?php require './templates/header.php';
-       ?>
-
-    </div>
-
-        <div class="main row">
-
-        </div>
-
-            <div class="footer row">
-                
-            </div>
-
-        
-                
-
-   
-
-</div>
-
-
-
-
-<script src="JS/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+if ($id === 'admin') {
+    $controleur->pageAdmin();
+} elseif ($id === 'connexion') {
+    $controleur->pageConnexion();
+} elseif ($id === 'test') {
+    $controleur->pagetest();
+} elseif ($id === 'reservation') {
+    $controleur->pageReservation();
+} elseif ($id === 'accueil') {
+    $controleur->pageAccueil();
+} elseif ($id === 'carte') {
+    $controleur->pageCarte();
+}elseif ($id === 'horaires') {
+    $controleur->pageHoraires();
+} elseif ($id === 'a_propos') {
+    $controleur->pageA_propos();
+}else {
+    echo 'Page non trouvée';
+}

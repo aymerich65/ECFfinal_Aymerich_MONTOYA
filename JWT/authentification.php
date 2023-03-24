@@ -1,6 +1,22 @@
 <?php
+
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+
+
+    if(isset($_ENV['DYNO'])){
+
+        ini_set('session.cookie_secure', 1);
+
+        ini_set('session.cookie_samesite', 'Strict');
+    } else {
+
+        ini_set('session.cookie_secure', 0);
+
+
+    }
+
+        session_start();
+
 }
 
 //require_once 'vendor/autoload.php';
