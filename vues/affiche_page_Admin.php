@@ -42,7 +42,7 @@ if (isset($_SESSION['jwt'])) {
     ?>
 
     <h3 class="titleh3-admin-form">Supprimer une réservation :</h3>
-    <form method="POST" action="../modeles/suppressionlignes/suppression_reservation.php" class="form-admin-style">
+    <form method="POST" action="modeles/suppressionlignes/deleteReservation.php" class="form-admin-style">
         <label class="label-admin-style">Adresse e-mail : <input type="email" name="email" value="" class="input-admin-style"></label>
         <label class="label-admin-style">Date : <input type="date" name="date" value="" class="input-admin-style"></label>
         <label class="label-admin-style">Horaire : <input type="time" name="horaire" value="" class="input-admin-style"></label>
@@ -51,7 +51,7 @@ if (isset($_SESSION['jwt'])) {
     </form>
 
     <h3 class="titleh3-admin-form">Supprimer toute les  réservations du jour:</h3>
-    <form method="POST" action="modeles/suppressionlignes/supression_reservations.php">
+    <form method="POST" action="modeles/suppressionlignes/suppression_reservations.php">
         <input type="submit" value="Supprimer toutes les réservations" class="connexionbutton">
     </form>
 

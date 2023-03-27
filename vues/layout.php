@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuaiAntique</title>
     <link rel="stylesheet" href="../CSS/bootstrap.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -16,21 +16,21 @@
 
 </head>
 <body class="bodystyle">
-    
+
 <div class="header">
     <?php require 'header.php'; ?>
 </div>
 
-    <div class="main">
-        <?php
-        echo $contenu;
-        ?>
-    </div>
+<div class="main">
+    <?php
+    echo $contenu;
+    ?>
+</div>
 
-    <div class="footerstyle">
-        <div class="col-10 offset-1">
-            <?php require_once 'affiche_horraires.php'; ?>
-        </div>
+<div class="footerstyle">
+    <div class="col-10 offset-1">
+        <?php require_once 'affiche_horraires.php'; ?>
+    </div>
 
 
 
@@ -47,4 +47,11 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
 

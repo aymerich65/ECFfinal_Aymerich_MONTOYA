@@ -1,25 +1,43 @@
 <?php
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$hostname = getenv('DB_HOSTNAME');
-$db_name = getenv('DB_NAME');
-$db_user = getenv('DB_USER');
-$db_password = getenv('DB_PASSWORD');
-$db_dsn = "mysql:host=$hostname;dbname=$db_name;charset=utf8mb4";
+$url = getenv('JAWSDB_URL');
+if($url){
+    $dbparts = parse_url($url);
 
-define("DB_DSN", $db_dsn);
-define("DB_USER", $db_user);
-define("DB_PASSWORD", $db_password);
+    $hostname = $dbparts['host'];
+    $envuser = $dbparts['user'];
+    $envpassword = $dbparts['pass'];
+    $database = ltrim($dbparts['path'], '/');
+    $dsn = "mysql:host=$hostname;dbname=$database;charset=utf8mb4";
 
-echo $hostname . "<br>";
-echo $db_name . "<br>";
-echo $db_user . "<br>";
-echo $db_password . "<br>";
+    define("DB_DSN", $dsn);
+    define("DB_USER", $envuser);
+    define("DB_PASSWORD", $envpassword);
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+}else{
+    $dsn = $_ENV['DB_DSN'];
+    $envuser = $_ENV['DB_USERNAME'];
+    $envpassword = $_ENV['DB_PASSWORD'];
+
+
+    define("DB_DSN", $dsn);
+    define("DB_USER", $envuser);
+    define("DB_PASSWORD", $envpassword);
+}
+
+try {
+    $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 
 
 define("JWT_SECRET_KEY", getenv("JWT_SECRET_KEY"));
+

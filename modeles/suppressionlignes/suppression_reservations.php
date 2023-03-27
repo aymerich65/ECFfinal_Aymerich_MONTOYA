@@ -1,23 +1,17 @@
 <?php
-
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use Dotenv\Dotenv;
 
-
-
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->load();
-
-
-$dsn = $_ENV['DB_DSN'];
-$envuser = $_ENV['DB_USER'];
-$envpassword = $_ENV['DB_PASSWORD'];
-$pdo = new PDO($dsn, $envuser, $envpassword);
 
 try {
 
-    $currentDate = date('Y-m-d');
+    /* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+    require_once __DIR__ . '/../../config.php';
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+    $currentDate = (new DateTime('now', new DateTimeZone('Europe/Paris')))->format('Y-m-d');
 
 
     $statement = $pdo->prepare("DELETE FROM reservations WHERE date = :currentDate");

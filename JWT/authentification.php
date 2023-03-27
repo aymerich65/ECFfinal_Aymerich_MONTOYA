@@ -25,17 +25,25 @@ use Firebase\JWT\JWT;
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
+
+
+
+/* utilisation du fichier config pour récupérer les variables d'environnement:*/
+
 require_once __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-$dsn = $_ENV['DB_DSN'];
-$envuser = $_ENV['DB_USERNAME'];
-$envpassword = $_ENV['DB_PASSWORD'];
+require_once __DIR__ . '/../config.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
+
+
+
 
 
 if (isset($password) && isset($email)) {
 
-    $pdo = new PDO($dsn, $envuser , $envpassword);
+
 
     $statement = $pdo->prepare("SELECT * FROM administrateurs WHERE email = :email");
     $statement->bindValue(':email', $email);

@@ -4,15 +4,15 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
+/* utilisation du fichier config pour récupérer les variables d'environnement:*/
+
 require_once __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-$dsn = $_ENV['DB_DSN'];
-$envuser = $_ENV['DB_USERNAME'];
-$envpassword = $_ENV['DB_PASSWORD'];
+require_once __DIR__ . '/../config.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
 
-$pdo = new PDO($dsn, $envuser , $envpassword );
+
+
 $myrequest = $pdo->prepare('SELECT * FROM images_accueil');
 $myrequest->execute();
 $mybddTable = $myrequest->fetchAll(PDO::FETCH_ASSOC);
@@ -65,18 +65,18 @@ ob_start();
                 image.addEventListener('mouseout', function() {
                     tooltip.style.display = 'none';
                 });
+
+                /* mode tactile: */
+                image.addEventListener('touchstart', function() {
+                    tooltip.style.opacity = 1;
+                });
+                image.addEventListener('touchend', function() {
+                    tooltip.style.opacity = 0;
+                });
             });
         };
-
-        /* mode tactile: */
-        element.addEventListener('touchstart', function() {
-            tooltip.style.opacity = 1;
-        });
-        element.addEventListener('touchend', function() {
-            tooltip.style.opacity = 0;
-        });
-
     </script>
+
 <div class="button-container mytestcolor">
   <a href="index.php?page=reservation"><button class="button-reservation-style">Réservation</button></a>
 </div>

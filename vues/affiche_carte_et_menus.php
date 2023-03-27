@@ -1,9 +1,18 @@
 <?php
 ob_start();
 
+/* utilisation du fichier config pour récupérer les variables d'environnement:*/
+
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../config.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
+
+
 try {
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn, 'root', '');
+
     $myTable = $pdo->query("SELECT * FROM entrees");
     $myTable->execute();
     $myStarterTable = $myTable->fetchAll(PDO::FETCH_ASSOC);
@@ -12,8 +21,7 @@ try {
 }
 
 try {
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn, 'root', '');
+
     $myTable = $pdo->query("SELECT * FROM plats");
     $myTable->execute();
     $myStarterTablePlat = $myTable->fetchAll(PDO::FETCH_ASSOC);
@@ -22,8 +30,8 @@ try {
 }
 
 try {
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn, 'root', '');
+
+
     $myTable = $pdo->query("SELECT * FROM desserts");
     $myTable->execute();
     $myDessertsTable = $myTable->fetchAll(PDO::FETCH_ASSOC);
@@ -31,8 +39,8 @@ try {
     echo 'il y a une erreur:'.$e->getMessage();
 }
 try {
-    $dsn = 'mysql:host=localhost;dbname=quaiantique';
-    $pdo = new PDO($dsn, 'root', '');
+
+
     $myTable = $pdo->query("SELECT * FROM menus");
     $myTable->execute();
     $myMenusTable = $myTable->fetchAll(PDO::FETCH_ASSOC);
