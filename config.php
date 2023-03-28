@@ -39,5 +39,12 @@ try {
 }
 
 
+
+
+
+
+
+
+
 define("JWT_SECRET_KEY", getenv("JWT_SECRET_KEY"));
 

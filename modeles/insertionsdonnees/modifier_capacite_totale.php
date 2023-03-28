@@ -1,22 +1,19 @@
 <?php
 try{
+
+    /* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+    require_once __DIR__ . '/../../config.php';
     require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
+    $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
 
 
     //var_dump($_POST);
     $capacity=htmlspecialchars($_POST['capacite_totale'], ENT_QUOTES);
 
 
-
-
-
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
-
-    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->prepare("UPDATE capacite_d_accueil SET capacite_totale = :capacite_totale");
     $myTable->bindValue(':capacite_totale', $capacity, PDO::PARAM_INT);
     $myTable->execute();

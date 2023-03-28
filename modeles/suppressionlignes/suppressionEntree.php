@@ -7,5 +7,5 @@ require '../Classes/RestaurantCardsupression.php';
     $titre=htmlspecialchars($_POST['titre'], ENT_QUOTES);
 
     $datasupression = new RestaurantCardsupressionManager();
-    $datasupression->suppressionOnBdd('entree',$titre);
+    $datasupression->suppressionOnBdd('entrees',$titre);
 

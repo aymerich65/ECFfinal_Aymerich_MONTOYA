@@ -1,15 +1,13 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    /* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+    require_once __DIR__ . '/../../config.php';
     require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
+    $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
 
-    $pdo = new PDO($dsn, $envuser , $envpassword);
+
 
     $num_image_bloc_1 = htmlspecialchars($_POST['num_image_bloc_1'], ENT_QUOTES);
     $num_image_bloc_2 = htmlspecialchars($_POST['num_image_bloc_2'], ENT_QUOTES);

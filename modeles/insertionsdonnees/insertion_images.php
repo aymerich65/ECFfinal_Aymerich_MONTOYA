@@ -1,4 +1,15 @@
 <?php
+
+/* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
+
+
+
 function getExtensionFromMimeType(string $mimeType): ?string {
 switch ($mimeType) {
 case 'image/jpeg':
@@ -84,15 +95,7 @@ $realname = basename($targetFile);
 
 
 
-    require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
 
-
-$pdo = new PDO($dsn, $envuser , $envpassword );
 
 
 

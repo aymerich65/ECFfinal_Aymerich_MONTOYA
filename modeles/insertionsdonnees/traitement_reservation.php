@@ -1,5 +1,13 @@
 <?php
 
+/* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
+
 try{
 $couverts =htmlspecialchars($_POST['couverts'], ENT_QUOTES);
 $allergies=htmlspecialchars($_POST['allergies'], ENT_QUOTES);
@@ -9,15 +17,7 @@ $date = htmlspecialchars($_POST['date'], ENT_QUOTES);
 $date_mysql = date('Y-m-d', strtotime($date));
 
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->load();
-$dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-$envpassword = $_ENV['DB_PASSWORD'];
 
-
-$pdo = new PDO($dsn, $envuser , $envpassword);
 
 
 

@@ -1,4 +1,14 @@
 <?php
+
+/* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
+
+
 function getExtensionFromMimeType(string $mimeType): ?string {
     switch ($mimeType) {
         case 'image/jpeg':
@@ -57,7 +67,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $titre = $myText = str_replace(" ", "_", htmlspecialchars($_POST['titre'], ENT_QUOTES));
     $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
     $numero_image = htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
-    $image_id = htmlspecialchars($_POST['image_id'], ENT_QUOTES);
+
     $targetDir = '../../galerie';
 
 
@@ -81,20 +91,14 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
         $realname = basename($targetFile);
 
-        require_once __DIR__ . '/../../vendor/autoload.php';
-        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-        $dotenv->load();
-        $dsn = $_ENV['DB_DSN'];
-        $envuser = $_ENV['DB_USERNAME'];
-        $envpassword = $_ENV['DB_PASSWORD'];
 
-        $pdo = new PDO($dsn, $envuser , $envpassword );
-        $myTable = $pdo->prepare("UPDATE images SET titre = :titre, description = :description, numero_image = :numero_image, nom_fichier = :nom_fichier WHERE id = :image_id");
+
+        $myTable = $pdo->prepare("UPDATE images SET titre = :titre, description = :description, numero_image = :numero_image, nom_fichier = :nom_fichier WHERE numero_image = :numero_image");
         $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
         $myTable->bindValue(':description', $description, PDO::PARAM_STR);
         $myTable->bindValue(':numero_image', $numero_image, PDO::PARAM_INT);
         $myTable->bindValue(':nom_fichier', $realname, PDO::PARAM_STR);
-        $myTable->bindValue(':image_id', $image_id, PDO::PARAM_INT);
+
         $myTable->execute();
 
         echo '<script>alert("Image modifiée redirection vers l\'accueil")</script>';
@@ -120,21 +124,16 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $titre = $myText = str_replace(" ", "_", htmlspecialchars($_POST['titre'], ENT_QUOTES));
     $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
     $numero_image = htmlspecialchars($_POST['numero_image'], ENT_QUOTES);
-    $image_id = htmlspecialchars($_POST['image_id'], ENT_QUOTES);
 
-    require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USER'];
-    $envpassword = $_ENV['DB_PASSWORD'];
 
-    $pdo = new PDO($dsn, $envuser , $envpassword );
+
+
+
     $myTable = $pdo->prepare("UPDATE images SET titre = :titre, description = :description, numero_image = :numero_image WHERE id = :image_id");
     $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
     $myTable->bindValue(':description', $description, PDO::PARAM_STR);
     $myTable->bindValue(':numero_image', $numero_image, PDO::PARAM_INT);
-    $myTable->bindValue(':image_id', $image_id, PDO::PARAM_INT);
+
     $myTable->execute();
 
     echo '<script>alert("Image modifiée")</script>';
