@@ -72,11 +72,19 @@ margin-bottom: 1%;
     margin-top: 1%;
   padding-left: 1%;
   padding-right: 1%;
-  min-height: 60%;
+  min-height: 50%;
   margin-bottom: 1%;
   }
 }
-
+@media (orientation : landscape){
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 50%;
+  margin-bottom: 1%;
+  }
+}
 
 
 
@@ -433,12 +441,12 @@ margin-bottom: 1%;
 
 /* horaires pied de page:*/
 
-
+@media (orientation : landscape){
 .titleschedule{
   font-weight: 900;  
   padding-top: 0.5%;
   padding-bottom: 0.5%;
-  margin-bottom: 1%;
+  margin-bottom: 1.1%;
   line-height: 30%;
 }
 
@@ -450,7 +458,7 @@ margin-bottom: 1%;
   text-align: center;
   background-color:rgba(144, 100, 39, 1);
   font-weight: 700;
-  min-height: 26vh;
+  min-height: 40vh;
   line-height: 40%;
 
 }
@@ -459,7 +467,7 @@ margin-bottom: 1%;
   justify-content: center;
   text-align: center;
 }
-
+}
 
 @media (orientation : portrait){
 
@@ -477,7 +485,7 @@ padding-bottom: 1%;
   text-align: center;
   background-color:rgba(144, 100, 39, 1);
   font-weight: 800;
-  min-height: 26vh;
+  min-height: 30vh;
   line-height: 30%;
 }
 }
@@ -487,7 +495,7 @@ padding-bottom: 1%;
 
   .titleschedule{
     margin-top: 1vh;
-    margin-bottom: 2vh;
+    margin-bottom: 2%;
     padding-bottom: 1%;
   }
   
@@ -499,7 +507,7 @@ padding-bottom: 1%;
     text-align: center;
     background-color:rgba(144, 100, 39, 1);
     font-weight: 600;
-    min-height: 40vh;
+    min-height: 45vh;
     line-height: 0.1;
     
   }
@@ -512,6 +520,15 @@ padding-bottom: 1%;
 
 
   }
+
+
+
+
+
+
+
+
+
 
 
 
