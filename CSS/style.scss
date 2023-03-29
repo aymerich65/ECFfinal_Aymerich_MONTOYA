@@ -33,7 +33,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100vw;
+      width: 50%;
    
     }
     .refresh-button-reservation{
@@ -116,7 +116,7 @@ min-height: 60%;
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
 .headerlink a {
     display: none;
   }
@@ -254,6 +254,15 @@ min-height: 60%;
     object-fit: cover; 
   }
 }
+
+
+
+
+
+
+
+
+
 /* format mobile:*/
 @media only screen and (max-width: 767px) {
   .myimage-container {
@@ -390,6 +399,10 @@ min-height: 60%;
   background-color:rgba(144, 100, 39, 1);
   margin: 0vw;
   font-weight: 700;
+
+
+  bottom: 0;
+
   
 
 }
@@ -504,16 +517,19 @@ min-height: 60%;
   margin-bottom: 4%;
 }
 
+
+
 @media screen and (max-width: 767px) {
   .reservationstablestyle {
     font-size: 8px;
-    width: 60%;
-    overflow-x: auto;
+    width: 95%;
     font-weight: bold;
+    table-layout: fixed;
   }
   .reservationstablestyle td, 
   .reservationstablestyle th {
-    padding: 10px;
+    word-wrap: break-word;
+    padding: 1px;
     font-size: 8px;
     font-weight: bold;
   }
@@ -522,16 +538,23 @@ min-height: 60%;
   }
 }
 
+
+
+
+
+
+
+
+
+/*horaires */
+
+
 .form-admin-style-schedules{
   background-color: rgb(182, 172, 151);
   border-radius: 8px;
   border: 0.5px solid black;
 
 }
-
-
-
-
 
 
 
@@ -591,6 +614,12 @@ th:last-child, td:last-child {
 }
 
 
+
+
+
+
+
+
 /* bloc disponibilité  page reservation:*/
 
 .disponibiltéstyle{
@@ -606,4 +635,10 @@ button{
   border-radius: 8px;
   border: 1px solid black;
 }
+
+
+
+
+
+
 

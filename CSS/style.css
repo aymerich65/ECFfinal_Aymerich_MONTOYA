@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 50%;
 }
 .bodystyle .refresh-button-reservation {
   width: 40%;
@@ -89,7 +89,7 @@
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .headerlink a {
     display: none;
   }
@@ -288,6 +288,7 @@
   background-color: rgb(144, 100, 39);
   margin: 0vw;
   font-weight: 700;
+  bottom: 0;
 }
 
 .footerstyle > .footerchildrenstyle {
@@ -371,13 +372,14 @@
 @media screen and (max-width: 767px) {
   .reservationstablestyle {
     font-size: 8px;
-    width: 80%;
-    overflow-x: auto;
+    width: 95%;
     font-weight: bold;
+    table-layout: fixed;
   }
   .reservationstablestyle td,
   .reservationstablestyle th {
-    padding: 10px;
+    word-wrap: break-word;
+    padding: 1px;
     font-size: 8px;
     font-weight: bold;
   }
@@ -385,6 +387,7 @@
     font-size: 8px;
   }
 }
+/*horaires */
 .form-admin-style-schedules {
   background-color: rgb(182, 172, 151);
   border-radius: 8px;
