@@ -1,9 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ .'/../../');
-$dotenv->load();
+require_once __DIR__ . '/../../config.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
 
 
@@ -12,10 +11,7 @@ $dotenv->load();
 
 try{
 
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
-    $pdo = new PDO($dsn, $envuser , $envpassword);
+
 
 
     $myTable = $pdo->query("SELECT * FROM reservations");
