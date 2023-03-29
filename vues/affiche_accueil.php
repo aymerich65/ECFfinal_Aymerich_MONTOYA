@@ -68,14 +68,16 @@ ob_start();
 
                 /* mode tactile: */
                 image.addEventListener('touchstart', function() {
-                    tooltip.style.opacity = 1;
+                    tooltip.style.display = 'block';
                 });
                 image.addEventListener('touchend', function() {
-                    tooltip.style.opacity = 0;
+                    tooltip.style.display = 'none';
                 });
             });
         };
+
     </script>
+
 
 <div class="button-container mytestcolor">
   <a href="index.php?page=reservation"><button class="button-reservation-style">Réservation</button></a>
