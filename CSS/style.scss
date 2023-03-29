@@ -11,6 +11,7 @@
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
+    position: relative;
    
   
     .reservationstablestyle{
@@ -69,7 +70,24 @@ min-height: 60%;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* En tête: */
+
+ /* styles spécifiques pour les écrans  en mode paysage */
+@media screen and (min-width: 200px) and (orientation: landscape) {
+ 
+
 .headerstyle {
   background-color: rgba(144, 100, 39, 1);
   width: 100%;
@@ -77,34 +95,36 @@ min-height: 60%;
   margin-bottom: 5%;
   height:6%;
   margin: 0;
+  bottom: 0%;
+  
+ 
 }
 
 .titrestyle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(144, 100, 39, 1);
+  
 }
 
 .titrestyle h1 {
-  font-size: 6rem;
-  
-  margin-right: 4%;
-  margin-bottom: 3rem;
+  font-size: 6vw;
+  margin-right: 1%;
+  margin-bottom: 1rem;
   white-space: nowrap;
 }
 
 .headerlink a{
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: black;
-  margin-left: 2rem;
+  margin-left: 2.5vh;
 }
 
 .headerlink span {
-  margin-left: 0.5rem;
+  margin-left: 1%;
 }
 
 .aproposestyle {
@@ -115,8 +135,35 @@ min-height: 60%;
   white-space: nowrap;
 
 }
+  
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (min-width: 200px) {
+  .dropdown {
+    display: none;
+  }
+}
+
+
+  }
+
+
+
+/*header en mode mobile portrait */
+@media (orientation: portrait) {
+
+  
+.headerstyle {
+  background-color: rgba(144, 100, 39, 1);
+  width: 100%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  height:6%;
+  margin: 0;
+  bottom: 0%;
+  
+}
+
+  
 .headerlink a {
     display: none;
   }
@@ -127,17 +174,6 @@ min-height: 60%;
     white-space: nowrap;
   }
 }
-
-
-
-@media (min-width: 768px) {
-  .dropdown {
-    display: none;
-  }
-}
-
-
-
 
 
 
@@ -387,23 +423,28 @@ min-height: 60%;
 
 /* horaires pied de page:*/
 
+
+
+
+
 .titleschedule{
-  margin-top: 1rem;
-  font-weight: 900;
+  margin-top: 50%;
+  font-weight: 900;  
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
+
 .footerstyle {
   width: 100%;
   justify-content: center;
-  font-size: 9px;
+  font-size: 60%;
   text-align: center;
   background-color:rgba(144, 100, 39, 1);
-  margin: 0vw;
-  font-weight: 700;
-
-
+  font-weight: 800;
+  position: sticky;
   bottom: 0;
-
-  
+  height: 26vh;
+  line-height: 40%;
 
 }
 
@@ -411,45 +452,55 @@ min-height: 60%;
   justify-content: center;
   text-align: center;
 }
-@media screen and (max-width: 768px) {
-  .footerstyle {
-    width: 100%;
-    justify-content: center;
-    font-size: 8px;
-    text-align: center;
-    background-color:rgba(144, 100, 39, 1);
-    margin: 0vw;
-    font-weight: 700;
-
-  }
-  }
-  @media screen and (min-width: 768px) {
-    .footerstyle {
-      font-size: 12px;
-    }
-  }
 
 
 
 
 
-
-
-
-
-
-
-/* Mon responsive format au dessus de 768px */
-
-@media screen and (min-width: 768px) {
-  .button-reservation-style {
-    font-size: 2rem;
-  }
-}
+@media (orientation : portrait){
 
 .titleschedule{
-  font-weight: 900;
+padding-top: 1%;
+padding-bottom: 1%;
 }
+
+.footerstyle {
+  width: 100%;
+  justify-content: center;
+  font-size: 60%;
+  text-align: center;
+  background-color:rgba(144, 100, 39, 1);
+  font-weight: 800;
+  position: sticky;
+  bottom: 0;
+  height: 26vh;
+  line-height: 30%;
+
+}
+
+
+
+}
+
+
+
+
+
+/*boutonreservation accueil*/
+
+  .button-reservation-style {
+    font-size: 90%;
+  }
+
+
+
+
+
+
+
+
+
+
 
 
  /*Alignement images en mode desktop : */
@@ -641,4 +692,6 @@ button{
 
 
 
+
+/* version tablette************************************** */
 
