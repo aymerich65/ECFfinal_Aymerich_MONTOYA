@@ -11,7 +11,8 @@
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
-    position: relative;
+ 
+
    
   
     .reservationstablestyle{
@@ -62,11 +63,19 @@
   margin-top: 1%;
 padding-left: 1%;
 padding-right: 1%;
-min-height: 60%;
+min-height: 67%;
 margin-bottom: 1%;
-
 }
 
+@media (orientation : landscape){
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 52%;
+  margin-bottom: 1%;
+  }
+}
 
 
 
@@ -425,14 +434,11 @@ margin-bottom: 1%;
 /* horaires pied de page:*/
 
 
-
-
-
 .titleschedule{
-  margin-top: 50%;
   font-weight: 900;  
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  line-height: 30%;
 }
 
 .footerstyle {
@@ -442,10 +448,8 @@ margin-bottom: 1%;
   font-size: 60%;
   text-align: center;
   background-color:rgba(144, 100, 39, 1);
-  font-weight: 800;
-  position: relative;
-  bottom: 0;
-  height: 26vh;
+  font-weight: 700;
+  min-height: 26vh;
   line-height: 40%;
 
 }
@@ -456,15 +460,14 @@ margin-bottom: 1%;
 }
 
 
-
-
-
 @media (orientation : portrait){
 
 .titleschedule{
-padding-top: 1%;
+  margin-top: 5%;
+  margin-bottom: 10%;
 padding-bottom: 1%;
 }
+
 
 .footerstyle {
   width: 100%;
@@ -473,9 +476,7 @@ padding-bottom: 1%;
   text-align: center;
   background-color:rgba(144, 100, 39, 1);
   font-weight: 800;
-  position: relative;
-  bottom: 0;
-  height: 26vh;
+  min-height: 26vh;
   line-height: 30%;
 
 }
