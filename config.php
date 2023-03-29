@@ -4,7 +4,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+$dotenv->load();/*
 $url = getenv('JAWSDB_URL');
 if($url){
     $dbparts = parse_url($url);
@@ -19,7 +19,7 @@ if($url){
     define("DB_USER", $envuser);
     define("DB_PASSWORD", $envpassword);
 
-}else{
+}else{*/
     $dsn = $_ENV['DB_DSN'];
     $envuser = $_ENV['DB_USERNAME'];
     $envpassword = $_ENV['DB_PASSWORD'];
@@ -27,8 +27,8 @@ if($url){
 
     define("DB_DSN", $dsn);
     define("DB_USER", $envuser);
-    define("DB_PASSWORD", $envpassword);
-}
+    define("DB_PASSWORD", $envpassword);/*
+}*/
 
 try {
     $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
