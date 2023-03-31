@@ -1,4 +1,12 @@
 <?php
+
+/* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
 try{
 //var_dump($_POST);
 
@@ -10,15 +18,7 @@ try{
     $fermeture_soir = htmlspecialchars($_POST['fermeture_soir'], ENT_QUOTES);
 
 
-    require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
 
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
-
-    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->prepare("INSERT INTO horaires (jour, statut, ouverture_midi, fermeture_midi, ouverture_soir, fermeture_soir) VALUES (:jour, :statut, :ouverture_midi, :fermeture_midi, :ouverture_soir, :fermeture_soir)");
     $myTable->bindValue(':jour', $jour, PDO::PARAM_STR);
     $myTable->bindValue(':statut', $statut, PDO::PARAM_STR);

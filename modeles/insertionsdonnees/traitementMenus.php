@@ -1,4 +1,14 @@
 <?php
+
+/* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
+
+
 try{
 //var_dump($_POST);
 $titre= htmlspecialchars($_POST['titre'], ENT_QUOTES);
@@ -6,15 +16,7 @@ $formule=htmlspecialchars($_POST['formule'], ENT_QUOTES);
 $description= htmlspecialchars($_POST['description'], ENT_QUOTES);
 $prix= htmlspecialchars($_POST['prix'], ENT_QUOTES);
 
-    require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
 
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
-
-    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->prepare("INSERT INTO menus (titre, formule, description, prix) VALUES (:titre, :formule, :description, :prix)");
     $myTable->bindValue(':titre', $titre, PDO::PARAM_STR);
     $myTable->bindValue(':formule', $formule, PDO::PARAM_STR);

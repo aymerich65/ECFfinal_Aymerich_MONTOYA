@@ -1,4 +1,12 @@
 <?php
+
+/* Utilisation du fichier config pour récupérer les variables d'environnement:*/
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
+
+
 try{
  //var_dump($_POST);
     $email=htmlspecialchars($_POST['email'], ENT_QUOTES);
@@ -7,15 +15,7 @@ try{
     $allergies= htmlspecialchars($_POST['allergies'], ENT_QUOTES);
 
 
-    require_once __DIR__ . '/../../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
 
-    $dsn = $_ENV['DB_DSN'];
-    $envuser = $_ENV['DB_USERNAME'];
-    $envpassword = $_ENV['DB_PASSWORD'];
-
-    $pdo = new PDO($dsn, $envuser , $envpassword);
     $myTable = $pdo->prepare("INSERT INTO clients (email, password, convives, allergies) VALUES (:email, :password, :convives, :allergies)");
     $myTable->bindValue(':email', $email, PDO::PARAM_STR);
     $myTable->bindValue(':password', password_hash($password,PASSWORD_BCRYPT));
