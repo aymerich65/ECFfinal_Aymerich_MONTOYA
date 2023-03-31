@@ -17,20 +17,21 @@
 </head>
 <body class="bodystyle">
 
-<div class="header">
+<header class="header">
     <?php require 'header.php'; ?>
-</div>
+</header>
 
-<div class="main">
+<main class="main">
     <?php
     echo $contenu;
     ?>
-</div>
+</main>
 
-<div class="footerstyle">
+<footer class="footerstyle">
     <div class="col-10 offset-1">
         <?php require_once 'affiche_horraires.php'; ?>
-    </div>
+       </div> 
+</footer>
 
 
 
@@ -40,7 +41,7 @@
 
 
 
-</div>
+
 <script src="JS/appelle_script_recuperation_table_image.js"></script>
 <script src="JS/scriptControleTablesDisponibles.js"></script>
 <script src="../JS/bootstrap.bundle.min.js"></script>
