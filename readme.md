@@ -1,7 +1,16 @@
 1)Installation du site 
 
 Dans une fenêtre de commande créez un dossier et initialisez un dépôt git avec "git init" puis à l'aide de la commande "git clone https://github.com/aymerich65/ECFfinal_Aymerich_MONTOYA.git" récupérez le dépôt distant. Ainsi vous disposez d'une copie du dépôt Git mais aussi et surtout d'une copie du site sur votre environnement local.
-Pour utiliser l'application en locale vous devez aller dans le fichier à la racine config.php et attribuer la valeur "null" à la variable $url.
+Pour utiliser l'application en locale vous devez aller dans le fichier à la racine config.php et attribuer la valeur "null" à la variable $url puis dans le fichier .env à la racine remplir les variables avec ces valeurs:
+
+
+DB_DSN=mysql:host=localhost;dbname=quaiantique
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+
+JWT_SECRET_KEY=qsdqsd
 
 
 
