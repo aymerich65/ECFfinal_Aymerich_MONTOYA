@@ -33,6 +33,12 @@ if (isset($_SESSION['jwt'])) {
 }
 
 ?>
+
+
+
+
+
+
 <h1 class="tableaudebordstyle">TABLEAU DE BORD</h1>
 <br>
 <h2>Réservations</h2>
@@ -67,6 +73,26 @@ if (isset($_SESSION['jwt'])) {
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
+<!-- bouton affichage entées -->
+    <button id="afficher-entrees">Afficher les entrées</button>
+<div id="entrees-container"></div>
+
+
+
+
+    <h3 class="titleh3-admin-form">Modifier l'entrée :</h3>
+<form method="POST" action="modeles/modifications_donnees/traitement_modif_entree.php" class="form-admin-style">
+    <label class="label-admin-style">ID de l'entrée :<input type="text" name="id" value="" required></label>   
+    <br>
+    <label class="right-align label-admin-style">Titre : <input type="text" name="titre" value="" class="input-admin-style"></label>
+    <label class="label-admin-style">Description : <input type="text" name="description" value="" class="input-admin-style"></label>
+    <label class="label-admin-style">Prix : <input type="text" name="prix" value="" class="input-admin-style"></label>
+    <br>
+    <button class="dishbuton" type="submit">Valider</button>
+</form>
+
+
+
     <h3 class="titleh3-admin-form">Supprimer entrée : </h3>
     <form method="POST" action="modeles/suppressionlignes/suppressionEntree.php" class="form-admin-style">
         <label class="label-admin-style">Titre : <input type="text" name="titre" value="" ></label>
@@ -83,6 +109,23 @@ if (isset($_SESSION['jwt'])) {
     <br>
     <button class="dishbuton" type="submit">Valider</button>
 </form>
+
+<!-- bouton affichage des plats principaux -->
+<button id="afficher-plats-principaux">Afficher les plats principaux</button>
+<div id="plats-container"></div>
+
+
+
+<h3 class="titleh3-admin-form">Modifier le plat principal :</h3>
+<form method="POST" action="modeles/insertionsdonnees/traitementPlats.php" class="form-admin-style">
+<label class="label-admin-style">ID du plat principal :<input type="text" name="id" value="" required></label>
+    <label class="label-admin-style">Titre : <input type="text" name="titre" value=""></label>
+    <label class="label-admin-style">Description : <input type="text" name="description" value=""></label>
+    <label class="label-admin-style">Prix : <input type="text" name="prix" value=""></label>
+    <br>
+    <button class="dishbuton" type="submit">Valider</button>
+</form>
+
 
 
     <h3 class="titleh3-admin-form">Supprimer plat principal : </h3>
@@ -102,6 +145,22 @@ if (isset($_SESSION['jwt'])) {
         <button class="dishbuton" type="submit">Valider</button>
     </form>
 
+<!-- bouton affichage des desserts -->
+<button id="afficher-dessert">Afficher les desserts</button>
+<div id="dessert-container"></div>
+
+
+    <h3 class="titleh3-admin-form">Modifier le dessert :</h3>
+<form method="POST" action="modeles/modifications_donnees/traitment_modif_dessert.php" class="form-admin-style">
+<label class="label-admin-style">ID du dessert :<input type="text" name="id" value="" required></label>
+    <label class="label-admin-style">Titre : <input type="text" name="titre" value=""></label>
+    <label class="label-admin-style">Description : <input type="text" name="description" value=""></label>
+    <label class="label-admin-style">Prix : <input type="text" name="prix" value=""></label>
+    <br>
+    <button class="dishbuton" type="submit">Valider</button>
+</form>
+
+
 
     <h3 class="titleh3-admin-form">Supprimer dessert : </h3>
     <form method="POST" action="modeles/suppressionlignes/suppressionDessert.php" class="form-admin-style">
@@ -120,6 +179,24 @@ if (isset($_SESSION['jwt'])) {
     <br>
     <button class="dishbuton" type="submit">Valider</button>
 </form>
+
+<!-- bouton affichage des menus -->
+<button id="afficher-menus">Afficher les menus</button>
+<div id="menus-container"></div>
+
+
+<h3 class="titleh3-admin-form">Modifier le Menu :</h3>
+<form method="POST" action="modeles/modifications_donnees/traitement_modif_menu.php" class="form-admin-style">
+<label class="label-admin-style">ID du menu :<input type="text" name="id" value="" required></label>
+    <label class="label-admin-style">Titre : <input type="text" name="titre" value=""></label>
+    <label class="label-admin-style">Formule : <input type="text" name="formule" value=""></label>
+    <label class="label-admin-style">Description : <input type="text" name="description" value=""></label>
+    <label class="label-admin-style">Prix : <input type="text" name="prix" value=""></label>
+    <br>
+    <button class="dishbuton" type="submit">Valider</button>
+</form>
+
+
 
 
 </br>
@@ -241,8 +318,10 @@ require 'modeles/recuperations_donnees/recuperation_administrateurs.php';
         <input type="email" name="email" id="email" required>
         <button class="dishbuton" type="submit">Supprimer</button>
     </form>
-
-
+    <script src="JS/recup_json_entree.JS"></script>
+    <script src="JS/recup_json_plat_principal.JS"></script>
+    <script src="JS/recup_json_dessert.JS"></script>
+    <script src="JS\recup_json_menus.JS"></script>
 
 <?php
 

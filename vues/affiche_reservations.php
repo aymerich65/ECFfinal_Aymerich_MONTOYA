@@ -22,12 +22,14 @@ if (isset($_SESSION['allergies'])) {
 }
 ?>
 
+
     <div class="reservationstyle">
         <h1>Réservation</h1>
         <form method="POST" action="modeles/insertionsdonnees/traitement_reservation.php">
             <div>
                 <label for="date-input">Date :</label>
-                <input type="date" id="date-input" name="date" required>
+                <input type="date" id="date-input" name="date" required min="<?php echo date('Y-m-d'); ?>">
+
             </div>
             <br>
             <div>
@@ -66,7 +68,7 @@ if (isset($_SESSION['allergies'])) {
                 </div>
                 <br>
                 <div>
-                    <label>Convives : <input type="number" name="couverts" value="<?php echo $guestsnumber; ?>" required max="30"></label>
+                    <label>Convives : <input type="number" name="couverts" value="<?php echo $guestsnumber; ?>" required max="30" min="1"></label>
                 </div>
                 <br>
                 <div>
@@ -85,6 +87,131 @@ if (isset($_SESSION['allergies'])) {
         const reservationFormContainer = document.getElementById('reservation-form-container');
         const dateInput = document.getElementById('date-input');
         const heureInput = document.getElementById('heure-input');
+        const currentDate = new Date().toISOString().split('T')[0];
+
+
+
+
+
+
+
+
+
+// Contrôle de la sélection de l'heure
+
+
+//dateInput.addEventListener('change', resetReservation);
+function resetReservation() {
+    const disponibilitesContainer = document.querySelector('#disponibilites-container');
+    disponibilitesContainer.innerHTML = '';
+    reservationFormContainer.style.display = 'none';
+    submitButton.disabled = true;
+}
+
+dateInput.addEventListener('change', function() {
+    if (reservationFormContainer.style.display === 'block') {
+        resetReservation();
+    }
+});
+
+
+
+heureInput.addEventListener('change', function() {
+    const selectedDate = new Date(dateInput.value);
+    const currentDate = new Date();
+    const selectedTime = heureInput.value;
+
+    const selectedDateString = selectedDate.toISOString().split('T')[0];
+    const currentDateString = currentDate.toISOString().split('T')[0];
+    const currentTime = currentDate.getHours() + ':' + currentDate.getMinutes();
+
+    if (selectedDateString === currentDateString && selectedTime < '13:00') {
+        const disponibilitesContainer = document.querySelector('#disponibilites-container');
+        disponibilitesContainer.innerHTML = '<p>L\'heure sélectionnée est antérieure à l\'heure minimale autorisée.</p>';
+        reservationFormContainer.style.display = 'none';
+        submitButton.disabled = true;
+    } else {
+        // Afficher le bloc de réservation si la date sélectionnée n'est pas la date actuelle ou si l'heure est supérieure ou égale à 13h
+        reservationFormContainer.style.display = 'block';
+        submitButton.disabled = false;
+    }
+});
+
+// Contrôle au moment de la vérification des disponibilités
+disponibilitesBtn.addEventListener('click', function() {
+    const selectedDate = new Date(dateInput.value);
+    const currentDate = new Date();
+    const selectedTime = heureInput.value;
+
+    const selectedDateString = selectedDate.toISOString().split('T')[0];
+    const currentDateString = currentDate.toISOString().split('T')[0];
+    const currentTime = currentDate.getHours() + ':' + currentDate.getMinutes();
+
+    if (selectedDateString === currentDateString && selectedTime < '13:00') {
+        const disponibilitesContainer = document.querySelector('#disponibilites-container');
+        disponibilitesContainer.innerHTML = '<p>L\'heure sélectionnée est antérieure à l\'heure minimale autorisée.</p>';
+        reservationFormContainer.style.display = 'none';
+        submitButton.disabled = true;
+    } else {
+        // Afficher le bloc de réservation si la date sélectionnée n'est pas la date actuelle ou si l'heure est supérieure ou égale à 13h
+        reservationFormContainer.style.display = 'block';
+        submitButton.disabled = false;
+    }
+});
+
+// Désactiver le bouton de soumission de la réservation par défaut
+const submitButton = document.getElementById('submit-btn');
+submitButton.disabled = true;
+
+// Activer le bouton de soumission lorsque le formulaire est complet
+dateInput.addEventListener('change', toggleSubmitButton);
+heureInput.addEventListener('change', toggleSubmitButton);
+emailInput.addEventListener('input', toggleSubmitButton);
+guestsInput.addEventListener('change', toggleSubmitButton);
+
+function toggleSubmitButton() {
+    const selectedDate = new Date(dateInput.value);
+    const currentDate = new Date();
+    const selectedTime = heureInput.value;
+
+    const selectedDateString = selectedDate.toISOString().split('T')[0];
+    const currentDateString = currentDate.toISOString().split('T')[0];
+    const currentTime = currentDate.getHours() + ':' + currentDate.getMinutes();
+
+    if (
+        (selectedDateString === currentDateString && selectedTime < '13:00') ||
+        !emailInput.value ||
+        !guestsInput.value
+    ) {
+        submitButton.disabled = true;
+    } else {
+        submitButton.disabled = false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
 
         disponibilitesBtn.addEventListener('click', function() {
             const date = dateInput.value;
@@ -119,6 +246,17 @@ if (isset($_SESSION['allergies'])) {
         heureInput.addEventListener('change', function() {
             reservationFormContainer.style.display = 'none';
         });
+
+
+
+
+
+
+
+
+
+
+
 
 
     </script>

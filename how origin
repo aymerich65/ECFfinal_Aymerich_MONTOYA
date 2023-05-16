@@ -1,0 +1,359 @@
+[33mcommit 16a8bdc86e2b4b8c2e86ceaecf6567e87464b107[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mheroku/master[m[33m)[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 31 16:00:38 2023 +0200
+
+    Amélioration de la sémantique des blocs du body
+
+[33mcommit e1193109f75fd612dd89e6eb96447fe5dee69dcf[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 31 13:15:29 2023 +0200
+
+    Correction du code de récupération des variables .env dans les fichiers de traitement
+
+[33mcommit 169c194c9d5fb3d5d5efc66683c9062d2af0a155[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 31 12:25:10 2023 +0200
+
+    Sécurisation du fichier .env
+
+[33mcommit 0237ee4395998287fb5a1c29b2b61d06367415a4[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Thu Mar 30 11:19:31 2023 +0200
+
+    Suppression d'un commentaire
+
+[33mcommit 29d3e962b0e90882fb168f9584d8cafcc17ccd16[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 19:48:30 2023 +0200
+
+    Modification du css du  footer
+
+[33mcommit a1ec06e1092cad6c39b973e08063f9db94aca166[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 19:29:17 2023 +0200
+
+    Modification du fichier config qui était en mode locale
+
+[33mcommit 8f45b0aea62c3f84bb6cd5ddd36d6ab0b359f583[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 19:22:50 2023 +0200
+
+    Modification du css du  footer
+
+[33mcommit b0d830a45478e10043b3757ccf99b1e1d9ca39fc[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 18:50:53 2023 +0200
+
+    Reactivation du fichier config en mod prod
+
+[33mcommit e7da63e2b780f7fad622008ee27b3ee10c4ab1d3[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 18:47:20 2023 +0200
+
+    Modification de la hauteur du main et du footer
+
+[33mcommit 366320eea37daea0737d5ef325ed5f5f12278586[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 17:59:02 2023 +0200
+
+    Modification de la marge du footer
+
+[33mcommit 2068e65165014e4ad0720b962fcc04fb14c702f7[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 17:51:19 2023 +0200
+
+    Modification de la position du footer
+
+[33mcommit 52f0079f085f0b69fa72dd59af8d7afa97ed13c4[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 17:44:12 2023 +0200
+
+    Modification de la propriété position du footer
+
+[33mcommit f1603d8c9b6c65ad8cb920b29a423e6b7363d659[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 16:34:25 2023 +0200
+
+    modification du fichier config
+
+[33mcommit 91152a161f53aafd0af60ae932b98ecc8f7037af[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 16:29:41 2023 +0200
+
+    Correction de divers erreurs de style liées au système de responsive:Header,footer et bouton de réservation
+
+[33mcommit 4e5b80ebad89a83d5e45cbbe32cdccbfe8e393cf[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 14:08:38 2023 +0200
+
+    Modification du css du tableau des réservations et du bouton de rafraichissement
+
+[33mcommit 41541a9e76f8ce1feeebb2b3b313270aa50b8b99[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 11:49:42 2023 +0200
+
+    modification de la largeur du tableau des réservations
+
+[33mcommit df3119c990316c6f39e34afd3dc381fc85c1afd6[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 11:11:01 2023 +0200
+
+    Correction de la récupération des variables d'environnement dans tous les script du dossier recuperations_donnees.
+
+[33mcommit 140610c456d81c2214336ada81853691c1fb804d[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 11:03:44 2023 +0200
+
+    Correction de la récupération des variables d'environnement dans le script de récupération des réservations
+
+[33mcommit 346b2b33e9c32b4f0cf468afe0231c993c921d6b[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 10:56:15 2023 +0200
+
+    Correction des  chemins dans les requires_once du script de récupération des horaires
+
+[33mcommit b0e3a0cfd29d606619ebe376f27eb7c05ec5dd65[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 10:52:37 2023 +0200
+
+    Correction du script de récupération des variables d'environnement dans le code de récupération des horaires en base de donnée
+
+[33mcommit e47abf222a178372d0d9335b720324ed29c5b291[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 10:49:44 2023 +0200
+
+    Modification du script de récupération des horaires au niveau de la récupération des variables d'environnement
+
+[33mcommit b66db130c9af9b885546a59ab628e145b5b9e142[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 10:36:50 2023 +0200
+
+    Correction de l'infobulle au survole des images en mode mobile
+
+[33mcommit 4a2b98b4505879afb1fb9d89fbca856c4fcb71cc[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 10:28:13 2023 +0200
+
+    remise des vaiables env locales dans le fichier env
+
+[33mcommit de4a40c9acd9daafbe364bc2128bfea76685ea86[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 29 10:25:43 2023 +0200
+
+    modification du fichier env
+
+[33mcommit 47421cb68f67e034285a211406c6bda6ce415d73[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Tue Mar 28 15:57:46 2023 +0200
+
+    Correction des chemins vers les scripts de suppréssions. Correction du code de récupération des variables d'environnement sur tous les scripts.
+
+[33mcommit 7b932434d1c142e4319f85e13aff816d59631e35[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Mon Mar 27 16:11:35 2023 +0200
+
+    Modification du script config.php, ajout du nouveau système de récupération des variables env dans les fichiers du dossier vue.Création de classes d'insertion et de suppression
+
+[33mcommit c6e9a82b424eed99c794e1c239053dfc1685e70c[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 21:03:22 2023 +0100
+
+    modifs
+
+[33mcommit e599b6ad75a122896802a1b1b3997537b20c5ade[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 20:31:54 2023 +0100
+
+    modification de la variable env user en username
+
+[33mcommit 7ca2350c491f6b8b90c180f5e066170e02bfe27d[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 20:03:32 2023 +0100
+
+    ajout fichier modifié
+
+[33mcommit 32b72b557f2a5d652646c9059538b18db0763057[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 19:21:21 2023 +0100
+
+    modification du script de requête
+
+[33mcommit af52d597db1f79f3da5410966c68b9ead8ff3a6e[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 18:48:51 2023 +0100
+
+    modification de la requêtevers al base de donnée
+
+[33mcommit 7d3bd2e1d2773c330a6edc1854255b83d6a77b1f[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 18:24:00 2023 +0100
+
+    modif fichier config.php
+
+[33mcommit 1fb54f97657e8f0b4b4f9abe8af91225776b2b6f[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 18:12:58 2023 +0100
+
+    modif
+
+[33mcommit 42c78480d0e83f65a56fa517d0edf4c0aa164549[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 17:46:03 2023 +0100
+
+    modification des valeurs des variables
+
+[33mcommit 694b9e3550843c0543f487c1c43abe4c13aeaf24[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 17:22:46 2023 +0100
+
+    correction fichier env
+
+[33mcommit 09777784ab5efa77b5628c7e4c274e8f74124f91[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 17:00:36 2023 +0100
+
+    modification du fichier config : ajout de chaque variable env
+
+[33mcommit 169e7df099b92fc1c2c18b40e0e27ac9f9a423ec[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 16:56:50 2023 +0100
+
+    modification des valeurs du fichier env
+
+[33mcommit 80f30923858602a38475b691ca32dc97dc8389f1[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 16:26:55 2023 +0100
+
+    modif fichier env
+
+[33mcommit f311a0081fcbe995fdced22c63373f9859ae9f6e[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 24 16:07:28 2023 +0100
+
+    je pousse l'ensemble du site sur mon dépôt local
+
+[33mcommit 84790b9d4b87de3a23684a51c74d46df6b719bcd[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 22 13:45:35 2023 +0100
+
+    Ajout du dossier CSS actualisé avec les dernières modifications scss et css
+
+[33mcommit be590077cf2993c1317fbd33c721c4ab07c80f47[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 22 13:43:19 2023 +0100
+
+    Ajout du formulaire de gestion des administrateurs ainsi que du script de suppréssion d'administrateur
+
+[33mcommit 056f995f3832804ab7a00f64523434053edf78b5[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Mon Mar 20 16:28:59 2023 +0100
+
+    Ajout du fichier config.php pour la  gestion des variables d'environnement
+
+[33mcommit 7810936eeb09f5930d754a2fad504c0236445559[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 17 13:52:54 2023 +0100
+
+    correction des redirections après réservation ou connexion
+
+[33mcommit 0d376bf5470d2f39220bcd15fecb5df9bcfbec27[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Mon Mar 13 16:05:18 2023 +0100
+
+    Modification de la page des horaires avec l'ajout des créneaux horaires de midi. Ajout des quarts d'heure à 14:00 et 22:00. Ajout de contrôles des variables POST avec htmlspecialchars. Renforcement du contrôle anti-attaque XSS avec l'ajout de script sur la page d'authentification pour l'environnement prod. Modification de l'affichage des horaires sans les secondes. Correction du CSS du titre du site qui était sans espace entre les mots et modification de la taille de police et de la disposition. Modification du CSS pour la hauteur du header du main et du footer.
+
+[33mcommit b40ccde3231c955702d5d450acd1f74c92871e5f[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Thu Mar 9 15:39:18 2023 +0100
+
+    Modifications apportées à la page de réservation pour sécuriser l'affichage du formulaire de réservation en fonction des disponibilités : ajout d'un script pour masquer automatiquement le formulaire si la date ou l'heure est modifiée, et nécessité de cliquer sur le bouton de vérification des disponibilités pour afficher le formulaire à nouveau.
+
+[33mcommit c037d70609fb1169f3e751616410e93f946ecf34[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Mar 8 17:32:05 2023 +0100
+
+    Modification du script récupération_disponibilites pour corriger la récupération des variables de la superglobale session sur la page de réservation. Création d'une table capacite_d_accueil pour stocker le nombre de couverts disponibles. Création d'un script d'insertion du nombre de couverts dans la capacite_d_accueil. Modification du formulaire de changement du nombre de couverts. Modification du formulaire de suppression de réservation. Correction de la div mal fermée sur la page inscription. Ajout d'un système de redirection après la réservation avec un pop-up de confirmation.
+
+[33mcommit 1dc106dc9e6f0b6ec2726957fe4e024b38bb8973[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Tue Mar 7 17:32:38 2023 +0100
+
+    Correction table reservations et script insertion de rerservations.Modification de la page réservation et ajout script afficher_disponibilites
+
+[33mcommit 8775bd2e65ceb7b90ddd3a170cdb100df3b1b4c2[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Mon Mar 6 17:57:06 2023 +0100
+
+    Ajouts des variables environnement utilisateur et mot de passe dans les scripts de requêtes. Modification du tableau d'images dans la page adminavec ajout de css pour améliorer sa lisibilité. Création des scripts de supréssion d'une ou de plusieurs réservations. Ajout du contrôle des insertions dans les champs des horaires
+
+[33mcommit f9f5f6daea6beecfa926ba172e82e653d4c2dd4d[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Mar 3 14:04:36 2023 +0100
+
+    Ajout du dossier CSS contenant le style  du site, utilisation de la variable de dsn pour les requêtes en base de donnée des fichier d'insertion d'entrées plats et desserts et du fichier recuperation_Tables_Disponibles. Modification du fichier recuperation_Tables_Diponibles avec ajout du calcul des tables disponibles
+
+[33mcommit 28764c33fd4c098fe87166b1af63f3fe24a59b94[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Tue Feb 28 16:55:49 2023 +0100
+
+    Ajout onglets navigation en mode desktop sur le header. Ajout page "A propos". Utilisation du package "vlucas/phpdotenv" pour alimenter la variable de dsn sur les scripts de requête
+
+[33mcommit 20d0fd4d5e6253432929e8f03463b0307be3adc0[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Feb 24 14:14:24 2023 +0100
+
+    Modification du script header et ajout du script qui masque la page administrateur. Modification de la page layout avec réorganisation mise à jour des fichiers bootstrap
+
+[33mcommit ebeb754ef32a8d665f9c49f4ba450f5402e146f0[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Thu Feb 23 20:08:10 2023 +0100
+
+    Ajout du script de traitement des données de connexion sur le script authentification.php. Ajout du contrôle des valeurs de  sur la page affiche_page_Admin.php
+
+[33mcommit cf074ae5aa1b21669ad8f8cdb549cba6d3546e4f[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Feb 22 15:55:35 2023 +0100
+
+    Modification de la page index pour incorporer la reconnaissance des url du site. Modification du style du bouton réservation sur la page accueil et modification du script scss qui avait une règle media en trop. Ajout du script d'affichage de la carte et des formules menu .Ajout des scripts JS dont l'affichage des table disponibles et affichage des images stockées.
+
+[33mcommit bbefc0f09605e0b2110172ebbfb77f13bf69e51d[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Tue Feb 21 15:49:59 2023 +0100
+
+    Ajout de scripts pour la gestion des images, y compris la création des tables images et images_accueil et l'insertion des images dans la base de données et dans le dossier galerie. Ajout de formulaires pour l'insertion d'images et pour la sélection des images d'accueil. Ajout de scripts PHP pour récupérer les données de la table images_accueil et pour traiter les formulaires d'images d'accueil. Ajout du code HTML et JavaScript pour afficher les images d'accueil et leurs infobulles. Mise à jour de la page d'accueil avec les nouvelles images.
+
+[33mcommit 4384a7dfe3a65c4fc3b7c78c058544dfb04bfa89[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Fri Feb 17 14:46:04 2023 +0100
+
+    Scripts création table image, insertion images et données en bdd,récupération de données en table images, fichier js AJAX pour récupérer les données du script php précédemment cité et afficher données en html
+
+[33mcommit 9e5fe5a4f4f75012a72bcfd21d490b246e6d6c82[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Thu Feb 16 12:32:51 2023 +0100
+
+    Ajout script envoi d'images et champ formulaire sur la page admin pour envoyer des images
+
+[33mcommit 0bc04468e542c6fcc81b3b00a03e74a161306882[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Wed Feb 15 16:53:45 2023 +0100
+
+    Modification du titre la page, de l'agencement du formulaire. Ajout d'une classe dans chaque balise label pour modifier l'espace. Ajout de classes sur les titres pour changer leurs positions et la taille de police. Ajout du chemin vers le script php qui doit afficher le tableau de réservation.Ajout script tableau des réservations.Modification du script d'envoi de mails avec prise en compte de PHP mailer et SendGrid
+
+[33mcommit 2efce30f36f13590fe65bccc641d3ef5651f3d56[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Tue Feb 14 14:15:47 2023 +0100
+
+    modification script reservation prise en compte email et date. Création script pour instancier la table de réservation, traitement du formulaire de réservation ercorrection script de traitement cookie JWT
+
+[33mcommit 67f664e99d945b2a814a342124314874e80f8d04[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Mon Feb 13 15:30:59 2023 +0100
+
+    modification  des formulaires de connexion, d'administration et d'inscription ainsi que de  reservation.
+
+[33mcommit 9ddf56ff4afd696960a0056fce2f66d8400f6525[m
+Author: Aymerich MONTOYA <aymaman6576@gmail.com>
+Date:   Mon Feb 13 15:29:23 2023 +0100
+
+    ajout des scripts de gestion et d'affichage des formulaires de connection, d'inscription et de gestion des informations client
