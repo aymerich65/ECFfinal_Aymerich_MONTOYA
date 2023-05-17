@@ -23,7 +23,7 @@ ob_start();
 
 
 ?>
-    <div class="row">
+    <div class="row blocdesimages">
         <div class="col-md-4 px-0">
             <?php if (!empty($mybddTable[0])) : ?>
                 <div class="myimage-container">
@@ -50,6 +50,28 @@ ob_start();
         </div>
     </div>
 
+<!--version mobile paysage-->
+
+<div class="blocdesimages2">
+    <div class="myimage-container">
+        <?php if (!empty($mybddTable[0])) : ?>
+            <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[0]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[0]['titre']) ?>">
+            <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[0]['titre']) ?></div>
+        <?php endif; ?>
+    </div>
+    <div class="myimage-container">
+        <?php if (!empty($mybddTable[1])) : ?>
+            <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[1]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[1]['titre']) ?>">
+            <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[1]['titre']) ?></div>
+        <?php endif; ?>
+    </div>
+    <div class="myimage-container">
+        <?php if (!empty($mybddTable[2])) : ?>
+            <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[2]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[2]['titre']) ?>">
+            <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[2]['titre']) ?></div>
+        <?php endif; ?>
+    </div>
+</div>
 
 
     <script>
@@ -79,7 +101,7 @@ ob_start();
     </script>
 
 
-<div class="button-container mytestcolor">
+<div class="button-container lignereservationaccueil">
   <a href="index.php?page=reservation"><button class="button-reservation-style">Réservation</button></a>
 </div>
 

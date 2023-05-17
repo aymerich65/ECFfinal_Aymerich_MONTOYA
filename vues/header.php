@@ -1,9 +1,10 @@
 <?php
 
 ?>
+<div class="blocdescrollhorizontal">
 <div class="container-fluid headerstyle">
     <div class="row d-flex align-items-center">
-    <div class="col-8 titrestyle">
+    <div class="col-10 titrestyle">
   <h1 class="headertitlestyle">Quai Antique</h1>
   <h2 class="headerlink"><a href="index.php?page=accueil"><span>Accueil</span></a></h2>
   <h2 class="headerlink"><a href="index.php?page=reservation"><span>Réservation</span></a></h2>
@@ -14,11 +15,12 @@
             <h2 class="headerlink pageadministrateurestyle"><a href="index.php?page=admin"><span>Page administrateur</span></a></h2>
         <?php endif; ?>
 </div>
+   
 
-        <div class="col-4 text-end">
+        <div class="col-2 ">
             <div class="dropdown ">
-                <button class="btn btn-secondary dropdown-toggle btn-transparent dropdown-toggle-noarrow" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-list"></i>
+                <button class="btn   btn-secondary dropdown-toggle btn-transparent dropdown-toggle-noarrow" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-list fluide-icon"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="index.php?page=accueil">Accueil</a></li>
@@ -29,7 +31,7 @@
                         <li><a class="dropdown-item" href="index.php?page=admin">Page administrateur</a></li>
                     <?php endif; ?>
                     <li><a class="dropdown-item" href="index.php?page=a_propos">A propos</a></li>
-                </ul>
+                </ul> </div>
             </div>
         </div>
     </div>

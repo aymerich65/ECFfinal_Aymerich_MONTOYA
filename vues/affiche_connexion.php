@@ -6,7 +6,7 @@ require_once 'JWT/authentification.php';
 ?>
 
     <h1>Connexion/Inscription</h1>
-    <div>
+    <div class="blocconnexion">
         <form method="post">
             <button  type="submit" name="connexion" value="Connexion" >Connexion</button>
             <button  type="submit" name="inscription" value="Inscription" >Inscription</button>
@@ -17,7 +17,7 @@ require_once 'JWT/authentification.php';
         <form method="post" action="">
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="email">Adresse Email</label>
+                    <label for="email" class="connexionemailmargintop">Adresse Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Indiquez votre adresse email">
                 </div>
                 <div class="form-group col-md-12">
@@ -32,7 +32,7 @@ require_once 'JWT/authentification.php';
 <div class="">
     <form method="POST" action="../modeles/insertionsdonnees/traitementInscription.php">
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 connexionemailmargintop">
                 <label for="email">Adresse Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Indiquez votre adresse email">
             </div>

@@ -58,6 +58,6 @@ echo '</table>';
     }
     ?>
 
-<div class="div-refresh-button-reservation">
+<div class="dishbuton">
     <button onclick="location.reload()" class="refresh-button-reservation">Actualiser</button>
 </div>

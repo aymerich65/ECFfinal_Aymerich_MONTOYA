@@ -1,3 +1,6 @@
+
+/*------------------css global------------------*/
+/*Tableau d'affichage des données stockées en bdd*/
 .tableauadminconsultationbdd{
   h3{
     font-size: 1em;
@@ -6,8 +9,40 @@
   font-size: 1em;
 }
 
+/*Marge haute des boutons de connexion et réservation */ 
+.connexionemailmargintop{
+  margin-top: 4%;
+}
+.emailreservation-input{
+  margin-top: 4%;
+  margin-left: 0.5%;
+}
+/*bouton qui imite le style dishbutton */
+.dishbutonlike{
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
+}
+/*Boutons divers:*/
+.connexionemailmargintop{
+  margin-top: 4%;
+}
+
+.dishbuton{
+margin-top: 1%;
+}
+
+.affichage-donnees{
+margin-top: 2%;
+}
+
+.lignereservationaccueil{
+
+  text-align: center;
+}
 
 
+/* Partie principale du corps de la page: */
 .bodystyle{
     height: 100vh;
     width: 100vw;
@@ -16,11 +51,8 @@
     pointer-events: auto;
     margin: 0%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-x: hidden;}
  
-
-   
-  
     .reservationstablestyle{
       border-collapse: collapse;
       width: 90%;
@@ -37,25 +69,50 @@
         text-align: left;
       }
     }
+
+    /*bouton d\'actualisation du tableau des réservation*/
     .div-refresh-button-reservation{
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 50%;
-   
+      width: 50%; 
     }
     .refresh-button-reservation{
-      width: 40%;
-     
-      
-
+      width: 40%;     
     }
+
     .titlecarte-style{
       margin-top: 4rem;
     }
 
+/*Dernier forumulaire page tableau de bord*/
+.formulairespressionadmin{
+  margin-bottom: 10%;
+}
+/*Margin top des titres h2 du tableau de bord*/
+.titleh2-admin-form,
+.titleh3-admin-form {
+  margin-top: 8%;
+}
 
-
+/*Icone menu mode portrait*/
+.headerstyle{
+  .btn-transparent:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: black; /* ou spécifiez la couleur de texte souhaitée */
+}
+.btn-transparent {
+  background-color: transparent; /* Fond transparent par défaut */
+  border-color: transparent;
+}
+.btn-transparent i {
+  color: black;
+}
+/* suppression de la flèche */
+.dropdown-toggle-noarrow::after {
+  display: none;
+}
 }
 
 
@@ -64,33 +121,6 @@
 
 
 
-/* Partie principale du corps de la page: */
-.main{
-  margin-top: 1%;
-padding-left: 1%;
-padding-right: 1%;
-min-height: 67%;
-margin-bottom: 1%;
-}
-
-@media (orientation : landscape){
-  .main{
-    margin-top: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
-  min-height: 50%;
-  margin-bottom: 1%;
-  }
-}
-@media (orientation : landscape){
-  .main{
-    margin-top: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
-  min-height: 50%;
-  margin-bottom: 1%;
-  }
-}
 
 
 
@@ -100,18 +130,26 @@ margin-bottom: 1%;
 
 
 
-
-
-
-
-
-
-/* En tête: */
 
  /* styles spécifiques pour les écrans  en mode paysage */
-@media screen and (min-width: 200px) and (orientation: landscape) {
- 
+@media screen and (orientation: landscape) and (min-width : 1279px){
 
+      .blocdesimages2 {
+        display: none;
+      }
+
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 50%;
+  margin-bottom: 1%;
+  }
+
+ /* En tête: */
+ .dropdown {
+  display: none;
+}
 .headerstyle {
   background-color: rgba(144, 100, 39, 1);
   width: 100%;
@@ -120,15 +158,13 @@ margin-bottom: 1%;
   height:6%;
   margin: 0;
   bottom: 0%;
-  
  
 }
 
 .titrestyle {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  
+  justify-content: space-between; 
 }
 
 .titrestyle h1 {
@@ -161,79 +197,7 @@ margin-bottom: 1%;
 }
   
 
-@media (min-width: 200px) {
-  .dropdown {
-    display: none;
-  }
-}
-
-
-  }
-
-
-
-/*header en mode mobile portrait */
-@media (orientation: portrait) {
-
-  
-.headerstyle {
-  background-color: rgba(144, 100, 39, 1);
-  width: 100%;
-  padding-top: 1%;
-  margin-bottom: 5%;
-  height:6%;
-  margin: 0;
-  bottom: 0%;
-  
-}
-
-  
-.headerlink a {
-    display: none;
-  }
-  .titrestyle h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    margin-right: 30%;
-    white-space: nowrap;
-  }
-}
-
-
-
-
-
-
-
-
-
-
 /*Page Connexion Inscription : */
-
-
-.titleh2-admin-form{
-  font-weight: 3rem;
-  margin-top: 4rem;
-  text-align: center;
-}
-.titleh3-admin-form{
-  font-weight: 2rem;
-  margin-top: 1rem;
-}
-
-@media screen and (max-width: 767px) {
-  .form-admin-style {
-      .label-admin-style{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-
-
-      }
-      
-    }
-    
-
-  }
 
 
   /*boutons page connexion : */
@@ -252,12 +216,6 @@ margin-bottom: 1%;
     border: 1px solid black;
 
   }
-
-
-
-
-
-
 
 
 
@@ -299,68 +257,9 @@ margin-bottom: 1%;
   display: block;
 }
 
-
-@media only screen and (min-width: 992px) {
-  .myimage-container {
-    position: relative;
-    display: inline-block;
-    height: 300px; 
-    overflow: hidden; 
-  }
-  
-  .myimage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-  }
-}
-
-
-
-
-
-
-
-
-
-/* format mobile:*/
-@media only screen and (max-width: 767px) {
-  .myimage-container {
-    display: block;
-    height: auto; /* Supprimer la hauteur */
-    overflow: hidden;
-    text-align: center
-  }
-  
-  .myimage {
-    max-width: 50%; /* Changer la largeur maximale */
-    height: auto;
-    object-fit: contain; /* Changer l'ajustement de l'image */
-    margin: 2% auto;
-
-
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*bouton réservation*/
 
-  .button-container{
+.button-container{
   background-color: #ffffff;
   text-align: center;
   width: 100%;
@@ -378,7 +277,6 @@ margin-bottom: 1%;
     text-decoration: none; 
     display: inline-block; 
     font-size: 16px; 
-    margin: 0%; 
     cursor: pointer; 
     border-radius: 8px; 
     width: 40%;
@@ -418,7 +316,6 @@ margin-bottom: 1%;
 }
 
 
-
   .btn-transparent:hover {
     background-color: transparent;
     border-color: transparent;
@@ -432,22 +329,9 @@ margin-bottom: 1%;
   .dropdown-toggle-noarrow::after {
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* horaires pied de page:*/
 
-@media (orientation : landscape){
+
 .titleschedule{
   font-weight: 900;  
   padding-top: 0.5%;
@@ -457,15 +341,17 @@ margin-bottom: 1%;
 }
 
 .footerstyle {
+  font-size: 0.8vw;
   padding-top: 1%;
   width: 100%;
   justify-content: center;
-  font-size: 60%;
+
   text-align: center;
   background-color:rgba(144, 100, 39, 1);
   font-weight: 700;
   min-height: 40vh;
   line-height: 40%;
+
 
 }
 
@@ -473,179 +359,84 @@ margin-bottom: 1%;
   justify-content: center;
   text-align: center;
 }
-}
-
-@media (orientation : portrait){
-
-.titleschedule{
-  margin-top: 5%;
-  margin-bottom: 10%;
-padding-bottom: 1%;
-}
-
-
-.footerstyle {
-  width: 100%;
-  justify-content: center;
-  font-size: 60%;
-  text-align: center;
-  background-color:rgba(144, 100, 39, 1);
-  font-weight: 800;
-  min-height: 30vh;
-  line-height: 30%;
-}
-}
-
-
-@media (orientation : landscape) and (max-width : 763px){
-
-  .titleschedule{
-    margin-top: 1vh;
-    margin-bottom: 2%;
-    padding-bottom: 1%;
-  }
-  
-  
-  .footerstyle {
-    width: 100%;
-    justify-content: center;
-    font-size: 8px;
-    text-align: center;
-    background-color:rgba(144, 100, 39, 1);
-    font-weight: 600;
-    min-height: 45vh;
-    line-height: 0.1;
-    
-  }
- .footerstyle > .footerchildrenstyle {
-      justify-content: center;
-      text-align: center;  
-      margin: 0;
-      padding: 0;
-    }
-
-
-  }
-
-
-
-
-
-
-
-
 
 
 
 
 /*boutonreservation accueil*/
 
-  .button-reservation-style {
-    font-size: 90%;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
- /*Alignement images en mode desktop : */
-@media (min-width: 768px) {
-  .galerieaccueil {
-    display: flex;
-  }
+.button-reservation-style {
+  font-size: 90%;
 }
 
 
+/*Alignement images en mode desktop : */
 
-
-
-
-
-
+.galerieaccueil {
+  display: flex;
+}
 
 
 /*page a propos*/
+.blocapropos{
+font-size: 16px;
+}
 
 .apropotextestyleh1{
-  margin-top: 5%;
-  margin-bottom: 4%;
-  text-align: center;
+margin-top: 5%;
+margin-bottom: 4%;
+text-align: center;
 }
 .apropotextestyle{
-  margin-top: 5%;
-  font-size: 30px;
-  justify-content: center;
+margin-top: 5%; 
+text-align: justify;
 }
 
 
 .mentionslegaletitlesstyle{
-  margin-top: 5%;
-  font-size: 30px;
-  text-align: center;
+margin-top: 5%;
+text-align: center;
 }
 
 .mentionslegalesstyle{
-  line-height: 2%;
-  word-wrap: pre-wrap;
-  text-align: center;
+text-align: center;
 }
+.politiquedeconfidentialitestyle{
+margin-top: 5%;
+text-align: justify;
+}
+
 .mentionslegalescookiesstyle{
-  margin-top: 5%;
-  word-wrap: pre-wrap;
-  margin-bottom: 3%;
+margin-top: 5%;
+word-wrap: pre-wrap;
+margin-bottom: 3%;
+text-align: justify;
 }
-
-
-
-
-
 
 
 
 /* formulaire tableau de bord:*/
 
 .tableaudebordstyle{
-  margin-top: 3%;
-  text-align: center;
+margin-top: 3%;
+text-align: center;
 }
+.titleh2-admin-form{
+font-weight: 3rem;
+margin-top: 4rem;
+text-align: center;
+}
+.titleh3-admin-form{
+font-weight: 2rem;
+margin-top: 1rem;
+}
+
+
+
 
 .footer-form-style{
-  margin-bottom: 4%;
+margin-bottom: 4%;
 }
-
-
-
-@media screen and (max-width: 767px) {
-  .reservationstablestyle {
-    font-size: 8px;
-    width: 95%;
-    font-weight: bold;
-    table-layout: fixed;
-  }
-  .reservationstablestyle td, 
-  .reservationstablestyle th {
-    word-wrap: break-word;
-    padding: 1px;
-    font-size: 8px;
-    font-weight: bold;
-  }
-  .reservationstablestyle thead th {
-    font-size: 8px;
-  }
-}
-
-
-
-
-
-
 
 
 
@@ -653,17 +444,11 @@ padding-bottom: 1%;
 
 
 .form-admin-style-schedules{
-  background-color: rgb(182, 172, 151);
-  border-radius: 8px;
-  border: 0.5px solid black;
+background-color: rgb(182, 172, 151);
+border-radius: 8px;
+border: 0.5px solid black;
 
 }
-
-
-
-
-
-
 
 
 
@@ -672,72 +457,1562 @@ padding-bottom: 1%;
 
 
 .my-table {
-  border-collapse: collapse;
-  width: 100%;
+border-collapse: collapse;
+width: 100%;
 
-  th, td {
-    padding: 10px;
-    text-align: left;
+th, td {
+  padding: 10px;
+  text-align: left;
 
+}
+
+th {
+  text-transform: uppercase;
+  &:first-child {
+    padding-left: 0;
   }
-
-  th {
-    text-transform: uppercase;
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-    &:nth-child(2) {
-      width: 30%;
-    }
-    &:nth-child(3) {
-      width: 50%;
-    }
+  &:last-child {
+    padding-right: 0;
   }
-
-  td {
-    font-size: 14px;
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
+  &:nth-child(2) {
+    width: 30%;
   }
+  &:nth-child(3) {
+    width: 50%;
+  }
+}
+
+td {
+  font-size: 14px;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
 }
 
 th:first-child, td:first-child {
-  padding-left: 0;
+padding-left: 0;
 }
 
 th:last-child, td:last-child {
-  padding-right: 0;
+padding-right: 0;
 }
-
-
-
-
-
 
 
 
 /* bloc disponibilité  page reservation:*/
 
 .disponibiltéstyle{
-  margin-top: 2rem;
-  margin-bottom: 6rem;
+margin-top: 2rem;
+margin-bottom: 6rem;
 
 }
 
 /*couleur boutons*/
-
+/*
+button{
+background-color: rgb(182, 172, 151);
+border-radius: 8px;
+border: 1px solid black;
+}
+*/
 button{
   background-color: rgb(182, 172, 151);
   border-radius: 8px;
   border: 1px solid black;
+  }
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------format mobile:-------------------*/
+@media only screen and (max-width: 480px)and (orientation : portrait) {
+
+  /*Bloc corps principale*/
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 67%;
+  margin-bottom: 1%;
+  overflow-x: hidden;
+  }
+  .blocdesimages{
+    display: none;
+      }
+
+
+  .myimage-container {
+    display: block;
+    height: auto; /* Supprimer la hauteur */
+    overflow: hidden;
+    text-align: center
+  }
+  
+  .myimage {
+    max-width: 50%; /* Changer la largeur maximale */
+    height: auto;
+    object-fit: contain; /* Changer l'ajustement de l'image */
+    margin: 2% auto;
+
+
+  }
+
+/*page a propos*/
+.blocapropos{
+  font-size: 18px;
 }
+
+.apropotextestyleh1{
+  font-size: 22px;
+  margin-top: 5%;
+  margin-bottom: 4%;
+  text-align: center;
+}
+.apropotextestyle{
+  margin-top: 5%; 
+  text-align: justify;
+}
+
+
+.mentionslegaletitlesstyle{
+  font-size: 22px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.mentionslegalesstyle{
+  text-align: center;
+}
+.politiquedeconfidentialitestyle{
+  margin-top: 5%;
+  text-align: justify;
+}
+
+.mentionslegalescookiesstyle{
+  margin-top: 5%;
+  word-wrap: pre-wrap;
+  margin-bottom: 3%;
+  text-align: justify;
+}
+
+/*header en mode mobile portrait */
+
+.headerstyle {
+  background-color: rgba(144, 100, 39, 1);
+  width: 100%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  height:6%;
+  margin: 0;
+  bottom: 0%;
+  //overflow: hidden;
+  
+}
+
+  .headerlink a {
+      display: none;
+    }
+    .titrestyle h1 {
+      font-size: 10vw;
+      margin: 0;
+      white-space: nowrap;
+      padding: 0;
+    }
+    .fluide-icon.bi-list {
+      color: rgb(0, 0, 0);
+      font-size: 8vw;
+    }
+  
+.bodystyle{
+  height: 100vh;
+  width: 100vw;
+  background-color:white;
+  font-family: 'Montserrat', sans-serif;
+  pointer-events: auto;
+  margin: 0%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-size: 18px;
+  }
+
+/* bloc connexion:*/
+
+
+/*Titre de la page carte: */
+.h1cartestyle{
+  margin-top: 4%;
+  font-size: 3rem;
+}
+
+  /*Tableau de bord*/
+  .table-container{
+    overflow-x: auto;
+  }
+  .reservationstablestyle {
+    font-size: 12px;
+    width: auto; /* Utilisez 'auto' pour permettre au tableau de s'adapter à la largeur du contenu */
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    overflow-x: scroll; /* Permet le défilement horizontal si nécessaire */
+  }
+  
+  .reservationstablestyle td, 
+  .reservationstablestyle th {
+    width: 20px; /* Définissez la largeur des colonnes sur 20px */
+    padding: 1px;
+    font-weight: bold;
+  }
+  
+  .reservationstablestyle thead th {
+  }
+  .div-refresh-button-reservation{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+ 
+  }
+  .refresh-button-reservation{
+    width: 40%;
+  }
+  .titlecarte-style{
+    margin-top: 4rem;
+  }
+
+  .affichage-donnees{
+    margin-top: 3%;
+  }
+
+    .form-admin-style {
+        .label-admin-style{
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }       
+      }     
+      button{
+        background-color: rgb(182, 172, 151);
+        border-radius: 8px;
+        border: 1px solid black;
+        }
+
+/*Pied de page*/
+.footerstyle {
+  padding-top: 1%;
+  padding-bottom: 3%;
+  width: 100%;
+  justify-content: center;
+  font-size: 2.8vw;
+  text-align: center;
+  background-color:rgba(144, 100, 39, 1);
+  font-weight: 700;
+}
+
+.footerstyle > .footerchildrenstyle {
+  justify-content: center;
+  text-align: center;
+}
+.titleschedule{
+  font-size: 5.6vw;
+  font-weight: 900;  
+  margin-bottom: 4%;
+}
+
+
+/*Page reservation*/
+
+
+  .reservationstyle {
+    font-size: 18px;
+    
+  }
+  .rowDate{
+    margin-top: 1%;
+    padding: 0;
+    label{
+      margin-right: 1%;
+    }
+    input{
+      border: 1px solid black;
+    }
+  }
+  
+  .rowHeure{
+    margin-top: 1%;
+    padding: 0;
+    label{
+      margin-right: 1%;
+    }
+    select{
+      border: 1px solid black;
+    }
+  }
+  
+.rowemail{
+margin-top: 3%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+.rowConvives{
+margin-top: 1%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+.rowAllergies{
+margin-top: 1%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+}
+
+
+
+
+/*-------mobile paysage-----*/
+@media screen and (orientation: landscape) and (max-width : 763px) {
+  
+  /* Corps principale*/
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 50%;
+  margin-bottom: 1%;
+  overflow-x: hidden;
+  }
+
+.bodystyle{
+    height: 100vh;
+    width: 100vw;
+    background-color:white;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: auto;
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+
+ /* En tête: */
+ .dropdown {
+  display: none;
+}
+/*
+.text-end{
+  display: none;
+}*/
+.headerstyle {
+  background-color: rgba(144, 100, 39, 1);
+  width: 100%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  height:6%;
+  margin: 0;
+  bottom: 0%;
+  overflow-x: scroll;
+}
+.blocdescrollhorizontal{
+  overflow-x: auto;
+}
+
+.titrestyle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  
+}
+
+.titrestyle h1 {
+  font-size: 6vw;
+  margin-right: 1%;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.headerlink a{
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin-left: 2.5vh;
+}
+
+.headerlink span {
+  margin-left: 1%;
+}
+
+.aproposestyle {
+  white-space: nowrap;
+
+}
+.pageadministrateurestyle {
+  white-space: nowrap;
+
+}
+
+
+
+/* Ici le css de la galerie d'accueil:*/
+.blocdesimages{
+  display: none;
+}
+
+.blocdesimages2 {
+  overflow: hidden; /* Ajout d'une propriété overflow pour contenir les flottants */
+}
+
+.myimage-container {
+  width: 30%; /* Utilisation d'une largeur en pourcentage pour aligner les 3 images sur une même ligne */
+  float: left;
+  position: relative;
+  margin: 0.8%;
+}
+
+.myimage {
+  height: auto;
+  max-width: 100%;
+}
+
+.mytooltip {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  background-color: rgba(123, 123, 123, 0.679);
+  z-index: 2;
+}
+
+.myimage-container:hover .mytooltip {
+  display: block;
+}
+
+
+/*bouton de reservation*/
+.button-container{
+  background-color: #ffffff;
+  text-align: center;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+  .button-reservation-style {
+    background-color: rgb(182, 172, 151);
+    border-radius: 2%;
+    border: 2px solid black; 
+    color: rgb(0, 0, 0); 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 0%; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    width: 40%;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .h1cartestyle{
+    margin-top: 4%;
+    font-size: 3rem;
+  }
+
+/*Page reservation*/
+.reservationstyle {
+  padding-left: 2%;
+
+  .rowDate{
+    margin-top: 1%;
+    padding: 0;
+    label{
+      margin-right: 1%;
+    }
+    input{
+      border: 1px solid black;
+    }
+  }
+  
+  .rowHeure{
+    margin-top: 1%;
+    padding: 0;
+    label{
+      margin-right: 1%;
+    }
+    select{
+      border: 1px solid black;
+    }
+  }
+
+.rowemail{
+margin-top: 3%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+.rowConvives{
+margin-top: 1%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+.rowAllergies{
+margin-top: 1%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+}
+
+  /*Tableau de bord*/
+  .table-container{
+    overflow-x: auto;
+  }
+  .reservationstablestyle {
+    font-size: 12px;
+    width: auto; /* Utilisez 'auto' pour permettre au tableau de s'adapter à la largeur du contenu */
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    overflow-x: scroll; /* Permet le défilement horizontal si nécessaire */
+  }
+  
+  .reservationstablestyle td, 
+  .reservationstablestyle th {
+    width: 20px; /* Définissez la largeur des colonnes sur 20px */
+    padding: 1px;
+    font-weight: bold;
+  }
+  
+  .reservationstablestyle thead th {
+  }
+  .div-refresh-button-reservation{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+ 
+  }
+  .refresh-button-reservation{
+    width: 40%;
+  }
+  .titlecarte-style{
+    margin-top: 4rem;
+  }
+
+  .affichage-donnees{
+    margin-top: 3%;
+  }
+
+    .form-admin-style {
+        .label-admin-style{
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }       
+      }     
+      button{
+        background-color: rgb(182, 172, 151);
+        border-radius: 8px;
+        border: 1px solid black;
+        }
+
+/* Pied de page*/
+.footerstyle {
+  padding-top: 1%;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.4vw;
+  text-align: center;
+  background-color:rgba(144, 100, 39, 1);
+  font-weight: 700;
+  overflow: hidden;
+  /*box-sizing: border-box;*/
+
+}
+
+.footerstyle > .footerchildrenstyle {
+  justify-content: center;
+  text-align: center;
+}
+.titleschedule{
+  font-weight: 900;  
+  padding-top: 0.5%;
+  padding-bottom: 2%;
+  margin-bottom: 1.1%;
+  line-height: 30%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------tablette orientation portrait-----*/
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) and (orientation : portrait) {
+  .bodystyle{
+    height: 100vh;
+    width: 100vw;
+    background-color:white;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: auto;
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-size: 18px;
+    
+
+  /*Bloc corps principale*/
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 67%;
+  margin-bottom: 1%;
+  overflow-x: hidden;
+
+  }
+ 
+
+  .blocdesimages{
+display: none;
+  }
+  .blocdesimages2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .myimage-container {
+    display: block;
+    width: 50%;
+    margin: 2% auto;
+  }
+  
+  .myimage {
+    max-width: 100%; /* Rétablir la largeur maximale */
+    height: auto;
+    object-fit: contain;
+  }
+  
+/*header*/
+
+.headerstyle {
+  background-color: rgba(144, 100, 39, 1);
+  width: 100%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  height:6%;
+  margin: 0;
+  bottom: 0%;
+  //overflow: hidden;
+  
+}
+
+  .headerlink a {
+      display: none;
+    }
+    .titrestyle h1 {
+      font-size: 10vw;
+      margin: 0;
+      white-space: nowrap;
+      padding: 0;
+    }
+
+    .fluide-icon.bi-list {
+      color: rgb(0, 0, 0);
+      font-size: 8vw;
+    }
+    
+.dropdown-menu{
+  font-size: 4.2vw;
+}
+
+/*page a propos*/
+.blocapropos{
+  font-size: 18px;
+}
+
+.apropotextestyleh1{
+  font-size: 22px;
+  margin-top: 5%;
+  margin-bottom: 4%;
+  text-align: center;
+}
+.apropotextestyle{
+  margin-top: 5%; 
+  text-align: justify;
+}
+
+
+.mentionslegaletitlesstyle{
+  font-size: 22px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.mentionslegalesstyle{
+  text-align: center;
+}
+.politiquedeconfidentialitestyle{
+  margin-top: 5%;
+  text-align: justify;
+}
+
+.mentionslegalescookiesstyle{
+  margin-top: 5%;
+  word-wrap: pre-wrap;
+  margin-bottom: 3%;
+  text-align: justify;
+}
+  
+/* bloc connexion:*/
+/*Titre page carte*/
+.h1cartestyle{
+  margin-top: 4%;
+  font-size: 3rem;
+}
+
+
+
+
+  /*Tableau de bord*/
+
+  .table-container{
+    overflow-x: auto;
+  }
+  .reservationstablestyle {
+    font-size: 12px;
+    width: auto; /* Utilisez 'auto' pour permettre au tableau de s'adapter à la largeur du contenu */
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    overflow-x: scroll; /* Permet le défilement horizontal si nécessaire */
+  }
+  
+  .reservationstablestyle td, 
+  .reservationstablestyle th {
+    width: 20px; /* Définissez la largeur des colonnes sur 20px */
+    padding: 1px;
+    font-weight: bold;
+  }
+  
+  .reservationstablestyle thead th {
+  }
+  .div-refresh-button-reservation{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+ 
+  }
+  .refresh-button-reservation{
+    width: 40%;
+  }
+  .titlecarte-style{
+    margin-top: 4rem;
+  }
+
+  .affichage-donnees{
+    margin-top: 3%;
+  }
+
+    .form-admin-style {
+        .label-admin-style{
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }       
+      }     
+    .input-admin-style{
+      border: 1px solid black;
+    }
+    button{
+      background-color: rgb(182, 172, 151);
+      border-radius: 8px;
+      border: 1px solid black;
+      }
+
+/* Pied de page */
+      .footerstyle {
+        padding-top: 1%;
+        padding-bottom: 3%;
+        width: 100%;
+        justify-content: center;
+        font-size: 2.9vw;
+        text-align: center;
+        background-color:rgba(144, 100, 39, 1);
+        font-weight: 700;
+      }
+      
+      .footerstyle > .footerchildrenstyle {
+        justify-content: center;
+        text-align: center;
+      }
+      .titleschedule{
+        font-size: 6.6vw;
+        font-weight: 900;  
+        margin-bottom: 3.6%;
+      }
+
+/*bouton reservation accueil*/
+.button-reservation-style{
+font-size: 3vh;
+}
+
+
+/*Page reservation*/
+.reservationstyle {
+    //font-size: 24px;
+    padding-left: 2%;
+
+    .rowDate{
+      margin-top: 1%;
+      padding: 0;
+      label{
+        margin-right: 1%;
+      }
+      input{
+        border: 1px solid black;
+      }
+    }
+    
+    .rowHeure{
+      margin-top: 1%;
+      padding: 0;
+      label{
+        margin-right: 1%;
+      }
+      select{
+        border: 1px solid black;
+      }
+    }
+
+.rowemail{
+  margin-top: 3%;
+  padding: 0;
+  label{
+    margin-right: 1%;
+  }
+  input{
+    border: 1px solid black;
+  }
+}
+
+.rowConvives{
+  margin-top: 1%;
+  padding: 0;
+  label{
+    margin-right: 1%;
+  }
+  input{
+    border: 1px solid black;
+  }
+}
+
+.rowAllergies{
+  margin-top: 1%;
+  padding: 0;
+  label{
+    margin-right: 1%;
+  }
+  input{
+    border: 1px solid black;
+  }
+}
+
+}
+
+}
+}
+
+
+/*-------tablette orientation paysage-----*/
+@media screen and (min-width: 767px)and (max-width: 1279px)   {
+  
+  /* Corps principale*/
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 50%;
+  margin-bottom: 1%;
+  overflow-x: hidden;
+  }
+
+.bodystyle{
+    height: 100vh;
+    width: 100vw;
+    background-color:white;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: auto;
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+
+ /* En tête: */
+ .dropdown {
+  display: none;
+}
+.text-end{
+  display: none;
+}
+.headerstyle {
+  background-color: rgba(144, 100, 39, 1);
+  width: 100%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  height:6%;
+  margin: 0;
+  bottom: 0%;
+  overflow-x: scroll;
+}
+.blocdescrollhorizontal{
+  overflow-x: auto;
+}
+
+.titrestyle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  
+}
+
+.titrestyle h1 {
+  font-size: 6vw;
+  margin-right: 1%;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.headerlink a{
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin-left: 2.5vh;
+}
+
+.headerlink span {
+  margin-left: 1%;
+}
+
+.aproposestyle {
+  white-space: nowrap;
+
+}
+.pageadministrateurestyle {
+  white-space: nowrap;
+
+}
+
+
+
+/* Ici le css de la galerie d'accueil:*/
+
+.blocdesimages2 {
+  display: none;
+}
+
+.myimage-container {
+  width: 90%; /* Utilisation d'une largeur en pourcentage pour aligner les 3 images sur une même ligne */
+  float: left;
+  position: relative;
+  margin: 0.8%;
+  padding-left: 16%;
+}
+
+.myimage {
+  height: auto;
+  max-width: 100%;
+}
+
+.mytooltip {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  background-color: rgba(123, 123, 123, 0.679);
+  z-index: 2;
+}
+
+.myimage-container:hover .mytooltip {
+  display: block;
+}
+
+/*Titre page carte*/
+.h1cartestyle{
+  margin-top: 4%;
+  font-size: 3rem;
+}
+/*bouton de reservation*/
+.button-container{
+  background-color: #ffffff;
+  text-align: center;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+  .button-reservation-style {
+    background-color: rgb(182, 172, 151); 
+    border-radius: 2%;
+    border: 2px solid black; 
+    color: rgb(0, 0, 0); 
+    padding: 5px 10px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 2vw; 
+    margin-top: 5%; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    width: 40%;
+    font-weight: 600;
+  }
+
+/*Page reservation*/
+.reservationstyle {
+  //font-size: 24px;
+  padding-left: 2%;
+
+  .rowDate{
+    margin-top: 1%;
+    padding: 0;
+    label{
+      margin-right: 1%;
+    }
+    input{
+      border: 1px solid black;
+    }
+  }
+  
+  .rowHeure{
+    margin-top: 1%;
+    padding: 0;
+    label{
+      margin-right: 1%;
+    }
+    select{
+      border: 1px solid black;
+    }
+  }
+
+.rowemail{
+margin-top: 3%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+.rowConvives{
+margin-top: 1%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+
+.rowAllergies{
+margin-top: 1%;
+padding: 0;
+label{
+  margin-right: 1%;
+}
+input{
+  border: 1px solid black;
+}
+}
+}
+
+  /*Tableau de bord*/
+  .table-container{
+    overflow-x: auto;
+  }
+  .reservationstablestyle {
+    font-size: 12px;
+    width: auto; /* Utilisez 'auto' pour permettre au tableau de s'adapter à la largeur du contenu */
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    overflow-x: scroll; /* Permet le défilement horizontal si nécessaire */
+  }
+  
+  .reservationstablestyle td, 
+  .reservationstablestyle th {
+    width: 20px; /* Définissez la largeur des colonnes sur 20px */
+    padding: 1px;
+    font-weight: bold;
+  }
+  
+  .reservationstablestyle thead th {
+  }
+  .div-refresh-button-reservation{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+ 
+  }
+  .refresh-button-reservation{
+    width: 40%;
+  }
+  .titlecarte-style{
+    margin-top: 4rem;
+  }
+
+  .affichage-donnees{
+    margin-top: 3%;
+  }
+
+    .form-admin-style {
+        .label-admin-style{
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }       
+      }     
+      button{
+        background-color: rgb(182, 172, 151);
+        border-radius: 8px;
+        border: 1px solid black;
+        }
+
+
+/* Pied de page*/
+.footerstyle {
+  padding-top: 1%;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.4vw;
+  text-align: center;
+  background-color:rgba(144, 100, 39, 1);
+  font-weight: 700;
+  overflow: hidden;
+  /*box-sizing: border-box;*/
+
+}
+
+.footerstyle > .footerchildrenstyle {
+  justify-content: center;
+  text-align: center;
+}
+.titleschedule{
+  font-weight: 900;  
+  padding-top: 0.5%;
+  padding-bottom: 2%;
+  margin-bottom: 1.1%;
+  line-height: 30%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------desktop orientation portrait-----*/
+
+@media only screen and (min-width: 1024px) and (orientation : portrait) {
+
+  .bodystyle{
+    height: 100vh;
+    width: 100vw;
+    background-color:white;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: auto;
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-size: 18px;
+    
+
+  /*Bloc corps principale*/
+  .main{
+    margin-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-height: 67%;
+  margin-bottom: 1%;
+  overflow-x: hidden;
+
+  }
+ 
+
+  .blocdesimages{
+display: none;
+  }
+  .blocdesimages2 {
+    display: none;/*
+    display: flex;
+    flex-direction: column;
+    align-items: center;*/
+  }
+  
+  .myimage-container {
+    display: block;
+    width: 50%;
+    margin: 2% auto;
+  }
+  
+  .myimage {
+    max-width: 100%; /* Rétablir la largeur maximale */
+    height: auto;
+    object-fit: contain;
+  }
+  
+/*header*/
+
+.headerstyle {
+  background-color: rgba(144, 100, 39, 1);
+  width: 100%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  height:6%;
+  margin: 0;
+  bottom: 0%;
+  //overflow-y: hidden;
+  
+} 
+.headerlink a {
+      display: none;
+    }
+/*
+.blocdescrollhorizontal{
+  overflow-x: auto;
+}*/
+/*
+.dropdown {
+  display: block;
+}   
+.dropdown-menu{
+  font-size: 2.2vw;
+}*/
+ 
+    .titrestyle h1 {
+      font-size: 8vw;
+      margin: 0;
+      white-space: nowrap;
+      padding: 0;
+
+    }
+
+.dropdown{
+  display: contents;
+}
+
+
+
+    .fluide-icon.bi-list {
+      color: rgb(0, 0, 0);
+      font-size: 5vw;
+    }
+    
+
+
+/*page a propos*/
+.blocapropos{
+  font-size: 18px;
+}
+
+.apropotextestyleh1{
+  font-size: 22px;
+  margin-top: 5%;
+  margin-bottom: 4%;
+  text-align: center;
+}
+.apropotextestyle{
+  margin-top: 5%; 
+  text-align: justify;
+}
+
+
+.mentionslegaletitlesstyle{
+  font-size: 22px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.mentionslegalesstyle{
+  text-align: center;
+}
+.politiquedeconfidentialitestyle{
+  margin-top: 5%;
+  text-align: justify;
+}
+
+.mentionslegalescookiesstyle{
+  margin-top: 5%;
+  word-wrap: pre-wrap;
+  margin-bottom: 3%;
+  text-align: justify;
+}
+  
+/* bloc connexion:*/
+/*Titre page carte*/
+.h1cartestyle{
+  margin-top: 4%;
+  font-size: 3rem;
+}
+
+
+
+
+  /*Tableau de bord*/
+
+  .table-container{
+    overflow-x: auto;
+  }
+  .reservationstablestyle {
+    font-size: 12px;
+    width: auto; /* Utilisez 'auto' pour permettre au tableau de s'adapter à la largeur du contenu */
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    overflow-x: scroll; /* Permet le défilement horizontal si nécessaire */
+  }
+  
+  .reservationstablestyle td, 
+  .reservationstablestyle th {
+    width: 20px; /* Définissez la largeur des colonnes sur 20px */
+    padding: 1px;
+    font-weight: bold;
+  }
+  
+  .reservationstablestyle thead th {
+  }
+  .div-refresh-button-reservation{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+ 
+  }
+  .refresh-button-reservation{
+    width: 40%;
+  }
+  .titlecarte-style{
+    margin-top: 4rem;
+  }
+
+  .affichage-donnees{
+    margin-top: 3%;
+  }
+
+    .form-admin-style {
+        .label-admin-style{
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }       
+      }     
+    .input-admin-style{
+      border: 1px solid black;
+    }
+    button{
+      background-color: rgb(182, 172, 151);
+      border-radius: 8px;
+      border: 1px solid black;
+      }
+
+/* Pied de page */
+      .footerstyle {
+        padding-top: 1%;
+        padding-bottom: 3%;
+        width: 100%;
+        justify-content: center;
+        font-size: 2.9vw;
+        text-align: center;
+        background-color:rgba(144, 100, 39, 1);
+        font-weight: 700;
+      }
+      
+      .footerstyle > .footerchildrenstyle {
+        justify-content: center;
+        text-align: center;
+      }
+      .titleschedule{
+        font-size: 6.6vw;
+        font-weight: 900;  
+        margin-bottom: 3.6%;
+      }
+
+/*bouton reservation accueil*/
+.button-reservation-style{
+font-size: 3vh;
+}
+
+
+/*Page reservation*/
+.reservationstyle {
+    //font-size: 24px;
+    padding-left: 2%;
+
+    .rowDate{
+      margin-top: 1%;
+      padding: 0;
+      label{
+        margin-right: 1%;
+      }
+      input{
+        border: 1px solid black;
+      }
+    }
+    
+    .rowHeure{
+      margin-top: 1%;
+      padding: 0;
+      label{
+        margin-right: 1%;
+      }
+      select{
+        border: 1px solid black;
+      }
+    }
+
+.rowemail{
+  margin-top: 3%;
+  padding: 0;
+  label{
+    margin-right: 1%;
+  }
+  input{
+    border: 1px solid black;
+  }
+}
+
+.rowConvives{
+  margin-top: 1%;
+  padding: 0;
+  label{
+    margin-right: 1%;
+  }
+  input{
+    border: 1px solid black;
+  }
+}
+
+.rowAllergies{
+  margin-top: 1%;
+  padding: 0;
+  label{
+    margin-right: 1%;
+  }
+  input{
+    border: 1px solid black;
+  }
+}
+
+}
+
+}
+  
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -26,15 +26,15 @@ if (isset($_SESSION['allergies'])) {
     <div class="reservationstyle">
         <h1>Réservation</h1>
         <form method="POST" action="modeles/insertionsdonnees/traitement_reservation.php">
-            <div>
-                <label for="date-input">Date :</label>
-                <input type="date" id="date-input" name="date" required min="<?php echo date('Y-m-d'); ?>">
+            <div class="rowDate">
+                <label for="date-input" >Date : </label>
+                <input type="date" id="date-input" name="date" required min="<?php echo date('Y-m-d'); ?>" class="datereservation-input">
 
             </div>
             <br>
-            <div>
-                <label for="heure-input">Heure :</label>
-                <select id="heure-input" name="heure" required>
+            <div class="rowHeure">
+                <label for="heure-input" >Heure : </label>
+                <select id="heure-input" name="heure" class="heurereservation-input"required>
                     <option value="12:00">12:00</option>
                     <option value="12:15">12:15</option>
                     <option value="12:30">12:30</option>
@@ -63,16 +63,16 @@ if (isset($_SESSION['allergies'])) {
             <button id="disponibilites-btn" type="button">Vérifier les disponibilités</button>
             <div id="disponibilites-container"></div>
             <div class="reservationstyle" id="reservation-form-container" style="display:none;">
-                <div>
-                    <label>Email : <input type="email" name="email" value="<?php echo $email; ?>" required></label>
+                <div class="rowemail">
+                    <label>Email : </label><input type="email" name="email" value="<?php echo $email; ?>" class="emailreservation-input"required>
                 </div>
                 <br>
                 <div>
-                    <label>Convives : <input type="number" name="couverts" value="<?php echo $guestsnumber; ?>" required max="30" min="1"></label>
+                    <label class="rowConvives">Convives : <input type="number" name="couverts" value="<?php echo $guestsnumber; ?>" required max="30" min="1" class="numberreservation-input"></label>
                 </div>
                 <br>
                 <div>
-                    <label>Allergies : <input type="text" name="allergies" value="<?php echo $allergies; ?>"></label>
+                    <label class="rowAllergies">Allergies : <input type="text" name="allergies" value="<?php echo $allergies; ?>" class="allergiesreservation-input"></label>
                 </div>
                 <br>
                 <button type="submit" id="submit-btn">Envoyer</button>
