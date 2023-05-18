@@ -93,10 +93,6 @@ if (isset($_SESSION['allergies'])) {
 
 
 
-
-
-
-
 // Réinitialise les éléments de réservation lorsque la date est modifiée 
 
 function resetReservation() {
@@ -154,68 +150,38 @@ disponibilitesBtn.addEventListener('click', function() {
 
 
 
+/*Contrôle des données à envoyer*/
 
 
-// Sélectionner les éléments du formulaire
-const reservationDateInput = document.getElementById('date-input');
-const reservationHeureInput = document.getElementById('heure-input');
-const emailInput = document.querySelector('input[name="email"]');
 const submitButton = document.getElementById('submit-btn');
-const errorContainer = document.getElementById('error-container');
 
-// Cacher le message d'erreur par défaut
-errorContainer.style.display = 'none';
+submitButton.addEventListener('click', function(event) {
+  // Votre logique de vérification ici
+  const selectedDate = new Date(dateInput.value);
+  const currentDate = new Date();
+  const selectedTime = heureInput.value;
 
-// Vérifier l'heure lors de la modification de la date ou de l'heure
-reservationDateInput.addEventListener('change', validateForm);
-reservationHeureInput.addEventListener('change', validateForm);
-emailInput.addEventListener('input', validateForm);
-
-function validateForm() {
-    const selectedDate = new Date(reservationDateInput.value);
-    const currentDate = new Date();
-    const selectedTime = reservationHeureInput.value;
-
-    // Vérifier si l'heure choisie pour une réservation du jour actuel est ultérieure à l'heure actuelle
-    const isTimeValid = !(selectedDate.toISOString().split('T')[0] === currentDate.toISOString().split('T')[0] && isTimeAfterCurrentTime(selectedTime, currentDate));
-
-    // Vérifier si tous les champs obligatoires sont remplis
-    const isAllFieldsFilled = reservationDateInput.value !== '' && reservationHeureInput.value !== '' && emailInput.value !== '';
-
-    // Afficher le message d'erreur si l'heure est invalide
-    if (isTimeValid) {
-        errorContainer.style.display = 'none';
-    } else {
-        errorContainer.style.display = 'block';
-    }
-
-    // Bloquer l'envoi du formulaire si les conditions ne sont pas validées
-    if (isTimeValid && isAllFieldsFilled) {
-        submitButton.disabled = false;
-    } else {
-        submitButton.disabled = true;
-    }
-}
-
-function isTimeAfterCurrentTime(selectedTime, currentDate) {
+  if (selectedDate.toDateString() === currentDate.toDateString()) {
     const [selectedHour, selectedMinute] = selectedTime.split(':');
     const currentHour = currentDate.getHours();
     const currentMinute = currentDate.getMinutes();
 
-    if (parseInt(selectedHour) > currentHour) {
-        return true;
-    } else if (parseInt(selectedHour) === currentHour && parseInt(selectedMinute) >= currentMinute) {
-        return true;
+    if (
+      parseInt(selectedHour) < currentHour ||
+      (parseInt(selectedHour) === currentHour && parseInt(selectedMinute) <= currentMinute)
+    ) {
+      event.preventDefault(); // Bloquer l'envoi du formulaire
+      alert('L\'heure sélectionnée est antérieure ou égale à l\'heure actuelle. Veuillez choisir une heure ultérieure.');
     }
+  }
+});
 
-    return false;
-}
+
+
 
 
 
     </script>
-
-
 
 
 <?php
