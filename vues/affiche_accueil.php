@@ -67,7 +67,7 @@ ob_start();
     </div>
     <div class="myimage-container">
         <?php if (!empty($mybddTable[2])) : ?>
-            <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[2]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[2]['titre']) ?>">
+            <img class="img-fluid myimage imgstyledesktopportrait" src="./galerie/<?= $mybddTable[2]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[2]['titre']) ?>">
             <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[2]['titre']) ?></div>
         <?php endif; ?>
     </div>
