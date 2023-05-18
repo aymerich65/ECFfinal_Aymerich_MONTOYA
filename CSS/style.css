@@ -225,7 +225,7 @@
     margin-bottom: 2%;
   }
   .button-reservation-style {
-    background-color: blue;
+    background-color: rgb(182, 172, 151);
     border-radius: 2%;
     border: 2px solid black;
     color: rgb(0, 0, 0);
@@ -776,7 +776,7 @@
     margin: 0%;
     cursor: pointer;
     border-radius: 8px;
-    width: 40%;
+    width: 25%;
     font-size: 16px;
     font-weight: 600;
   }
@@ -1274,7 +1274,7 @@
     margin-top: 5%;
     cursor: pointer;
     border-radius: 8px;
-    width: 40%;
+    width: 25%;
     font-weight: 600;
   }
   /*Page reservation*/
