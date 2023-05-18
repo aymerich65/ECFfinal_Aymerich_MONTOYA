@@ -55,7 +55,7 @@ ob_start();
 <div class="blocdesimages2">
     <div class="myimage-container">
         <?php if (!empty($mybddTable[0])) : ?>
-            <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[0]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[0]['titre']) ?>">
+            <img class="img-fluid myimage" src="./galerie/<?= $mybddTable[0]['nom_fichier'] ?>" data-title="<?= str_replace('_', ' ', $mybddTable[0]['titre']) ?>" >
             <div class="mytooltip"><?= str_replace('_', ' ', $mybddTable[0]['titre']) ?></div>
         <?php endif; ?>
     </div>

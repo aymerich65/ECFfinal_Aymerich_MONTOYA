@@ -189,16 +189,19 @@
   }
   .myimage {
     height: auto;
-    max-width: 100%;
+    max-width: 90%;
   }
   .galerieaccueil {
     display: inline-block;
     position: relative;
     width: 100%;
   }
+  /* Description de l'image au survole */
   .myimage-container {
     position: relative;
     display: inline-block;
+    padding: 2%;
+    justify-content: center;
   }
   .mytooltip {
     position: absolute;
@@ -442,6 +445,27 @@
     -o-object-fit: contain;
        object-fit: contain; /* Changer l'ajustement de l'image */
     margin: 2% auto;
+  }
+  /*Description image si touchée */
+  .myimage-container {
+    position: relative;
+    display: inline-block;
+    padding: 2%;
+    justify-content: center;
+  }
+  .mytooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(123, 123, 123, 0.679);
+    z-index: 2;
+    opacity: 0; /* Rend la description transparente par défaut */
+    transition: opacity 0.3s ease; /* Ajoute une transition fluide */
+  }
+  .myimage-container:hover .mytooltip {
+    opacity: 1; /* Rend la description opaque lorsque l'utilisateur survole l'image */
   }
   /*page a propos*/
   .blocapropos {
@@ -928,6 +952,26 @@
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .bodystyle .myimage-container {
+    position: relative;
+    display: inline-block;
+    padding: 2%;
+    justify-content: center;
+  }
+  .bodystyle .mytooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(123, 123, 123, 0.679);
+    z-index: 2;
+    opacity: 0; /* Rend la description transparente par défaut */
+    transition: opacity 0.3s ease; /* Ajoute une transition fluide */
+  }
+  .bodystyle .myimage-container:hover .mytooltip {
+    opacity: 1; /* Rend la description opaque lorsque l'utilisateur survole l'image */
+  }
   .bodystyle .headerstyle {
     background-color: rgb(144, 100, 39);
     width: 100%;
@@ -1365,17 +1409,7 @@
     overflow-x: hidden;
     font-size: 18px;
     /*Bloc corps principale*/
-    /*.blocdesimages{
-    display: none;
-      }*/
-    /*
-    .imgstyledesktopportrait{
-      height: auto;
-      width: 80%;
-      margin: auto;
-
-
-    }*/
+    /* Description de l'image au survole */
     /*header*/
     /*
     .blocdescrollhorizontal{
@@ -1422,6 +1456,25 @@ align-items: center;*/
     height: auto;
     -o-object-fit: contain;
        object-fit: contain;
+  }
+  .bodystyle .myimage-container {
+    position: relative;
+    display: inline-block;
+    padding: 2%;
+    justify-content: center;
+  }
+  .bodystyle .mytooltip {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    background-color: rgba(123, 123, 123, 0.679);
+    z-index: 2;
+  }
+  .bodystyle .myimage-container:hover .mytooltip {
+    display: block;
   }
   .bodystyle .headerstyle {
     background-color: rgb(144, 100, 39);
