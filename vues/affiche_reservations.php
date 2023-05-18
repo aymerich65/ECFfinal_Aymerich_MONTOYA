@@ -143,10 +143,6 @@ disponibilitesBtn.addEventListener('click', function() {
             reservationFormContainer.style.display = 'none';
         });
 
-        heureInput.addEventListener('change', function() {
-            reservationFormContainer.style.display = 'none';
-        });
-
 
 
 

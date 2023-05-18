@@ -47,7 +47,7 @@ if(isset($_SESSION['password']) && isset($_SESSION['email'])){
 }catch(Exception $e){
 echo 'un erreur c\'est produite';
 }
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 
 
