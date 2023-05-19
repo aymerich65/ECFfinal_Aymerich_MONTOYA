@@ -4,69 +4,53 @@ require_once 'modeles/recuperations_donnees/script_recuperation_horaires.php';
 <div class="footerchildrenstyle ">
     <h3 class="titleschedule">Nos horaires d'ouverture</h3>
 
+
     <p>Lundi:
-        <?php
-        if ($mondayOpeningNoon != '00:00:00' || $mondayOpeningEvening != '00:00:00') {
-            echo $mondayOpeningDay."&nbsp;&nbsp;";
-            if ($mondayOpeningNoon != '00:00:00') {
-                echo substr($mondayOpeningNoon, 0, 5) . "-" . substr($mondayClosingNoon, 0, 5) . "&nbsp;&nbsp;";
-            }
-            if ($mondayOpeningEvening != '00:00:00') {
-                echo substr($mondayOpeningEvening, 0, 5) . "-" . substr($mondayClosingEvening, 0, 5);
-            }
-        } else {
-            echo "Fermé";
+    <?php
+    if ($mondayOpeningNoon != '00:00:00' || $mondayOpeningEvening != '00:00:00') {
+        echo $mondayOpeningDay."&nbsp;&nbsp;";
+        if ($mondayOpeningNoon != '00:00:00') {
+            echo date("H:i", strtotime($mondayOpeningNoon))."-".date("H:i", strtotime($mondayClosingNoon))."&nbsp;&nbsp;";
         }
-        ?>
-    </p>
+        if ($mondayOpeningEvening != '00:00:00') {
+            echo date("H:i", strtotime($mondayOpeningEvening))."-".date("H:i", strtotime($mondayClosingEvening));
+        }
+    } else {
+        echo "Fermé";
+    }
+    ?>
+</p>
+<p>Mercredi:
+    <?php
+    if ($wednesdayOpeningNoon != '00:00:00' || $wednesdayOpeningEvening != '00:00:00') {
+        echo $wednesdayOpeningDay."&nbsp;&nbsp;";
+        if ($wednesdayOpeningNoon != '00:00:00') {
+            echo date("H:i", strtotime($wednesdayOpeningNoon))."-".date("H:i", strtotime($wednesdayClosingNoon))."&nbsp;&nbsp;";
+        }
+        if ($wednesdayOpeningEvening != '00:00:00') {
+            echo date("H:i", strtotime($wednesdayOpeningEvening))."-".date("H:i", strtotime($wednesdayClosingEvening));
+        }
+    } else {
+        echo "Fermé";
+    }
+    ?>
+</p>
+<p>Mardi:
+    <?php
+    if ($tuesdayOpeningNoon != '00:00:00' || $tuesdayOpeningEvening != '00:00:00') {
+        echo $tuesdayOpeningDay."&nbsp;&nbsp;";
+        if ($tuesdayOpeningNoon != '00:00:00') {
+            echo date("H:i", strtotime($tuesdayOpeningNoon))."-".date("H:i", strtotime($tuesdayClosingNoon))."&nbsp;&nbsp;";
+        }
+        if ($tuesdayOpeningEvening != '00:00:00') {
+            echo date("H:i", strtotime($tuesdayOpeningEvening))."-".date("H:i", strtotime($tuesdayClosingEvening));
+        }
+    } else {
+        echo "Fermé";
+    }
+    ?>
+</p>
 
-    <p>Mardi:
-        <?php
-        if ($tuesdayOpeningNoon != '00:00:00' || $tuesdayOpeningEvening != '00:00:00') {
-            echo $tuesdayOpeningDay."&nbsp;&nbsp;";
-            if ($tuesdayOpeningNoon != '00:00:00') {
-                echo substr($tuesdayOpeningNoon, 0, 5) . "-" . substr($tuesdayClosingNoon, 0, 5) . "&nbsp;&nbsp;";
-            }
-            if ($tuesdayOpeningEvening != '00:00:00') {
-                echo substr($tuesdayOpeningEvening, 0, 5) . "-" . substr($tuesdayClosingEvening, 0, 5);
-            }
-        } else {
-            echo "Fermé";
-        }
-        ?>
-    </p>
-
-    <p>Mercredi:
-        <?php
-        if ($wednesdayOpeningNoon != '00:00:00' || $wednesdayOpeningEvening != '00:00:00') {
-            echo $wednesdayOpeningDay."&nbsp;&nbsp;";
-            if ($wednesdayOpeningNoon != '00:00:00') {
-                echo substr($wednesdayOpeningNoon, 0, 5) . "-" . substr($wednesdayClosingNoon, 0, 5) . "&nbsp;&nbsp;";
-            }
-            if ($wednesdayOpeningEvening != '00:00:00') {
-                echo substr($wednesdayOpeningEvening, 0, 5) . "-" . substr($wednesdayClosingEvening, 0, 5);
-            }
-        } else {
-            echo "Fermé";
-        }
-        ?>
-    </p>
-
-    <p>Jeudi:
-        <?php
-        if ($thursdayOpeningNoon != '00:00:00' || $thursdayOpeningEvening != '00:00:00') {
-            echo $thursdayOpeningDay."&nbsp;&nbsp;";
-            if ($thursdayOpeningNoon != '00:00:00') {
-                echo date("H:i", strtotime($thursdayOpeningNoon))."-".date("H:i", strtotime($thursdayClosingNoon))."&nbsp;&nbsp;";
-            }
-            if ($thursdayOpeningEvening != '00:00:00') {
-                echo date("H:i", strtotime($thursdayOpeningEvening))."-".date("H:i", strtotime($thursdayClosingEvening));
-            }
-        } else {
-            echo "Fermé";
-        }
-        ?>
-    </p>
     <p>Vendredi:
         <?php
         if ($fridayOpeningNoon != '00:00:00' || $fridayOpeningEvening != '00:00:00') {
