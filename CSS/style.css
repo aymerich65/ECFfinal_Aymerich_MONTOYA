@@ -226,19 +226,18 @@
   }
   .button-reservation-style {
     background-color: rgb(182, 172, 151);
-    border-radius: 2%;
-    border: 2px solid black;
+    border-radius: 1%;
+    border: 1px solid black;
     color: rgb(0, 0, 0);
-    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.4vw;
     cursor: pointer;
     border-radius: 8px;
     width: 20%;
-    font-size: 16px;
-    font-weight: 600;
+    height: 6vh;
+    font-weight: 500;
   }
   /* Page carte:*/
   .btn-transparent {
@@ -299,10 +298,6 @@
   .footerstyle > .footerchildrenstyle {
     justify-content: center;
     text-align: center;
-  }
-  /*boutonreservation accueil*/
-  .button-reservation-style {
-    font-size: 90%;
   }
   /*Alignement images en mode desktop : */
   .galerieaccueil {
@@ -466,6 +461,23 @@
   }
   .myimage-container:hover .mytooltip {
     opacity: 1; /* Rend la description opaque lorsque l'utilisateur survole l'image */
+  }
+  .button-reservation-style {
+    background-color: rgb(182, 172, 151);
+    border-radius: 1%;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 4.8vw;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 40%;
+    height: 5.9vh;
+    font-weight: 500;
   }
   /*page a propos*/
   .blocapropos {
@@ -737,6 +749,7 @@
     float: left;
     position: relative;
     margin: 0.8%;
+    margin-left: 2%;
   }
   .myimage {
     height: auto;
@@ -765,20 +778,18 @@
   }
   .button-reservation-style {
     background-color: rgb(182, 172, 151);
-    border-radius: 2%;
-    border: 2px solid black;
+    border-radius: 1%;
+    border: 1px solid black;
     color: rgb(0, 0, 0);
-    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 0%;
+    font-size: 1.8vw;
     cursor: pointer;
     border-radius: 8px;
-    width: 25%;
-    font-size: 16px;
-    font-weight: 600;
+    width: 30%;
+    height: 7.5vh;
+    font-weight: 500;
   }
   .h1cartestyle {
     margin-top: 4%;
@@ -897,14 +908,14 @@
   }
   .titleschedule {
     font-weight: 900;
-    padding-top: 0.5%;
+    padding-top: 1%;
     padding-bottom: 2%;
     margin-bottom: 1.1%;
     line-height: 30%;
   }
 }
 /*-------tablette orientation portrait-----*/
-@media only screen and (min-width: 480px) and (max-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-width: 480px) and (max-width: 768px) and (orientation: portrait) {
   .bodystyle {
     height: 100vh;
     width: 100vw;
@@ -922,7 +933,6 @@
     /*Titre page carte*/
     /*Tableau de bord*/
     /* Pied de page */
-    /*bouton reservation accueil*/
     /*Page reservation*/
   }
   .bodystyle .main {
@@ -971,6 +981,23 @@
   }
   .bodystyle .myimage-container:hover .mytooltip {
     opacity: 1; /* Rend la description opaque lorsque l'utilisateur survole l'image */
+  }
+  .bodystyle .button-reservation-style {
+    background-color: rgb(182, 172, 151);
+    border-radius: 1%;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 4vw;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 40%;
+    height: 5.9vh;
+    font-weight: 500;
   }
   .bodystyle .headerstyle {
     background-color: rgb(144, 100, 39);
@@ -1093,9 +1120,6 @@
     font-size: 6.6vw;
     font-weight: 900;
     margin-bottom: 3.6%;
-  }
-  .bodystyle .button-reservation-style {
-    font-size: 3vh;
   }
   .bodystyle .reservationstyle {
     padding-left: 2%;
@@ -1228,12 +1252,12 @@
     width: 90%; /* Utilisation d'une largeur en pourcentage pour aligner les 3 images sur une même ligne */
     float: left;
     position: relative;
-    margin: 0.8%;
-    padding-left: 16%;
+    justify-content: center;
+    margin-left: 9%;
   }
   .myimage {
     height: auto;
-    max-width: 100%;
+    max-width: 90%;
   }
   .mytooltip {
     position: absolute;
@@ -1263,19 +1287,18 @@
   }
   .button-reservation-style {
     background-color: rgb(182, 172, 151);
-    border-radius: 2%;
-    border: 2px solid black;
+    border-radius: 1%;
+    border: 1px solid black;
     color: rgb(0, 0, 0);
-    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2vw;
-    margin-top: 5%;
+    font-size: 1.4vw;
     cursor: pointer;
     border-radius: 8px;
-    width: 25%;
-    font-weight: 600;
+    width: 20%;
+    height: 6vh;
+    font-weight: 500;
   }
   /*Page reservation*/
   .reservationstyle {
@@ -1394,10 +1417,11 @@
     padding-bottom: 2%;
     margin-bottom: 1.1%;
     line-height: 30%;
+    padding-top: 1%;
   }
 }
 /*------desktop orientation portrait-----*/
-@media only screen and (min-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-width: 768px) and (orientation: portrait) {
   .bodystyle {
     height: 100vh;
     width: 100vw;
@@ -1411,21 +1435,11 @@
     /*Bloc corps principale*/
     /* Description de l'image au survole */
     /*header*/
-    /*
-    .blocdescrollhorizontal{
-      overflow-x: auto;
-    }*/
-    /*
-    .dropdown {
-      display: block;
-    }   
-    */
     /*page a propos*/
     /* bloc connexion:*/
     /*Titre page carte*/
     /*Tableau de bord*/
     /* Pied de page */
-    /*bouton reservation accueil*/
     /*Page reservation*/
   }
   .bodystyle .main {
@@ -1475,6 +1489,23 @@ align-items: center;*/
   }
   .bodystyle .myimage-container:hover .mytooltip {
     display: block;
+  }
+  .bodystyle .button-reservation-style {
+    background-color: rgb(182, 172, 151);
+    border-radius: 1%;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 3vw;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 25%;
+    height: 5.9vh;
+    font-weight: 500;
   }
   .bodystyle .headerstyle {
     background-color: rgb(144, 100, 39);
@@ -1583,7 +1614,7 @@ align-items: center;*/
     border: 1px solid black;
   }
   .bodystyle .footerstyle {
-    padding-top: 5%;
+    padding-top: 2%;
     padding-bottom: 3%;
     width: 100%;
     justify-content: center;
@@ -1597,12 +1628,10 @@ align-items: center;*/
     text-align: center;
   }
   .bodystyle .titleschedule {
+    margin-top: 1%;
     font-size: 6.6vw;
     font-weight: 900;
     margin-bottom: 3.6%;
-  }
-  .bodystyle .button-reservation-style {
-    font-size: 3vh;
   }
   .bodystyle .reservationstyle {
     padding-left: 2%;
