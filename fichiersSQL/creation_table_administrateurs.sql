@@ -1,0 +1,5 @@
+CREATE TABLE Administrateurs (
+    email VARCHAR(254) NOT NULL PRIMARY KEY UNIQUE,
+    poste VARCHAR(60) NOT NULL,
+    password VARCHAR(60) NOT NULL
+);

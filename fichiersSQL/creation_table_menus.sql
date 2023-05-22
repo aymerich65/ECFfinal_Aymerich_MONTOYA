@@ -1,0 +1,7 @@
+CREATE TABLE menus (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(50) NOT NULL,
+    formule VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
+    prix DECIMAL(10,2) NOT NULL
+);
