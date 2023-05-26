@@ -21,9 +21,7 @@ if ($id === 'admin') {
     $controleur->pageAccueil();
 } elseif ($id === 'carte') {
     $controleur->pageCarte();
-}elseif ($id === 'horaires') {
-    $controleur->pageHoraires();
-} elseif ($id === 'a_propos') {
+}elseif ($id === 'a_propos') {
     $controleur->pageA_propos();
 }else {
     echo 'Page non trouvée';

@@ -44,7 +44,8 @@ $myTable->execute();
 
 
 }catch(PDOException $PDOException) {
-    echo 'il y a une erreur' . $PDOException->getMessage() . '<br>';
+    //echo 'il y a une erreur' . $PDOException->getMessage() . '<br>';
+    echo 'Il y a une erreur<br>';
     echo '<div class="button-container mytestcolor">';
     echo '<a href="../../index.php?page=accueil"><button class="button-reservation-style">Retour accueil</button></a>';
     echo '</div>';

@@ -42,8 +42,7 @@ $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
 
 if (isset($password) && isset($email)) {
-
-
+    try{
 
     $statement = $pdo->prepare("SELECT * FROM administrateurs WHERE email = :email");
     $statement->bindValue(':email', $email);
@@ -88,6 +87,14 @@ if (isset($password) && isset($email)) {
             }
         }
     }
+}catch(PDOException $e){
+    //echo 'Une erreur s'est produite : ' . $e->getMessage();
+    echo 'Il y a une erreur de requête<br>';
+    echo '<div class="button-container mytestcolor">';
+    echo '<a href="../../index.php?page=admin"><button class="button-reservation-style">Retour page administrateur</button></a>';
+    echo '</div>';
+    exit;
+}
 }
 
 
