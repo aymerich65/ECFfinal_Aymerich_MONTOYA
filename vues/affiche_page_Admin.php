@@ -320,7 +320,7 @@ require 'modeles/recuperations_donnees/recuperation_administrateurs.php';
         <button class="dishbuton" type="submit">Supprimer</button>
     </form>
 
-    <form action="Modeles/logout.php" method="post" class="deconnexionpageadminstyle">
+    <form action="modeles/logout.php" method="post" class="deconnexionpageadminstyle">
    <input type="submit" value="Déconnexion" class="dishbuton" >
 </form>
 </div>
