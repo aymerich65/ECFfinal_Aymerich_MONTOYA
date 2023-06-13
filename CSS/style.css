@@ -283,6 +283,8 @@
     padding-bottom: 0.5%;
     margin-bottom: 1.1%;
     line-height: 30%;
+    margin-top: 1%;
+    font-size: 1vw;
   }
   .footerstyle {
     font-size: 0.8vw;
@@ -298,6 +300,9 @@
   .footerstyle > .footerchildrenstyle {
     justify-content: center;
     text-align: center;
+  }
+  .footerchildrenstyle p {
+    margin-top: 1%;
   }
   /*Alignement images en mode desktop : */
   .galerieaccueil {
