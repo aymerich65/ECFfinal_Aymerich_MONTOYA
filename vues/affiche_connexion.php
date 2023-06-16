@@ -14,11 +14,11 @@ require_once 'JWT/authentification.php';
     </div>
     <?php if(isset($_POST['connexion'])){?>
     <div class="">
-        <form method="post" action="">
+        <form method="post" action="" class="largescreenlandscapestyleco">
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="email" class="connexionemailmargintop">Adresse Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Indiquez votre adresse email">
+                    <input type="email" class="form-control largescreenlandscapestyleco" id="email" name="email" placeholder="Indiquez votre adresse email">
                 </div>
                 <div class="form-group col-md-12">
                     <label for="password">Mot de passe</label>
@@ -30,7 +30,7 @@ require_once 'JWT/authentification.php';
     </div>
 <?php } elseif(isset($_POST['inscription'])){ ?>
 <div class="">
-    <form method="POST" action="../modeles/insertionsdonnees/traitementInscription.php">
+    <form method="POST" action="../modeles/insertionsdonnees/traitementInscription.php" class="largescreenlandscapestyleco">
         <div class="form-row">
             <div class="form-group col-md-12 connexionemailmargintop">
                 <label for="email">Adresse Email</label>

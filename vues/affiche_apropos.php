@@ -4,7 +4,7 @@ ob_start();
 
 
 ?>
-
+<!-- J'ai repri la classe du titre pour certains h2 et h3 -->
     <div class="blocapropos">
         <h1 class="apropotextestyleh1">À propos du restaurant Le Quai Antique</h1>
         <p class="apropotextestyle">Le restaurant Le Quai Antique est un établissement familial situé sur les rives du lac du Bourget à Chambéry. Depuis 2005, nous vous proposons une cuisine traditionnelle française élaborée à partir de produits frais et de qualité.
