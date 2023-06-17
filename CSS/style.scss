@@ -1318,7 +1318,7 @@ input{
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
-    font-size: 1.6vw;
+    font-size: 3vw;
     
 
   /*Bloc corps principale*/
@@ -1442,11 +1442,11 @@ display: none;
 
 /*page a propos*/
 .blocapropos{
-  font-size: 1.6vw;
+  font-size: 3vw;
 }
 
 .apropotextestyleh1{
-  font-size: 22px;
+  font-size: 5vw;
   margin-top: 5%;
   margin-bottom: 4%;
   text-align: center;
@@ -1458,7 +1458,7 @@ display: none;
 
 
 .mentionslegaletitlesstyle{
-  font-size: 22px;
+  font-size: 3vw;
   margin-top: 5%;
   text-align: center;
 }
@@ -1478,22 +1478,48 @@ display: none;
   text-align: justify;
 }
   
-/* bloc connexion:*/
+
+/*Page connexion : */
+.blocconnexion{
+  font-size: 3vw;
+}
+
+label{
+  font-size: 3vw;
+
+}
+
+.connexionbutton{
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 3vw;
+  }
+  
+  .connexionvalidatebutton{
+  margin-top: 3rem;
+  background-color: rgb(182, 172, 151);
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 3vw;
+  }
+  
+
+
 
 /*Titre page carte*/
 .h1cartestyle{
   margin-top: 4%;
-  font-size: 3rem;
+  font-size: 8vw;
+    color:rgb(0, 0, 0);
+  margin-top: 3%; 
 }
 
-.h1cartestyle{
-  color:rgb(0, 0, 0);
-  margin-top: 3%; 
-  }
-  
+
   .h2cartestyle{
   color:rgba(144, 100, 39, 1);
-  margin-top: 6%; 
+  margin-top: 10%; 
+  font-size: 6vw;
   
   }
   .h3cartestyle{
@@ -1587,7 +1613,7 @@ display: none;
 
 /*Page reservation*/
 .reservationstyle {
-    //font-size: 24px;
+    font-size: 3vw;
     padding-left: 2%;
 
     .rowDate{
