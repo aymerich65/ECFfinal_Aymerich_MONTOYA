@@ -643,6 +643,10 @@
   .affichage-donnees {
     margin-top: 3%;
   }
+  label {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
   .form-admin-style .label-admin-style {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -959,6 +963,10 @@
   .affichage-donnees {
     margin-top: 3%;
   }
+  label {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
   .form-admin-style .label-admin-style {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -1211,6 +1219,10 @@
   }
   .bodystyle .affichage-donnees {
     margin-top: 3%;
+  }
+  .bodystyle label {
+    margin-top: 1%;
+    margin-bottom: 1%;
   }
   .bodystyle .form-admin-style .label-admin-style {
     margin-top: 1rem;
@@ -1527,6 +1539,10 @@
   }
   .affichage-donnees {
     margin-top: 3%;
+  }
+  label {
+    margin-top: 1%;
+    margin-bottom: 1%;
   }
   .form-admin-style .label-admin-style {
     margin-top: 1rem;
