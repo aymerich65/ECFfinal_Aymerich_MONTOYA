@@ -1,6 +1,7 @@
 <?php
 
 ob_start();
+$titrePage = "Restaurant Quai Antique - Réservation";
 require_once 'JWT/authentification.php';
 
 if (isset($_SESSION['email'])) {

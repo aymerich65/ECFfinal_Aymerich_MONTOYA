@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$titrePage = "Restaurant Quai Antique - Tableau de bord";
 if(session_status() === PHP_SESSION_NONE){
     session_start();
 }

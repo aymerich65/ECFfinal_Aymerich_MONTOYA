@@ -20,7 +20,7 @@ $mybddTable = $myrequest->fetchAll(PDO::FETCH_ASSOC);
 
 
 ob_start();
-
+$titrePage = "Restaurant Quai Antique - Accueil";
 
 ?>
     <div class="row blocdesimages">

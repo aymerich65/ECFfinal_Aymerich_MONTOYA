@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$titrePage = "Restaurant Quai Antique - Carte";
 
 /* utilisation du fichier config pour récupérer les variables d'environnement:*/
 

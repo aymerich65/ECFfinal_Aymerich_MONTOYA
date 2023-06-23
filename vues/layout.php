@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuaiAntique</title>
+    <title><?php echo $titrePage; ?></title>
     <meta name="description" content="Découvrez le Quai Antique, un restaurant gastronomique situé à Chambéry, en Savoie. Le Chef Arnaud Michant, passionné par les produits locaux et les producteurs de la région, vous propose une cuisine authentique et raffinée, mettant en valeur les saveurs et les traditions culinaires savoyardes. Profitez d'une expérience culinaire unique, que ce soit pour le déjeuner ou le dîner, dans un cadre élégant et chaleureux.">
     <meta name="keywords" content="Chambéry, restaurant, authentique">
     <meta name="author" content="Aymerich MONTOYA">

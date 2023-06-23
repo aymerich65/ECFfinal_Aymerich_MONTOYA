@@ -2,6 +2,7 @@
 
 ob_start();
 require_once 'JWT/authentification.php';
+$titrePage = "Restaurant Quai Antique - Connexion";
 
 ?>
 

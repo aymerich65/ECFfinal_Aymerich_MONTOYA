@@ -1,6 +1,6 @@
 <?php
 ob_start();
-
+$titrePage = "Restaurant Quai Antique - A propos";
 
 
 ?>
